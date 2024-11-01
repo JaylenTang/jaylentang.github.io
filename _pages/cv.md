@@ -11,30 +11,25 @@ redirect_from:
 
 Education
 ======
-* Ph.a in Version Control Theory, GitHub University, 2018 (expected)
-* M.S. in Jekyll, GitHub University, 2014
-* B.S. in GitHub, GitHub University, 2012
+
+* M.S. in Fullerton, CA, USA, California State University,Fullerton, 2024
+* B.S. in Jinan, SD, China, Shandong University of Finance and Economics, 2022
 
 Work experience
 ======
-* Spring 2024: Academic Pages Collaborator
-  * Github University
+* Summer 2023: Software Developer
+  * Inspur Group (China)
   * Duties includes: Updates and improvements to template
   * Supervisor: The Users
 
-* Fall 2015: Research Assistant
-  * Github University
-  * Duties included: Merging pull requests
-  * Supervisor: Professor Hub
+* Fall 2022--Now: Research Assistant
+  * California State University, Fullerton
+  * Duties included: Research about AI
 
-* Summer 2015: Research Assistant
-  * Github University
-  * Duties included: Tagging issues
-  * Supervisor: Professor Git
   
 Skills
 ======
-* Skill 1
+* Python
 * Skill 2
   * Sub-skill 2.1
   * Sub-skill 2.2
