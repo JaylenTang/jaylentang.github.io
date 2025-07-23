@@ -12,9 +12,9 @@ redirect_from:
 Education
 ======
 
-* Ph.D. in Computer Science, University of California, Irvine (UCI), 2025-
-* M.S. in Fullerton, CA, USA, California State University, Fullerton, 2024
-* B.S. in Jinan, SD, China, Shandong University of Finance and Economics, 2022
+* Ph.D. in Computer Engineering, University of California, Irvine, 2025 -
+* M.S. in Computer Science, California State University, Fullerton, 2024
+* B.S. in Information Management and Information Systems, Shandong University of Finance and Economics, 2022
 
 Work experience
 ======
