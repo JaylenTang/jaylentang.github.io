@@ -1,14 +1,19 @@
 ---
-title: "Paper Title Number 2"
+title: "HyperEAST: An Enhanced Attention-Based Spectral-Spatial Transformer with Self-Supervised Pretraining for Hyperspectral Image Classification"
 collection: publications
-category: manuscripts
-permalink: /publication/2010-10-01-paper-title-number-2
-excerpt: 'This paper is about the number 2. The number 3 is left for future work.'
+category: journals
+permalink: /publication/2010-10-01-hypereast
+excerpt: 'We propose HyperEAST, an enhanced attention-based spectral-spatial transformer with self-supervised pretraining for hyperspectral image classification.'
 date: 2010-10-01
-venue: 'Journal 1'
-slidesurl: 'http://academicpages.github.io/files/slides2.pdf'
-paperurl: 'http://academicpages.github.io/files/paper2.pdf'
-citation: 'Your Name, You. (2010). &quot;Paper Title Number 2.&quot; <i>Journal 1</i>. 1(2).'
+venue: 'IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing'
+paperurl: ''
+citation: 'Tang, Jialin; Ma, Nan; Jia, Chen; Tian, Rui; Guo, Yanhui. (2025). "HyperEAST: An Enhanced Attention-Based Spectral-Spatial Transformer with Self-Supervised Pretraining for Hyperspectral Image Classification." <i>IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing</i>.'
 ---
 
-The contents above will be part of a list of publications, if the user clicks the link for the publication than the contents of section will be rendered as a full page, allowing you to provide more information about the paper for the reader. When publications are displayed as a single page, the contents of the above "citation" field will automatically be included below this section in a smaller font.
+HyperEAST: An Enhanced Attention-Based Spectral-Spatial Transformer with Self-Supervised Pretraining for Hyperspectral Image Classification
+
+Published in _IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing_, 2025
+
+We propose HyperEAST, an enhanced attention-based spectral-spatial transformer with self-supervised pretraining for hyperspectral image classification.
+
+Recommended citation: Tang, Jialin; Ma, Nan; Jia, Chen; Tian, Rui; Guo, Yanhui. (2025). "HyperEAST: An Enhanced Attention-Based Spectral-Spatial Transformer with Self-Supervised Pretraining for Hyperspectral Image Classification." _IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing_.
