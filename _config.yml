@@ -8,9 +8,9 @@
 
 # Basic Site Settings
 locale                   : "en-US"
-title                    : "Your Name / Site Title"
+title                    : "Jialin (Jaylen) Tang"
 title_separator          : "-"
-name                     : &name "Your Name"
+name                     : &name "Jialin Tang"
 description              : &description "personal description"
 url                      : https://jaylentang.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
@@ -24,9 +24,9 @@ author:
   avatar           : "profile.png"
   name             : "Jialin Tang"
   pronouns         : # example: "she/her"  
-  bio              : "Graduate Student in Computer Science"
-  location         : "Fullerton,CA,USA"
-  employer         : "California State University, Fullerton"
+  bio              : "PhD Student in Computer Science"
+  location         : "Irvine ,CA,USA"
+  employer         : "University of California, Irvine"
   uri              : # URL
   email            : "tjl_0516@csu.fullerton.edu" 
 
