@@ -65,7 +65,7 @@ redirect_from:
     </p>
 
     <article class="research-card">
-      <img src="/images/research-hypereast.png" alt="HyperEAST hyperspectral image classification thumbnail">
+      <img src="/images/research-hypereast.png?v={{ site.asset_version }}" alt="HyperEAST hyperspectral image classification thumbnail">
       <div>
         <h3>HyperEAST: An Enhanced Attention-Based Spectral-Spatial Transformer with Self-Supervised Pretraining for Hyperspectral Image Classification</h3>
         <p class="research-authors"><strong>Jialin Tang</strong>, Nan Ma, Chen Jia, Rui Tian, Yanhui Guo</p>
@@ -76,7 +76,7 @@ redirect_from:
     </article>
 
     <article class="research-card">
-      <img src="/images/research-mas-llava.png" alt="MAS-LLaVA video sampling thumbnail">
+      <img src="/images/research-mas-llava.png?v={{ site.asset_version }}" alt="MAS-LLaVA video sampling thumbnail">
       <div>
         <h3>MAS-LLaVA: Motion-Aware Adaptive Sampling for Training-Free Video Large Language Models</h3>
         <p class="research-authors"><strong>Jialin Tang</strong>, Yu Bai</p>
@@ -87,7 +87,7 @@ redirect_from:
     </article>
 
     <article class="research-card">
-      <img src="/images/research-hypermode.png" alt="HyperMODE hyperspectral modeling thumbnail">
+      <img src="/images/research-hypermode.png?v={{ site.asset_version }}" alt="HyperMODE hyperspectral modeling thumbnail">
       <div>
         <h3>HyperMODE: A Continuous-Depth Spectral-Spatial Modeling Framework with Mamba and Neural Ordinary Differential Equations for Hyperspectral Image Classification</h3>
         <p class="research-authors"><strong>Jialin Tang</strong>, Yunduan Lou, Yanhui Guo, Yu Bai</p>
@@ -98,7 +98,7 @@ redirect_from:
     </article>
 
     <article class="research-card">
-      <img src="/images/research-ev-charging.png" alt="EV wireless charging optimization thumbnail">
+      <img src="/images/research-ev-charging.png?v={{ site.asset_version }}" alt="EV wireless charging optimization thumbnail">
       <div>
         <h3>Optimizing Energy Management Strategy for EV Wireless Charging Efficiency Using Proximal Policy Optimization</h3>
         <p class="research-authors">Ava George, <strong>Jialin Tang</strong></p>
@@ -109,7 +109,7 @@ redirect_from:
     </article>
 
     <article class="research-card">
-      <img src="/images/research-aso-regression.png" alt="Antisense oligonucleotide regression modeling thumbnail">
+      <img src="/images/research-aso-regression.png?v={{ site.asset_version }}" alt="Antisense oligonucleotide regression modeling thumbnail">
       <div>
         <h3>Regression-Based Modeling of Antisense Oligonucleotide Efficacy Using Sequence, Structural, and Off-Target Features</h3>
         <p class="research-authors">Ava George, Yu Bai, <strong>Jialin Tang</strong></p>
