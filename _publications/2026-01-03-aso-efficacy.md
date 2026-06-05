@@ -3,10 +3,11 @@ title: "Regression-Based Modeling of Antisense Oligonucleotide Efficacy Using Se
 collection: publications
 category: conferences
 permalink: /publication/2026-01-03-aso-efficacy
+sort_order: 4
 excerpt: 'This work models ASO efficacy using sequence, structural, and off-target features.'
 date: 2026-01-03
 venue: 'IEEE 16th Annual Computing and Communication Workshop and Conference (CCWC)'
-paperurl: 'https://openreview.net/forum?id=mLOBKqTcL0'
+paperurl: 'https://ieeexplore.ieee.org/document/11393870'
 citation: 'George, Ava; Bai, Yu; Tang, Jialin. (2026). "Regression-Based Modeling of Antisense Oligonucleotide Efficacy Using Sequence, Structural, and Off-Target Features." <i>IEEE 16th Annual Computing and Communication Workshop and Conference (CCWC)</i>.'
 ---
 

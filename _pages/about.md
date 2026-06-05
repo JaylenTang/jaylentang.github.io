@@ -14,20 +14,22 @@ redirect_from:
       <img class="roger-calligraphy" src="/images/name-calligraphy.png" alt="Jialin Tang Chinese calligraphy">
 
       <p>
-        I am a Ph.D. student in Computer Engineering at the University of California, Irvine.
-        My research interests include deep learning, image processing, video large language
-        models, diffusion models, and hyperspectral image classification.
+        Jialin Tang received the B.M. degree in Information Management and Information
+        Systems from Shandong University of Finance and Economics, China, in 2022,
+        and the M.S. degree in Computer Science from California State University,
+        Fullerton, USA, in 2026. He is currently pursuing the Ph.D. degree in
+        Computational Science at the University of California, Irvine, USA. His research
+        interests include deep learning and image processing.
       </p>
 
       <p>
-        Before joining UCI, I received my M.S. in Computer Science from California State
-        University, Fullerton and my B.S. in Information Management and Information Systems
-        from Shandong University of Finance and Economics.
+        Henry Samueli School of Engineering, University of California, Irvine, Irvine, CA, USA<br>
+        Computational Science Research Center, San Diego State University, San Diego, CA, USA
       </p>
 
       <p>
         <strong>Email:</strong>
-        <a href="mailto:tjl_0516@csu.fullerton.edu">tjl_0516@csu.fullerton.edu</a>
+        <a href="mailto:jialit7@uci.edu">jialit7@uci.edu</a>
       </p>
 
       <nav class="roger-links" aria-label="Profile links">
@@ -65,28 +67,6 @@ redirect_from:
     </p>
 
     <article class="research-card">
-      <img src="/images/research-hypereast.png?v={{ site.asset_version }}" alt="HyperEAST hyperspectral image classification thumbnail">
-      <div>
-        <h3>HyperEAST: An Enhanced Attention-Based Spectral-Spatial Transformer with Self-Supervised Pretraining for Hyperspectral Image Classification</h3>
-        <p class="research-authors"><strong>Jialin Tang</strong>, Nan Ma, Chen Jia, Rui Tian, Yanhui Guo</p>
-        <p class="research-venue"><em>IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing</em>, 2025</p>
-        <p class="research-links"><a href="/publication/2025-01-01-hypereast">details</a> / <a href="https://ieeexplore.ieee.org/document/11129658/">paper</a></p>
-        <p class="research-note">Self-supervised spectral-spatial representation learning for hyperspectral image classification.</p>
-      </div>
-    </article>
-
-    <article class="research-card">
-      <img src="/images/research-mas-llava.png?v={{ site.asset_version }}" alt="MAS-LLaVA video sampling thumbnail">
-      <div>
-        <h3>MAS-LLaVA: Motion-Aware Adaptive Sampling for Training-Free Video Large Language Models</h3>
-        <p class="research-authors"><strong>Jialin Tang</strong>, Yu Bai</p>
-        <p class="research-venue">IEEE International Conference on Artificial Intelligence, Computer, Data Sciences and Applications (ACDSA), 2026</p>
-        <p class="research-links"><a href="/publication/2026-01-01-mas-llava">details</a> / <a href="https://openreview.net/forum?id=FLsOAmKj2I">paper</a></p>
-        <p class="research-note">Motion-aware token and frame sampling for efficient training-free video large language model inference.</p>
-      </div>
-    </article>
-
-    <article class="research-card">
       <img src="/images/research-hypermode.png?v={{ site.asset_version }}" alt="HyperMODE hyperspectral modeling thumbnail">
       <div>
         <h3>HyperMODE: A Continuous-Depth Spectral-Spatial Modeling Framework with Mamba and Neural Ordinary Differential Equations for Hyperspectral Image Classification</h3>
@@ -98,13 +78,24 @@ redirect_from:
     </article>
 
     <article class="research-card">
-      <img src="/images/research-ev-charging.png?v={{ site.asset_version }}" alt="EV wireless charging optimization thumbnail">
+      <img src="/images/research-hypereast.png?v={{ site.asset_version }}" alt="HyperEAST hyperspectral image classification thumbnail">
       <div>
-        <h3>Optimizing Energy Management Strategy for EV Wireless Charging Efficiency Using Proximal Policy Optimization</h3>
-        <p class="research-authors">Ava George, <strong>Jialin Tang</strong></p>
-        <p class="research-venue">IEEE 16th Annual Computing and Communication Workshop and Conference, 2026</p>
-        <p class="research-links"><a href="/publication/2026-01-02-ev-wireless-charging">details</a></p>
-        <p class="research-note">Reinforcement learning for efficient energy management in EV wireless charging systems.</p>
+        <h3>HyperEAST: An Enhanced Attention-Based Spectral-Spatial Transformer with Self-Supervised Pretraining for Hyperspectral Image Classification</h3>
+        <p class="research-authors"><strong>Jialin Tang</strong>, Nan Ma, Chen Jia, Rui Tian, Yanhui Guo</p>
+        <p class="research-venue"><em>IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing</em>, 2025</p>
+        <p class="research-links"><a href="/publication/2025-01-01-hypereast">details</a> / <a href="https://ieeexplore.ieee.org/document/11129658">paper</a></p>
+        <p class="research-note">Self-supervised spectral-spatial representation learning for hyperspectral image classification.</p>
+      </div>
+    </article>
+
+    <article class="research-card">
+      <img src="/images/research-mas-llava.png?v={{ site.asset_version }}" alt="MAS-LLaVA video sampling thumbnail">
+      <div>
+        <h3>MAS-LLaVA: Motion-Aware Adaptive Sampling for Training-Free Video Large Language Models</h3>
+        <p class="research-authors"><strong>Jialin Tang</strong>, Yu Bai</p>
+        <p class="research-venue">IEEE International Conference on Artificial Intelligence, Computer, Data Sciences and Applications (ACDSA), 2026</p>
+        <p class="research-links"><a href="/publication/2026-01-01-mas-llava">details</a> / <a href="https://ieeexplore.ieee.org/document/11468028">paper</a></p>
+        <p class="research-note">Motion-aware token and frame sampling for efficient training-free video large language model inference.</p>
       </div>
     </article>
 
@@ -114,8 +105,19 @@ redirect_from:
         <h3>Regression-Based Modeling of Antisense Oligonucleotide Efficacy Using Sequence, Structural, and Off-Target Features</h3>
         <p class="research-authors">Ava George, Yu Bai, <strong>Jialin Tang</strong></p>
         <p class="research-venue">IEEE 16th Annual Computing and Communication Workshop and Conference, 2026</p>
-        <p class="research-links"><a href="/publication/2026-01-03-aso-efficacy">details</a> / <a href="https://openreview.net/forum?id=mLOBKqTcL0">paper</a></p>
+        <p class="research-links"><a href="/publication/2026-01-03-aso-efficacy">details</a> / <a href="https://ieeexplore.ieee.org/document/11393870">paper</a></p>
         <p class="research-note">Regression modeling for ASO efficacy prediction using sequence, structure, and off-target signals.</p>
+      </div>
+    </article>
+
+    <article class="research-card">
+      <img src="/images/research-ev-charging.png?v={{ site.asset_version }}" alt="EV wireless charging optimization thumbnail">
+      <div>
+        <h3>Optimizing Energy Management Strategy for EV Wireless Charging Efficiency Using Proximal Policy Optimization</h3>
+        <p class="research-authors">Ava George, <strong>Jialin Tang</strong></p>
+        <p class="research-venue">IEEE 16th Annual Computing and Communication Workshop and Conference, 2026</p>
+        <p class="research-links"><a href="/publication/2026-01-02-ev-wireless-charging">details</a> / <a href="https://ieeexplore.ieee.org/document/11393703">paper</a></p>
+        <p class="research-note">Reinforcement learning for efficient energy management in EV wireless charging systems.</p>
       </div>
     </article>
   </section>

@@ -7,8 +7,8 @@ title: "Publications"
 <h2>Publications</h2>
 <hr />
 
-{% for post in site.publications reversed %}
+{% assign ordered_publications = site.publications | sort: "sort_order" %}
+{% for post in ordered_publications %}
   {% include archive-single.html %}
 {% endfor %}
-
 

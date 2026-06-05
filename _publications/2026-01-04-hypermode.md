@@ -3,6 +3,7 @@ title: "HyperMODE: A Continuous-Depth Spectral-Spatial Modeling Framework with M
 collection: publications
 category: manuscripts
 permalink: /publication/2026-01-04-hypermode
+sort_order: 1
 excerpt: 'HyperMODE is a continuous-depth spectral-spatial modeling framework for hyperspectral image classification.'
 date: 2026-01-04
 venue: 'SSRN'
