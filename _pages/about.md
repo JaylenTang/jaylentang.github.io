@@ -1,59 +1,122 @@
 ---
+layout: home
 permalink: /
 title: "Jialin Tang"
-author_profile: true
 redirect_from:
   - /about/
   - /about.html
 ---
 
-<div class="home-intro">
-  <img class="home-calligraphy" src="/images/name-calligraphy.png" alt="Jialin Tang Chinese calligraphy">
-  <p class="home-kicker">Ph.D. Student in Computer Engineering, University of California, Irvine</p>
-  <p class="home-lede">
-    I am a Ph.D. student in Computer Engineering at the University of California, Irvine.
-    My research interests are in machine learning, computer vision, remote sensing, and
-    hyperspectral image classification, with a focus on building reliable learning systems
-    for high-dimensional visual data.
-  </p>
-  <div class="home-actions">
-    <a class="home-button home-button-primary" href="/publications/">Publications</a>
-    <a class="home-button" href="/cv/">CV</a>
-    <a class="home-button" href="mailto:tjl_0516@csu.fullerton.edu">Email</a>
-  </div>
-</div>
+<main class="roger-page">
+  <section class="roger-hero" aria-label="Profile">
+    <div class="roger-intro">
+      <h1>Jialin Tang</h1>
+      <img class="roger-calligraphy" src="/images/name-calligraphy.png" alt="Jialin Tang Chinese calligraphy">
 
-<section class="home-section">
-  <h2>Research Interests</h2>
-  <ul class="home-chip-list">
-    <li>Machine Learning</li>
-    <li>Computer Vision</li>
-    <li>Remote Sensing</li>
-    <li>Hyperspectral Image Classification</li>
-    <li>Spectral-Spatial Representation Learning</li>
-  </ul>
-</section>
+      <p>
+        I am a Ph.D. student in Computer Engineering at the University of California, Irvine.
+        My research interests include deep learning, image processing, video large language
+        models, diffusion models, and hyperspectral image classification.
+      </p>
 
-<section class="home-section">
-  <h2>News</h2>
-  <ul class="home-news">
-    <li><span>2025</span><p>Began Ph.D. studies in Computer Engineering at UC Irvine.</p></li>
-    <li><span>2025</span><p>Published HyperEAST in <em>IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing</em>.</p></li>
-    <li><span>2024</span><p>Completed M.S. in Computer Science at California State University, Fullerton.</p></li>
-  </ul>
-</section>
+      <p>
+        Before joining UCI, I received my M.S. in Computer Science from California State
+        University, Fullerton and my B.S. in Information Management and Information Systems
+        from Shandong University of Finance and Economics.
+      </p>
 
-<section class="home-section">
-  <h2>Selected Publication</h2>
-  <article class="home-publication">
-    <h3>
-      <a href="/publication/2025-01-01-hypereast">
-        HyperEAST: An Enhanced Attention-Based Spectral-Spatial Transformer with Self-Supervised Pretraining for Hyperspectral Image Classification
-      </a>
-    </h3>
-    <p>
-      Tang, Jialin; Ma, Nan; Jia, Chen; Tian, Rui; Guo, Yanhui.
-      <em>IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing</em>, 2025.
+      <p>
+        <strong>Email:</strong>
+        <a href="mailto:tjl_0516@csu.fullerton.edu">tjl_0516@csu.fullerton.edu</a>
+      </p>
+
+      <nav class="roger-links" aria-label="Profile links">
+        <a href="https://scholar.google.com/citations?user=tOytfmwAAAAJ&hl=en">Google Scholar</a>
+        <span>/</span>
+        <a href="https://github.com/jaylentang">Github</a>
+        <span>/</span>
+        <a href="https://www.linkedin.com/in/jtang0516/">LinkedIn</a>
+        <span>/</span>
+        <a href="/publications/">Publications</a>
+        <span>/</span>
+        <a href="/cv/">CV</a>
+      </nav>
+    </div>
+
+    <img class="roger-photo" src="/images/profile-photo.jpg" alt="Jialin Tang profile photo">
+  </section>
+
+  <section class="roger-section">
+    <h2>News</h2>
+    <ul class="roger-news">
+      <li>[04/2026] MAS-LLaVA appeared at IEEE ACDSA 2026.</li>
+      <li>[04/2026] HyperMODE was posted as an SSRN preprint.</li>
+      <li>[2026] EV wireless charging optimization and ASO efficacy modeling appeared at IEEE CCWC 2026.</li>
+      <li>[2025] HyperEAST was published in <em>IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing</em>.</li>
+    </ul>
+  </section>
+
+  <section class="roger-section">
+    <h2>Selected Research</h2>
+    <p class="roger-research-summary">
+      My work focuses on learning methods for high-dimensional visual data, with recent
+      projects in hyperspectral image classification, training-free video VLLMs, continuous-depth
+      spectral-spatial modeling, and learning-based optimization.
     </p>
-  </article>
-</section>
+
+    <article class="research-card">
+      <img src="/images/research-hypereast.png" alt="HyperEAST hyperspectral image classification thumbnail">
+      <div>
+        <h3>HyperEAST: An Enhanced Attention-Based Spectral-Spatial Transformer with Self-Supervised Pretraining for Hyperspectral Image Classification</h3>
+        <p class="research-authors"><strong>Jialin Tang</strong>, Nan Ma, Chen Jia, Rui Tian, Yanhui Guo</p>
+        <p class="research-venue"><em>IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing</em>, 2025</p>
+        <p class="research-links"><a href="/publication/2025-01-01-hypereast">details</a> / <a href="https://ieeexplore.ieee.org/document/11129658/">paper</a></p>
+        <p class="research-note">Self-supervised spectral-spatial representation learning for hyperspectral image classification.</p>
+      </div>
+    </article>
+
+    <article class="research-card">
+      <img src="/images/research-mas-llava.png" alt="MAS-LLaVA video sampling thumbnail">
+      <div>
+        <h3>MAS-LLaVA: Motion-Aware Adaptive Sampling for Training-Free Video Large Language Models</h3>
+        <p class="research-authors"><strong>Jialin Tang</strong>, Yu Bai</p>
+        <p class="research-venue">IEEE International Conference on Artificial Intelligence, Computer, Data Sciences and Applications (ACDSA), 2026</p>
+        <p class="research-links"><a href="/publication/2026-01-01-mas-llava">details</a> / <a href="https://openreview.net/forum?id=FLsOAmKj2I">paper</a></p>
+        <p class="research-note">Motion-aware token and frame sampling for efficient training-free video large language model inference.</p>
+      </div>
+    </article>
+
+    <article class="research-card">
+      <img src="/images/research-hypermode.png" alt="HyperMODE hyperspectral modeling thumbnail">
+      <div>
+        <h3>HyperMODE: A Continuous-Depth Spectral-Spatial Modeling Framework with Mamba and Neural Ordinary Differential Equations for Hyperspectral Image Classification</h3>
+        <p class="research-authors"><strong>Jialin Tang</strong>, Yunduan Lou, Yanhui Guo, Yu Bai</p>
+        <p class="research-venue">Available at SSRN 6568417, 2026</p>
+        <p class="research-links"><a href="/publication/2026-01-04-hypermode">details</a> / <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6568417">paper</a></p>
+        <p class="research-note">Continuous-depth spectral-spatial modeling that combines sequence modeling with neural ODE dynamics.</p>
+      </div>
+    </article>
+
+    <article class="research-card">
+      <img src="/images/research-ev-charging.png" alt="EV wireless charging optimization thumbnail">
+      <div>
+        <h3>Optimizing Energy Management Strategy for EV Wireless Charging Efficiency Using Proximal Policy Optimization</h3>
+        <p class="research-authors">Ava George, <strong>Jialin Tang</strong></p>
+        <p class="research-venue">IEEE 16th Annual Computing and Communication Workshop and Conference, 2026</p>
+        <p class="research-links"><a href="/publication/2026-01-02-ev-wireless-charging">details</a></p>
+        <p class="research-note">Reinforcement learning for efficient energy management in EV wireless charging systems.</p>
+      </div>
+    </article>
+
+    <article class="research-card">
+      <img src="/images/research-aso-regression.png" alt="Antisense oligonucleotide regression modeling thumbnail">
+      <div>
+        <h3>Regression-Based Modeling of Antisense Oligonucleotide Efficacy Using Sequence, Structural, and Off-Target Features</h3>
+        <p class="research-authors">Ava George, Yu Bai, <strong>Jialin Tang</strong></p>
+        <p class="research-venue">IEEE 16th Annual Computing and Communication Workshop and Conference, 2026</p>
+        <p class="research-links"><a href="/publication/2026-01-03-aso-efficacy">details</a> / <a href="https://openreview.net/forum?id=mLOBKqTcL0">paper</a></p>
+        <p class="research-note">Regression modeling for ASO efficacy prediction using sequence, structure, and off-target signals.</p>
+      </div>
+    </article>
+  </section>
+</main>
