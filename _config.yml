@@ -11,21 +11,21 @@ locale                   : "en-US"
 title                    : "Jialin (Jaylen) Tang"
 title_separator          : "-"
 name                     : &name "Jialin Tang"
-description              : &description "personal description"
+description              : &description "Ph.D. student in Computer Engineering at the University of California, Irvine"
 url                      : https://jaylentang.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
-repository               : "academicpages/academicpages.github.io"
+repository               : "JaylenTang/jaylentang.github.io"
 
 # Site Author - The following control what appear as part of the author content on the side bar.
 #               If a field is blank the icon and link will not appear, otherwise it will be shown.
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "profile.png"
+  avatar           : "profile-photo.jpg"
   name             : "Jialin Tang"
   pronouns         : # example: "she/her"  
-  bio              : "PhD Student in Computer Science"
-  location         : "Irvine ,CA,USA"
+  bio              : "Ph.D. Student in Computer Engineering"
+  location         : "Irvine, CA, USA"
   employer         : "University of California, Irvine"
   uri              : # URL
   email            : "tjl_0516@csu.fullerton.edu" 

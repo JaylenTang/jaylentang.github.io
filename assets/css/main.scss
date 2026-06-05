@@ -39,3 +39,150 @@
 @import "vendor/font-awesome/brands";
 @import "vendor/magnific-popup/magnific-popup";
 @import "print";
+
+.home-intro {
+  margin-bottom: 2.25rem;
+}
+
+.home-calligraphy {
+  display: block;
+  width: 100%;
+  max-width: 760px;
+  height: auto;
+  margin: 0 0 1.4rem;
+}
+
+.home-kicker {
+  margin: 0 0 0.8rem;
+  color: #5d6670;
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+.home-lede {
+  max-width: 44rem;
+  margin-bottom: 1.1rem;
+  color: #3f464d;
+  font-size: 1.03rem;
+  line-height: 1.65;
+}
+
+.home-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.home-button,
+.home-button:visited {
+  display: inline-block;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #c8d1da;
+  border-radius: 4px;
+  color: #38434f;
+  background: #edf3f7;
+  font-size: 0.8rem;
+  font-weight: 700;
+  line-height: 1;
+  text-decoration: none !important;
+}
+
+.home-button:hover {
+  border-color: #8ea2b3;
+  color: #1f5f7a;
+  background: #f6f9fb;
+  text-decoration: none !important;
+}
+
+.home-button-primary,
+.home-button-primary:visited {
+  border-color: #1f6f8b;
+  color: #fff;
+  background: #1f6f8b;
+}
+
+.home-button-primary:hover {
+  border-color: #18566c;
+  color: #fff;
+  background: #18566c;
+  text-decoration: none !important;
+}
+
+.home-section {
+  max-width: 46rem;
+  padding-top: 1.4rem;
+  margin-top: 1.6rem;
+  border-top: 1px solid #e6e9ec;
+}
+
+.home-section h2 {
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+  font-size: 1.25rem;
+}
+
+.home-chip-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.home-chip-list li {
+  padding: 0.35rem 0.6rem;
+  border: 1px solid #d8dee4;
+  border-radius: 3px;
+  color: #444d56;
+  font-size: 0.82rem;
+  line-height: 1.2;
+  background: #f6f8fa;
+}
+
+.home-news {
+  padding-left: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.home-news li {
+  display: grid;
+  grid-template-columns: 4rem minmax(0, 1fr);
+  gap: 0.7rem;
+  padding: 0.55rem 0;
+  border-bottom: 1px solid #edf0f2;
+}
+
+.home-news li:last-child {
+  border-bottom: 0;
+}
+
+.home-news p {
+  margin: 0;
+}
+
+.home-news span {
+  color: #6a737d;
+  font-weight: 700;
+}
+
+.home-publication h3 {
+  margin: 0 0 0.45rem;
+  font-size: 1rem;
+  line-height: 1.35;
+}
+
+.home-publication p {
+  margin: 0;
+  color: #586069;
+  font-size: 0.92rem;
+}
+
+@media (max-width: 600px) {
+  .home-news li {
+    grid-template-columns: 1fr;
+    gap: 0.15rem;
+  }
+}
