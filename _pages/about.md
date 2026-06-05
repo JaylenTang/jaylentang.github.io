@@ -99,26 +99,5 @@ redirect_from:
       </div>
     </article>
 
-    <article class="research-card">
-      <img src="/images/research-aso-regression.png?v={{ site.asset_version }}" alt="Antisense oligonucleotide regression modeling thumbnail">
-      <div>
-        <h3>Regression-Based Modeling of Antisense Oligonucleotide Efficacy Using Sequence, Structural, and Off-Target Features</h3>
-        <p class="research-authors">Ava George, Yu Bai, <strong>Jialin Tang</strong></p>
-        <p class="research-venue">IEEE 16th Annual Computing and Communication Workshop and Conference, 2026</p>
-        <p class="research-links"><a href="/publication/2026-01-03-aso-efficacy">details</a> / <a href="https://ieeexplore.ieee.org/document/11393870">paper</a></p>
-        <p class="research-note">Regression modeling for ASO efficacy prediction using sequence, structure, and off-target signals.</p>
-      </div>
-    </article>
-
-    <article class="research-card">
-      <img src="/images/research-ev-charging.png?v={{ site.asset_version }}" alt="EV wireless charging optimization thumbnail">
-      <div>
-        <h3>Optimizing Energy Management Strategy for EV Wireless Charging Efficiency Using Proximal Policy Optimization</h3>
-        <p class="research-authors">Ava George, <strong>Jialin Tang</strong></p>
-        <p class="research-venue">IEEE 16th Annual Computing and Communication Workshop and Conference, 2026</p>
-        <p class="research-links"><a href="/publication/2026-01-02-ev-wireless-charging">details</a> / <a href="https://ieeexplore.ieee.org/document/11393703">paper</a></p>
-        <p class="research-note">Reinforcement learning for efficient energy management in EV wireless charging systems.</p>
-      </div>
-    </article>
   </section>
 </main>
