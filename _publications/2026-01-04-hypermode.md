@@ -13,7 +13,7 @@ citation: 'Tang, Jialin; Lou, Yunduan; Guo, Yanhui; Bai, Yu. (2026). "HyperMODE:
 
 HyperMODE: A Continuous-Depth Spectral-Spatial Modeling Framework with Mamba and Neural Ordinary Differential Equations for Hyperspectral Image Classification
 
-Posted as an _SSRN_ preprint, 2026.
+Posted as an [_SSRN_ preprint](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6568417), 2026.
 
 HyperMODE combines multi-scale spectral-spatial representation learning with Mamba-based spatial propagation and neural ODE feature evolution.
 
