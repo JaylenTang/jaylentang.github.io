@@ -43,7 +43,7 @@ redirect_from:
       </nav>
     </div>
 
-    <img class="roger-photo" src="/images/profile-photo.jpg" alt="Jialin Tang profile photo">
+    <img class="roger-photo" src="/images/profile-photo-2026.jpg" alt="Jialin Tang profile photo">
   </section>
 
   <section class="roger-section">
