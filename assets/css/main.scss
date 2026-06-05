@@ -162,10 +162,24 @@
   box-shadow: 0 16px 36px rgba(20, 20, 20, 0.12);
 }
 
+.research-figure {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: zoom-in;
+}
+
+.research-figure:focus-visible {
+  outline: 3px solid #06c;
+  outline-offset: 4px;
+}
+
 .research-card img {
   width: 100%;
   aspect-ratio: 16 / 9;
-  object-fit: cover;
+  object-fit: contain;
   border-radius: 2px;
   background: #eef1f3;
 }
@@ -204,6 +218,49 @@
   color: #080808;
 }
 
+.research-zoom-open {
+  overflow: hidden;
+}
+
+.research-zoom[hidden] {
+  display: none;
+}
+
+.research-zoom {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background: rgba(0, 0, 0, 0.78);
+}
+
+.research-zoom img {
+  width: auto;
+  max-width: min(96vw, 1200px);
+  max-height: 90vh;
+  object-fit: contain;
+  border-radius: 4px;
+  background: #fff;
+  box-shadow: 0 18px 60px rgba(0, 0, 0, 0.45);
+}
+
+.research-zoom-close {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #d4d4d4;
+  border-radius: 4px;
+  color: #111;
+  background: #fff;
+  font: inherit;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
 @media (max-width: 820px) {
   .research-home {
     padding-right: 1rem;
@@ -227,6 +284,10 @@
   .research-card {
     grid-template-columns: 1fr;
     gap: 1rem;
+    padding: 1rem;
+  }
+
+  .research-zoom {
     padding: 1rem;
   }
 }

@@ -14,17 +14,13 @@ redirect_from:
       <img class="roger-calligraphy" src="/images/name-calligraphy.png" alt="Jialin Tang Chinese calligraphy">
 
       <p>
-        Jialin Tang received the B.M. degree in Information Management and Information
-        Systems from Shandong University of Finance and Economics, China, in 2022,
-        and the M.S. degree in Computer Science from California State University,
-        Fullerton, USA, in 2026. He is currently pursuing the Ph.D. degree in
-        Computational Science at the University of California, Irvine, USA. His research
-        interests include deep learning and image processing.
-      </p>
-
-      <p>
-        Henry Samueli School of Engineering, University of California, Irvine, Irvine, CA, USA<br>
-        Computational Science Research Center, San Diego State University, San Diego, CA, USA
+        I am a Ph.D. student in Computational Science at the University of California,
+        Irvine, advised by Dr. Yu Bai. I received my B.M. degree in Information
+        Management and Information Systems from Shandong University of Finance and
+        Economics in 2022 and my M.S. degree in Computer Science from California State
+        University, Fullerton in 2026. My research interests include deep learning and
+        image processing, and I am affiliated with the Henry Samueli School of
+        Engineering at the University of California, Irvine.
       </p>
 
       <p>
@@ -51,23 +47,23 @@ redirect_from:
   <section class="roger-section">
     <h2>News</h2>
     <ul class="roger-news">
+      <li>[05/2026] Invited to serve as a reviewer for NeurIPS 2026.</li>
       <li>[04/2026] MAS-LLaVA appeared at IEEE ACDSA 2026.</li>
       <li>[04/2026] HyperMODE was posted as an SSRN preprint.</li>
-      <li>[2026] EV wireless charging optimization and ASO efficacy modeling appeared at IEEE CCWC 2026.</li>
-      <li>[2025] HyperEAST was published in <em>IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing</em>.</li>
+      <li>[03/2026] Defended my M.S. thesis at California State University, Fullerton.</li>
+      <li>[01/2026] Presented my EV wireless charging optimization and ASO efficacy modeling work at IEEE CCWC 2026, University of Nevada, Las Vegas.</li>
+      <li>[11/2025] Invited guest speaker at The 6th Workshop on Enhanced Open Networked Airborne Computing Platform, University of Nevada-Reno, NV. Topic: <em>HyperEAST: A Lightweight Spectral-Spatial Transformer for UAV-Based Hyperspectral Image Classification</em>.</li>
+      <li>[08/2025] HyperEAST was published in <em>IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing</em>.</li>
     </ul>
   </section>
 
   <section class="roger-section">
     <h2>Selected Research</h2>
-    <p class="roger-research-summary">
-      My work focuses on learning methods for high-dimensional visual data, with recent
-      projects in hyperspectral image classification, training-free video VLLMs, continuous-depth
-      spectral-spatial modeling, and learning-based optimization.
-    </p>
 
     <article class="research-card">
-      <img src="/images/research-hypermode.png?v={{ site.asset_version }}" alt="HyperMODE hyperspectral modeling thumbnail">
+      <button class="research-figure" type="button" data-full="/images/research-hypermode.png?v={{ site.asset_version }}" aria-label="Open HyperMODE figure">
+        <img src="/images/research-hypermode.png?v={{ site.asset_version }}" alt="HyperMODE hyperspectral modeling thumbnail">
+      </button>
       <div>
         <h3>HyperMODE: A Continuous-Depth Spectral-Spatial Modeling Framework with Mamba and Neural Ordinary Differential Equations for Hyperspectral Image Classification</h3>
         <p class="research-authors"><strong>Jialin Tang</strong>, Yunduan Lou, Yanhui Guo, Yu Bai</p>
@@ -78,7 +74,9 @@ redirect_from:
     </article>
 
     <article class="research-card">
-      <img src="/images/research-hypereast.png?v={{ site.asset_version }}" alt="HyperEAST hyperspectral image classification thumbnail">
+      <button class="research-figure" type="button" data-full="/images/research-hypereast.png?v={{ site.asset_version }}" aria-label="Open HyperEAST figure">
+        <img src="/images/research-hypereast.png?v={{ site.asset_version }}" alt="HyperEAST hyperspectral image classification thumbnail">
+      </button>
       <div>
         <h3>HyperEAST: An Enhanced Attention-Based Spectral-Spatial Transformer with Self-Supervised Pretraining for Hyperspectral Image Classification</h3>
         <p class="research-authors"><strong>Jialin Tang</strong>, Nan Ma, Chen Jia, Rui Tian, Yanhui Guo</p>
@@ -89,7 +87,9 @@ redirect_from:
     </article>
 
     <article class="research-card">
-      <img src="/images/research-mas-llava.png?v={{ site.asset_version }}" alt="MAS-LLaVA video sampling thumbnail">
+      <button class="research-figure" type="button" data-full="/images/research-mas-llava.png?v={{ site.asset_version }}" aria-label="Open MAS-LLaVA figure">
+        <img src="/images/research-mas-llava.png?v={{ site.asset_version }}" alt="MAS-LLaVA video sampling thumbnail">
+      </button>
       <div>
         <h3>MAS-LLaVA: Motion-Aware Adaptive Sampling for Training-Free Video Large Language Models</h3>
         <p class="research-authors"><strong>Jialin Tang</strong>, Yu Bai</p>
@@ -101,3 +101,43 @@ redirect_from:
 
   </section>
 </main>
+
+<div class="research-zoom" data-research-zoom hidden role="dialog" aria-modal="true" aria-label="Research figure preview">
+  <button class="research-zoom-close" type="button">Close</button>
+  <img alt="">
+</div>
+
+<script>
+  (function () {
+    var modal = document.querySelector("[data-research-zoom]");
+    if (!modal) return;
+
+    var modalImage = modal.querySelector("img");
+    var closeButton = modal.querySelector(".research-zoom-close");
+
+    function closeModal() {
+      modal.hidden = true;
+      modalImage.removeAttribute("src");
+      document.body.classList.remove("research-zoom-open");
+    }
+
+    document.querySelectorAll(".research-figure").forEach(function (button) {
+      button.addEventListener("click", function () {
+        var image = button.querySelector("img");
+        modalImage.src = button.getAttribute("data-full");
+        modalImage.alt = image ? image.alt : "";
+        modal.hidden = false;
+        document.body.classList.add("research-zoom-open");
+        closeButton.focus({ preventScroll: true });
+      });
+    });
+
+    closeButton.addEventListener("click", closeModal);
+    modal.addEventListener("click", function (event) {
+      if (event.target === modal) closeModal();
+    });
+    document.addEventListener("keydown", function (event) {
+      if (event.key === "Escape" && !modal.hidden) closeModal();
+    });
+  }());
+</script>
