@@ -1,7 +1,7 @@
 ---
 layout: home
 permalink: /
-title: "Jialin Tang"
+title: "Jia-Lin (Jaylen) Tang"
 redirect_from:
   - /about/
   - /about.html
@@ -10,17 +10,16 @@ redirect_from:
 <main class="roger-page">
   <section class="roger-hero" aria-label="Profile">
     <div class="roger-intro">
-      <h1>Jialin Tang</h1>
-      <img class="roger-calligraphy" src="/images/name-calligraphy.png" alt="Jialin Tang Chinese calligraphy">
+      <h1>Jia-Lin (Jaylen) Tang</h1>
+      <img class="roger-calligraphy" src="/images/name-calligraphy.png" alt="Jia-Lin Tang Chinese calligraphy">
 
       <p>
-        I am a Ph.D. student in Computational Science at the University of California,
-        Irvine, advised by Dr. Yu Bai. I received my B.M. degree in Information
+        I am currently a Ph.D. student in the Henry Samueli School of Engineering at
+        UC Irvine, advised by Prof. Bai. I received my B.M. degree in Information
         Management and Information Systems from Shandong University of Finance and
         Economics in 2022 and my M.S. degree in Computer Science from California State
         University, Fullerton in 2026. My research interests include deep learning and
-        image processing, and I am affiliated with the Henry Samueli School of
-        Engineering at the University of California, Irvine.
+        image processing.
       </p>
 
       <p>
@@ -41,17 +40,19 @@ redirect_from:
       </nav>
     </div>
 
-    <img class="roger-photo" src="/images/profile-photo-2026.jpg" alt="Jialin Tang profile photo">
+    <img class="roger-photo" src="/images/profile-photo-2026.jpg" alt="Jia-Lin Tang profile photo">
   </section>
 
   <section class="roger-section">
     <h2>News</h2>
     <ul class="roger-news">
-      <li>[05/2026] Invited to serve as a reviewer for NeurIPS 2026.</li>
-      <li>[04/2026] MAS-LLaVA appeared at IEEE ACDSA 2026.</li>
+      <li>[05/2026] PRISM-Stain received the third-place poster award at the SABPA OC/LA 18th Annual Biomedical Forum Poster Competition.</li>
+      <li>[05/2026] Invited to serve as a reviewer for the Conference on Neural Information Processing Systems (NeurIPS) 2026.</li>
+      <li>[04/2026] MAS-LLaVA was published at the IEEE International Conference on Artificial Intelligence, Computer, Data Sciences and Applications (ACDSA) 2026.</li>
       <li>[04/2026] HyperMODE was posted as an SSRN preprint.</li>
       <li>[03/2026] Defended my M.S. thesis at California State University, Fullerton.</li>
-      <li>[01/2026] Presented my EV wireless charging optimization and ASO efficacy modeling work at IEEE CCWC 2026, University of Nevada, Las Vegas.</li>
+      <li>[01/2026] Presented my EV wireless charging optimization and ASO efficacy modeling work at the IEEE 16th Annual Computing and Communication Workshop and Conference (CCWC) 2026, University of Nevada, Las Vegas.</li>
+      <li>[12/2025] Invited to serve as a reviewer for <em>IEEE Transactions on Geoscience and Remote Sensing</em> (TGRS).</li>
       <li>[11/2025] Invited guest speaker at The 6th Workshop on Enhanced Open Networked Airborne Computing Platform, University of Nevada-Reno, NV. Topic: <em>HyperEAST: A Lightweight Spectral-Spatial Transformer for UAV-Based Hyperspectral Image Classification</em>.</li>
       <li>[08/2025] HyperEAST was published in <em>IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing</em>.</li>
     </ul>
@@ -66,7 +67,7 @@ redirect_from:
       </button>
       <div>
         <h3>HyperMODE: A Continuous-Depth Spectral-Spatial Modeling Framework with Mamba and Neural Ordinary Differential Equations for Hyperspectral Image Classification</h3>
-        <p class="research-authors"><strong>Jialin Tang</strong>, Yunduan Lou, Yanhui Guo, Yu Bai</p>
+        <p class="research-authors"><strong>Jia-Lin Tang</strong>, Yunduan Lou, Yanhui Guo, Yu Bai</p>
         <p class="research-venue">Available at SSRN 6568417, 2026</p>
         <p class="research-links"><a href="/publication/2026-01-04-hypermode">details</a> / <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6568417">paper</a></p>
         <p class="research-note">Continuous-depth spectral-spatial modeling that combines sequence modeling with neural ODE dynamics.</p>
@@ -79,7 +80,7 @@ redirect_from:
       </button>
       <div>
         <h3>HyperEAST: An Enhanced Attention-Based Spectral-Spatial Transformer with Self-Supervised Pretraining for Hyperspectral Image Classification</h3>
-        <p class="research-authors"><strong>Jialin Tang</strong>, Nan Ma, Chen Jia, Rui Tian, Yanhui Guo</p>
+        <p class="research-authors"><strong>Jia-Lin Tang</strong>, Nan Ma, Chen Jia, Rui Tian, Yanhui Guo</p>
         <p class="research-venue"><em>IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing</em>, 2025</p>
         <p class="research-links"><a href="/publication/2025-01-01-hypereast">details</a> / <a href="https://ieeexplore.ieee.org/document/11129658">paper</a></p>
         <p class="research-note">Self-supervised spectral-spatial representation learning for hyperspectral image classification.</p>
@@ -92,7 +93,7 @@ redirect_from:
       </button>
       <div>
         <h3>MAS-LLaVA: Motion-Aware Adaptive Sampling for Training-Free Video Large Language Models</h3>
-        <p class="research-authors"><strong>Jialin Tang</strong>, Yu Bai</p>
+        <p class="research-authors"><strong>Jia-Lin Tang</strong>, Yu Bai</p>
         <p class="research-venue">IEEE International Conference on Artificial Intelligence, Computer, Data Sciences and Applications (ACDSA), 2026</p>
         <p class="research-links"><a href="/publication/2026-01-01-mas-llava">details</a> / <a href="https://ieeexplore.ieee.org/document/11468028">paper</a></p>
         <p class="research-note">Motion-aware token and frame sampling for efficient training-free video large language model inference.</p>

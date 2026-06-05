@@ -8,14 +8,14 @@
 
 # Basic Site Settings
 locale                   : "en-US"
-title                    : "Jialin (Jaylen) Tang"
+title                    : "Jia-Lin (Jaylen) Tang"
 title_separator          : "-"
-name                     : &name "Jialin Tang"
-description              : &description "Ph.D. student in Computational Science at the University of California, Irvine"
+name                     : &name "Jia-Lin (Jaylen) Tang"
+description              : &description "Ph.D. student in the Henry Samueli School of Engineering at UC Irvine"
 url                      : https://jaylentang.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "JaylenTang/jaylentang.github.io"
-asset_version            : "20260605-5"
+asset_version            : "20260605-6"
 
 # Site Author - The following control what appear as part of the author content on the side bar.
 #               If a field is blank the icon and link will not appear, otherwise it will be shown.
@@ -23,9 +23,9 @@ asset_version            : "20260605-5"
 author:
   # Biographic information
   avatar           : "profile-photo-2026.jpg"
-  name             : "Jialin Tang"
+  name             : "Jia-Lin (Jaylen) Tang"
   pronouns         : # example: "she/her"  
-  bio              : "Ph.D. Student in Computational Science"
+  bio              : "Ph.D. Student at UC Irvine"
   location         : "Irvine, CA, USA"
   employer         : "University of California, Irvine"
   uri              : # URL
