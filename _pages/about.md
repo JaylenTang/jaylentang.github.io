@@ -14,8 +14,8 @@ redirect_from:
       <img class="roger-calligraphy" src="/images/name-calligraphy.png?v={{ site.asset_version }}" alt="Jialin Tang Chinese calligraphy">
 
       <p>
-        I am currently a Ph.D. student in the Henry Samueli School of Engineering at
-        UC Irvine, advised by <a href="https://ecsicl.github.io/team/">Prof. Yu Bai</a>, and co-advised by
+        I am a Ph.D. student in Computational Science at the University of California, Irvine.
+        I am advised by <a href="https://ecsicl.github.io/team/">Prof. Yu Bai</a> and co-advised by
         <a href="https://aicps.eng.uci.edu/people-2/">Prof. Mohammad Abdullah Al Faruque</a> and
         <a href="https://smile.sdsu.edu/biography.html">Prof. Junfei Xie</a>. Before that I received my M.S. degree in
         Computer Science from California State University, Fullerton in 2026. My
