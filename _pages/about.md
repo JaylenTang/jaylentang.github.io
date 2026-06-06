@@ -29,8 +29,8 @@ redirect_from:
 
       <p class="roger-email">
         <strong>Email:</strong>
-        <span id="email" data-scrambled="ude.icu@7tilaij">ude.icu@7tilaij</span>
-        <button class="email-unscramble" type="button" data-unscramble-email>unscramble</button>
+        <span id="email">protected</span>
+        <button class="email-unscramble" type="button" data-unscramble-email>reveal</button>
       </p>
 
       <nav class="roger-profile-links" aria-label="Profile links">
@@ -116,8 +116,11 @@ redirect_from:
 
     if (emailTarget && emailButton) {
       emailButton.addEventListener("click", function () {
-        var scrambled = emailTarget.getAttribute("data-scrambled") || "";
-        var email = scrambled.split("").reverse().join("");
+        var encoded = [125, 46, 109, 55, 79, 99, 112, 76, 46, 69, 126, 105, 105, 63, 83];
+        var key = [23, 71, 12, 91, 38];
+        var email = encoded.map(function (value, index) {
+          return String.fromCharCode(value ^ key[index % key.length]);
+        }).join("");
         var link = document.createElement("a");
         link.href = "mailto:" + email;
         link.textContent = email;
