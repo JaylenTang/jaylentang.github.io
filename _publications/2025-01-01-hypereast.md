@@ -6,14 +6,14 @@ permalink: /publication/2025-01-01-hypereast
 sort_order: 2
 excerpt: 'We propose HyperEAST, an enhanced attention-based spectral-spatial transformer with self-supervised pretraining for hyperspectral image classification.'
 date: 2025-01-01
-venue: 'IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing (JCR Q1)'
+venue: 'IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing (JSTARS)'
 paperurl: 'https://ieeexplore.ieee.org/document/11129658'
 citation: 'Tang, Jialin; Ma, Nan; Jia, Chen; Tian, Rui; Guo, Yanhui. (2025). "HyperEAST: An Enhanced Attention-Based Spectral-Spatial Transformer with Self-Supervised Pretraining for Hyperspectral Image Classification." <i>IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing</i>, 18, 22241-22255.'
 ---
 
 HyperEAST: An Enhanced Attention-Based Spectral-Spatial Transformer with Self-Supervised Pretraining for Hyperspectral Image Classification
 
-Published in [_IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing_](https://www.grss-ieee.org/publications/journal-of-selected-topics-in-applied-earth-observations-and-remote-sensing/) (JCR Q1), 2025
+Published in [_IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing_](https://www.grss-ieee.org/publications/journal-of-selected-topics-in-applied-earth-observations-and-remote-sensing/) (JSTARS), 2025
 
 We propose HyperEAST, an enhanced attention-based spectral-spatial transformer with self-supervised pretraining for hyperspectral image classification.
 

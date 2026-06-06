@@ -8,9 +8,9 @@
 
 # Basic Site Settings
 locale                   : "en-US"
-title                    : "Jia-Lin (Jaylen) Tang"
+title                    : "Jialin (Jaylen) Tang"
 title_separator          : "-"
-name                     : &name "Jia-Lin (Jaylen) Tang"
+name                     : &name "Jialin (Jaylen) Tang"
 description              : &description "Ph.D. student in the Henry Samueli School of Engineering at UC Irvine"
 url                      : https://jaylentang.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
@@ -23,7 +23,7 @@ asset_version            : "20260605-7"
 author:
   # Biographic information
   avatar           : "profile-photo-2026.jpg"
-  name             : "Jia-Lin (Jaylen) Tang"
+  name             : "Jialin (Jaylen) Tang"
   pronouns         : # example: "she/her"  
   bio              : "Ph.D. Student at UC Irvine"
   location         : "Irvine, CA, USA"
