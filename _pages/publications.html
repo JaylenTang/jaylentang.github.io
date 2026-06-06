@@ -8,7 +8,27 @@ title: "Publications"
 <hr />
 
 {% assign ordered_publications = site.publications | sort: "sort_order" %}
-{% for post in ordered_publications %}
-  {% include archive-single.html %}
-{% endfor %}
+{% assign journal_publications = ordered_publications | where: "category", "journals" %}
+{% assign conference_publications = ordered_publications | where: "category", "conferences" %}
+{% assign manuscript_publications = ordered_publications | where: "category", "manuscripts" %}
 
+{% if journal_publications.size > 0 %}
+  <h2>Journal Articles</h2>
+  {% for post in journal_publications %}
+    {% include archive-single.html %}
+  {% endfor %}
+{% endif %}
+
+{% if conference_publications.size > 0 %}
+  <h2>Conference Papers</h2>
+  {% for post in conference_publications %}
+    {% include archive-single.html %}
+  {% endfor %}
+{% endif %}
+
+{% if manuscript_publications.size > 0 %}
+  <h2>Preprints / Manuscripts</h2>
+  {% for post in manuscript_publications %}
+    {% include archive-single.html %}
+  {% endfor %}
+{% endif %}
