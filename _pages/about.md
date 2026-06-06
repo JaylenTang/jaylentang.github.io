@@ -15,7 +15,8 @@ redirect_from:
 
       <p>
         I am currently a Ph.D. student in the Henry Samueli School of Engineering at
-        UC Irvine, advised by <a href="https://ecsicl.github.io/team/">Prof. Yu Bai</a>. Before that I received my M.S. degree in
+        UC Irvine, advised by <a href="https://ecsicl.github.io/team/">Prof. Yu Bai</a>, and co-advised by
+        Prof. Mohammad Abdullah Al Faruque and Prof. Junfei Xie. Before that I received my M.S. degree in
         Computer Science from California State University, Fullerton in 2026. My
         research interests include deep learning, image processing, Vision Large
         Language Models and diffusion.
