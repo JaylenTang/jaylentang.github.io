@@ -94,7 +94,7 @@ redirect_from:
       <div>
         <h3>MAS-LLaVA: Motion-Aware Adaptive Sampling for Training-Free Video Large Language Models</h3>
         <p class="research-authors"><strong>Jialin Tang</strong>, Yu Bai</p>
-        <p class="research-venue">IEEE International Conference on Artificial Intelligence, Computer, Data Sciences and Applications (ACDSA), 2026</p>
+        <p class="research-venue"><a href="https://acdsa.org/2026/">IEEE International Conference on Artificial Intelligence, Computer, Data Sciences and Applications (ACDSA)</a>, 2026</p>
         <p class="research-links"><a href="https://ieeexplore.ieee.org/document/11468028">paper</a></p>
         <p class="research-note">Motion-aware token and frame sampling for efficient training-free video large language model inference.</p>
       </div>
