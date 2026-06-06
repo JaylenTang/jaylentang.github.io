@@ -15,11 +15,10 @@ redirect_from:
 
       <p>
         I am currently a Ph.D. student in the Henry Samueli School of Engineering at
-        UC Irvine, advised by <a href="https://ecsicl.github.io/team/">Prof. Yu Bai</a>. I received my B.M. degree in Information
-        Management and Information Systems from Shandong University of Finance and
-        Economics in 2022 and my M.S. degree in Computer Science from California State
-        University, Fullerton in 2026. My research interests include deep learning,
-        image processing, VLLMs, and diffusion.
+        UC Irvine, advised by <a href="https://ecsicl.github.io/team/">Prof. Yu Bai</a>. Before that I received my M.S. degree in
+        Computer Science from California State University, Fullerton in 2026. My
+        research interests include deep learning, image processing, Vision Large
+        Language Models and diffusion.
       </p>
 
       <ul class="roger-profile-meta" aria-label="Profile details">
