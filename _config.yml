@@ -15,7 +15,7 @@ description              : &description "Ph.D. student in the Henry Samueli Scho
 url                      : https://jaylentang.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "JaylenTang/jaylentang.github.io"
-asset_version            : "20260605-9"
+asset_version            : "20260605-10"
 
 # Site Author - The following control what appear as part of the author content on the side bar.
 #               If a field is blank the icon and link will not appear, otherwise it will be shown.
