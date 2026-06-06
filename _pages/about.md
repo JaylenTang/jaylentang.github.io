@@ -22,15 +22,23 @@ redirect_from:
         image processing, VLLMs, and diffusion.
       </p>
 
-      <ul class="roger-profile-links" aria-label="Profile links">
+      <ul class="roger-profile-meta" aria-label="Profile details">
         <li><i class="fas fa-map-marker-alt" aria-hidden="true"></i><span>Irvine, CA, USA</span></li>
         <li><i class="fas fa-university" aria-hidden="true"></i><span>University of California, Irvine</span></li>
-        <li><a href="mailto:jialit7@uci.edu"><i class="fas fa-envelope" aria-hidden="true"></i><span>Email</span></a></li>
-        <li><a href="https://scholar.google.com/citations?user=tOytfmwAAAAJ&hl=en"><i class="ai ai-google-scholar" aria-hidden="true"></i><span>Google Scholar</span></a></li>
-        <li><a href="https://www.linkedin.com/in/jtang0516/"><i class="fab fa-linkedin" aria-hidden="true"></i><span>LinkedIn</span></a></li>
-        <li><a href="https://github.com/jaylentang"><i class="fab fa-github" aria-hidden="true"></i><span>Github</span></a></li>
-        <li><a href="/cv/"><i class="fas fa-file-alt" aria-hidden="true"></i><span>CV</span></a></li>
       </ul>
+
+      <p class="roger-email">
+        <strong>Email:</strong>
+        <span id="email" data-scrambled="ude.icu@7tilaij">ude.icu@7tilaij</span>
+        <button class="email-unscramble" type="button" data-unscramble-email>unscramble</button>
+      </p>
+
+      <nav class="roger-profile-links" aria-label="Profile links">
+        <a href="https://scholar.google.com/citations?user=tOytfmwAAAAJ&hl=en"><i class="ai ai-google-scholar" aria-hidden="true"></i><span>Google Scholar</span></a>
+        <a href="https://www.linkedin.com/in/jtang0516/"><i class="fab fa-linkedin" aria-hidden="true"></i><span>LinkedIn</span></a>
+        <a href="https://github.com/jaylentang"><i class="fab fa-github" aria-hidden="true"></i><span>Github</span></a>
+        <a href="/cv/"><i class="fas fa-file-alt" aria-hidden="true"></i><span>CV</span></a>
+      </nav>
     </div>
 
     <img class="roger-photo" src="/images/profile-photo-2026.jpg" alt="Jialin Tang profile photo">
@@ -103,6 +111,22 @@ redirect_from:
 
 <script>
   (function () {
+    var emailTarget = document.getElementById("email");
+    var emailButton = document.querySelector("[data-unscramble-email]");
+
+    if (emailTarget && emailButton) {
+      emailButton.addEventListener("click", function () {
+        var scrambled = emailTarget.getAttribute("data-scrambled") || "";
+        var email = scrambled.split("").reverse().join("");
+        var link = document.createElement("a");
+        link.href = "mailto:" + email;
+        link.textContent = email;
+        emailTarget.textContent = "";
+        emailTarget.appendChild(link);
+        emailButton.remove();
+      });
+    }
+
     var modal = document.querySelector("[data-research-zoom]");
     if (!modal) return;
 

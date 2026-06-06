@@ -97,7 +97,7 @@
   font-size: 0.98rem;
 }
 
-.roger-profile-links {
+.roger-profile-meta {
   display: grid;
   gap: 0.55rem;
   max-width: 620px;
@@ -108,12 +108,53 @@
   font-size: 0.98rem;
 }
 
-.roger-profile-links li,
-.roger-profile-links a {
+.roger-profile-meta li {
   display: flex;
   align-items: center;
   min-height: 1.35rem;
   color: #444;
+}
+
+.roger-profile-meta i {
+  width: 1.35rem;
+  margin-right: 0.6rem;
+  color: #444;
+  text-align: center;
+}
+
+.roger-email {
+  max-width: 620px;
+  margin-top: 1rem;
+}
+
+.email-unscramble {
+  padding: 0;
+  border: 0;
+  color: #06c;
+  background: transparent;
+  font: inherit;
+  cursor: pointer;
+}
+
+.email-unscramble:hover,
+.email-unscramble:focus-visible {
+  text-decoration: underline;
+}
+
+.roger-profile-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem 1.1rem;
+  max-width: 620px;
+  margin-top: 1rem;
+  font-size: 0.95rem;
+}
+
+.roger-profile-links a {
+  display: inline-flex;
+  align-items: center;
+  color: #444;
+  white-space: nowrap;
 }
 
 .roger-profile-links a:hover {
@@ -122,9 +163,9 @@
 }
 
 .roger-profile-links i {
-  width: 1.35rem;
-  margin-right: 0.6rem;
-  color: #444;
+  width: 1.15rem;
+  margin-right: 0.35rem;
+  color: currentColor;
   text-align: center;
 }
 
