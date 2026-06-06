@@ -97,18 +97,35 @@
   font-size: 0.98rem;
 }
 
-.roger-links {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 0.35rem;
+.roger-profile-links {
+  display: grid;
+  gap: 0.55rem;
   max-width: 620px;
-  margin-top: 1rem;
-  font-size: 0.95rem;
+  padding: 0;
+  margin: 1.1rem 0 0;
+  list-style: none;
+  color: #444;
+  font-size: 0.98rem;
 }
 
-.roger-links span {
-  color: #333;
+.roger-profile-links li,
+.roger-profile-links a {
+  display: flex;
+  align-items: center;
+  min-height: 1.35rem;
+  color: #444;
+}
+
+.roger-profile-links a:hover {
+  color: #06c;
+  text-decoration: none;
+}
+
+.roger-profile-links i {
+  width: 1.35rem;
+  margin-right: 0.6rem;
+  color: #444;
+  text-align: center;
 }
 
 .roger-photo {
@@ -295,14 +312,6 @@
 @media (max-width: 520px) {
   .roger-intro h1 {
     font-size: 1.8rem;
-  }
-
-  .roger-links {
-    gap: 0.65rem;
-  }
-
-  .roger-links span {
-    display: none;
   }
 
   .roger-section {

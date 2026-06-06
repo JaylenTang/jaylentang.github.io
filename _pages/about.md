@@ -22,20 +22,15 @@ redirect_from:
         image processing, VLLMs, and diffusion.
       </p>
 
-      <p>
-        <strong>Email:</strong>
-        <a href="mailto:jialit7@uci.edu">jialit7@uci.edu</a>
-      </p>
-
-      <nav class="roger-links" aria-label="Profile links">
-        <a href="https://scholar.google.com/citations?user=tOytfmwAAAAJ&hl=en">Google Scholar</a>
-        <span>/</span>
-        <a href="https://www.linkedin.com/in/jtang0516/">LinkedIn</a>
-        <span>/</span>
-        <a href="https://github.com/jaylentang">Github</a>
-        <span>/</span>
-        <a href="/cv/">CV</a>
-      </nav>
+      <ul class="roger-profile-links" aria-label="Profile links">
+        <li><i class="fas fa-map-marker-alt" aria-hidden="true"></i><span>Irvine, CA, USA</span></li>
+        <li><i class="fas fa-university" aria-hidden="true"></i><span>University of California, Irvine</span></li>
+        <li><a href="mailto:jialit7@uci.edu"><i class="fas fa-envelope" aria-hidden="true"></i><span>Email</span></a></li>
+        <li><a href="https://scholar.google.com/citations?user=tOytfmwAAAAJ&hl=en"><i class="ai ai-google-scholar" aria-hidden="true"></i><span>Google Scholar</span></a></li>
+        <li><a href="https://www.linkedin.com/in/jtang0516/"><i class="fab fa-linkedin" aria-hidden="true"></i><span>LinkedIn</span></a></li>
+        <li><a href="https://github.com/jaylentang"><i class="fab fa-github" aria-hidden="true"></i><span>Github</span></a></li>
+        <li><a href="/cv/"><i class="fas fa-file-alt" aria-hidden="true"></i><span>CV</span></a></li>
+      </ul>
     </div>
 
     <img class="roger-photo" src="/images/profile-photo-2026.jpg" alt="Jialin Tang profile photo">
