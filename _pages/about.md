@@ -47,7 +47,7 @@ redirect_from:
       <li>[05/2026] PRISM-Stain received the 3rd-place poster award at the SABPA OC/LA 18th Annual Biomedical Forum Poster Competition. <a href="https://www.linkedin.com/feed/update/urn:li:activity:7463034204185083904/">post</a></li>
       <li>[05/2026] Invited to serve as a reviewer for the <a href="https://neurips.cc/">Conference on Neural Information Processing Systems (NeurIPS) 2026</a>.</li>
       <li>[04/2026] MAS-LLaVA was published at the <a href="https://acdsa.org/2026/">IEEE International Conference on Artificial Intelligence, Computer, Data Sciences and Applications (ACDSA) 2026</a>.</li>
-      <li>[04/2026] HyperMODE was posted as an <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6568417">SSRN preprint</a>.</li>
+      <li>[04/2026] HyperMODE was posted as an SSRN preprint.</li>
       <li>[03/2026] Defended my M.S. thesis at California State University, Fullerton.</li>
       <li>[01/2026] Presented my EV wireless charging optimization and ASO efficacy modeling work at the <a href="https://ieee-ccwc.org/">IEEE 16th Annual Computing and Communication Workshop and Conference (CCWC) 2026</a>. <a href="https://www.linkedin.com/feed/update/urn:li:activity:7414165378937044993/">post</a></li>
       <li>[12/2025] Invited to serve as a reviewer for <a href="https://www.grss-ieee.org/publications/transactions-on-geoscience-remote-sensing/"><em>IEEE Transactions on Geoscience and Remote Sensing</em> (TGRS)</a>.</li>
