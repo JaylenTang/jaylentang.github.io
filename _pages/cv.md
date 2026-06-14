@@ -47,3 +47,11 @@ Preprints / Manuscripts
     {% include archive-single-cv.html %}
   {% endfor %}</ul>
 {% endif %}
+
+Services
+======
+
+Invited Reviewer
+------
+
+* Reviewer for the [Conference on Neural Information Processing Systems (NeurIPS) 2026](https://neurips.cc/).

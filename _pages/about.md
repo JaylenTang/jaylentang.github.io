@@ -103,6 +103,16 @@ redirect_from:
     </article>
 
   </section>
+
+  <section class="roger-section">
+    <h2>Services</h2>
+    <div class="roger-service-group">
+      <h3>Invited Reviewer</h3>
+      <ul class="roger-services">
+        <li>Reviewer for the <a href="https://neurips.cc/">Conference on Neural Information Processing Systems (NeurIPS) 2026</a>.</li>
+      </ul>
+    </div>
+  </section>
 </main>
 
 <div class="research-zoom" data-research-zoom hidden role="dialog" aria-modal="true" aria-label="Research figure preview">
