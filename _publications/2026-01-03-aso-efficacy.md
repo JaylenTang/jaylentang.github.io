@@ -8,6 +8,8 @@ excerpt: 'This work models ASO efficacy using sequence, structural, and off-targ
 date: 2026-01-03
 venue: 'IEEE 16th Annual Computing and Communication Workshop and Conference (CCWC)'
 paperurl: 'https://ieeexplore.ieee.org/document/11393870'
+scholar_authors: 'A George, Y Bai, J Tang'
+scholar_venue: '2026 IEEE 16th Annual Computing and Communication Workshop and Conference'
 citation: 'George, Ava; Bai, Yu; Tang, Jialin. (2026). "Regression-Based Modeling of Antisense Oligonucleotide Efficacy Using Sequence, Structural, and Off-Target Features." <i>IEEE 16th Annual Computing and Communication Workshop and Conference (CCWC)</i>.'
 ---
 

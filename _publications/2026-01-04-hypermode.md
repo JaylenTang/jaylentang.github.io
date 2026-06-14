@@ -8,6 +8,8 @@ excerpt: 'HyperMODE is a continuous-depth spectral-spatial modeling framework fo
 date: 2026-01-04
 venue: 'SSRN'
 paperurl: 'https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6568417'
+scholar_authors: 'J Tang, Y Lou, Y Guo, Y Bai'
+scholar_venue: 'Available at SSRN 6568417'
 citation: 'Tang, Jialin; Lou, Yunduan; Guo, Yanhui; Bai, Yu. (2026). "HyperMODE: A Continuous-Depth Spectral-Spatial Modeling Framework with Mamba and Neural Ordinary Differential Equations for Hyperspectral Image Classification." <i>SSRN</i>.'
 ---
 

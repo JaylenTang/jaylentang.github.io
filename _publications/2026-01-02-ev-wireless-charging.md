@@ -8,6 +8,8 @@ excerpt: 'This work applies proximal policy optimization to energy management fo
 date: 2026-01-02
 venue: 'IEEE 16th Annual Computing and Communication Workshop and Conference (CCWC)'
 paperurl: 'https://ieeexplore.ieee.org/document/11393703'
+scholar_authors: 'A George, J Tang'
+scholar_venue: '2026 IEEE 16th Annual Computing and Communication Workshop and Conference'
 citation: 'George, Ava; Tang, Jialin. (2026). "Optimizing Energy Management Strategy for EV Wireless Charging Efficiency Using Proximal Policy Optimization." <i>IEEE 16th Annual Computing and Communication Workshop and Conference (CCWC)</i>.'
 ---
 

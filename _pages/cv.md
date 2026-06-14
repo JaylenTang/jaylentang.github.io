@@ -27,7 +27,7 @@ Publications
 {% if journal_publications.size > 0 %}
 Journal Articles
 ------
-  <ul>{% for post in journal_publications %}
+  <ul class="cv-publications">{% for post in journal_publications %}
     {% include archive-single-cv.html %}
   {% endfor %}</ul>
 {% endif %}
@@ -35,7 +35,7 @@ Journal Articles
 {% if conference_publications.size > 0 %}
 Conference Papers
 ------
-  <ul>{% for post in conference_publications %}
+  <ul class="cv-publications">{% for post in conference_publications %}
     {% include archive-single-cv.html %}
   {% endfor %}</ul>
 {% endif %}
@@ -43,7 +43,7 @@ Conference Papers
 {% if manuscript_publications.size > 0 %}
 Preprints / Manuscripts
 ------
-  <ul>{% for post in manuscript_publications %}
+  <ul class="cv-publications">{% for post in manuscript_publications %}
     {% include archive-single-cv.html %}
   {% endfor %}</ul>
 {% endif %}

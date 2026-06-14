@@ -40,6 +40,47 @@
 @import "vendor/magnific-popup/magnific-popup";
 @import "print";
 
+.cv-publications {
+  max-width: 900px;
+  padding-left: 0;
+  margin: 0.8rem 0 1.7rem;
+  list-style: none;
+}
+
+.cv-publication {
+  margin: 0 0 0.9rem;
+  padding: 0;
+}
+
+.cv-publication-title {
+  margin: 0 0 0.08rem;
+  color: #0000cc;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.22;
+}
+
+.cv-publication-title a,
+.cv-publication-title a:visited {
+  color: #0000cc;
+  text-decoration: none;
+}
+
+.cv-publication-title a:hover {
+  text-decoration: underline;
+}
+
+.cv-publication-meta {
+  margin: 0.03rem 0;
+  color: #666;
+  font-size: 0.88rem;
+  line-height: 1.22;
+}
+
+.cv-publication-authors {
+  color: #4f4f4f;
+}
+
 .research-home {
   min-height: 100vh;
   padding: 0 1.5rem 3.5rem;
