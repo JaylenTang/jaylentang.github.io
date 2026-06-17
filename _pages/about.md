@@ -48,10 +48,10 @@ redirect_from:
   <section class="roger-section">
     <h2>News</h2>
     <ul class="roger-news">
+      <li>[06/2026] HyperMODE was accepted by <a href="https://www.grss-ieee.org/publications/journal-of-selected-topics-in-applied-earth-observations-and-remote-sensing/"><em>IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing</em></a> (JSTARS).</li>
       <li>[05/2026] PRISM-Stain received the 3rd-place poster award at the SABPA OC/LA 18th Annual Biomedical Forum Poster Competition. <a href="https://www.linkedin.com/feed/update/urn:li:activity:7463034204185083904/">post</a></li>
       <li>[05/2026] Invited to serve as a reviewer for the <a href="https://neurips.cc/">Conference on Neural Information Processing Systems (NeurIPS) 2026</a>.</li>
       <li>[04/2026] MAS-LLaVA was published at the <a href="https://acdsa.org/2026/">IEEE International Conference on Artificial Intelligence, Computer, Data Sciences and Applications (ACDSA) 2026</a>.</li>
-      <li>[04/2026] HyperMODE was posted as an SSRN preprint.</li>
       <li>[03/2026] Defended my M.S. thesis at California State University, Fullerton.</li>
       <li>[01/2026] Presented my EV wireless charging optimization and ASO efficacy modeling work at the <a href="https://ieee-ccwc.org/">IEEE 16th Annual Computing and Communication Workshop and Conference (CCWC) 2026</a>. <a href="https://www.linkedin.com/feed/update/urn:li:activity:7414165378937044993/">post</a></li>
       <li>[12/2025] Invited to serve as a reviewer for <a href="https://www.grss-ieee.org/publications/transactions-on-geoscience-remote-sensing/"><em>IEEE Transactions on Geoscience and Remote Sensing</em> (TGRS)</a>.</li>
@@ -70,7 +70,7 @@ redirect_from:
       <div>
         <h3>HyperMODE: A Continuous-Depth Spectral-Spatial Modeling Framework with Mamba and Neural Ordinary Differential Equations for Hyperspectral Image Classification</h3>
         <p class="research-authors"><strong>Jialin Tang</strong>, Yunduan Lou, Yanhui Guo, Yu Bai</p>
-        <p class="research-venue">Available at <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6568417">SSRN 6568417</a>, 2026</p>
+        <p class="research-venue"><a href="https://www.grss-ieee.org/publications/journal-of-selected-topics-in-applied-earth-observations-and-remote-sensing/"><em>IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing</em></a> (JSTARS), 2026, Volume 19</p>
         <p class="research-links"><a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6568417">paper</a> / <a href="https://github.com/JaylenTang/HyperMODE">code</a></p>
         <p class="research-note">Continuous-depth spectral-spatial modeling that combines sequence modeling with neural ODE dynamics.</p>
       </div>
@@ -83,7 +83,7 @@ redirect_from:
       <div>
         <h3>HyperEAST: An Enhanced Attention-Based Spectral-Spatial Transformer with Self-Supervised Pretraining for Hyperspectral Image Classification</h3>
         <p class="research-authors"><strong>Jialin Tang</strong>, Nan Ma, Chen Jia, Rui Tian, Yanhui Guo</p>
-        <p class="research-venue"><a href="https://www.grss-ieee.org/publications/journal-of-selected-topics-in-applied-earth-observations-and-remote-sensing/"><em>IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing</em></a> (JSTARS), 2025</p>
+        <p class="research-venue"><a href="https://www.grss-ieee.org/publications/journal-of-selected-topics-in-applied-earth-observations-and-remote-sensing/"><em>IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing</em></a> (JSTARS), 2025, Volume 18</p>
         <p class="research-links"><a href="https://ieeexplore.ieee.org/document/11129658">paper</a> / <a href="https://github.com/JaylenTang/HyperEAST">code</a></p>
         <p class="research-note">Self-supervised spectral-spatial representation learning for hyperspectral image classification.</p>
       </div>
