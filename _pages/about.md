@@ -48,7 +48,7 @@ redirect_from:
   <section class="roger-section">
     <h2>News</h2>
     <ul class="roger-news">
-      <li>[06/2026] HyperMODE was published in <a href="https://www.grss-ieee.org/publications/journal-of-selected-topics-in-applied-earth-observations-and-remote-sensing/"><em>IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing</em></a> (JSTARS). <a href="https://doi.org/10.1109/JSTARS.2026.3705708">doi</a></li>
+      <li>[06/2026] <a href="https://doi.org/10.1109/JSTARS.2026.3705708">HyperMODE</a> was published in <a href="https://www.grss-ieee.org/publications/journal-of-selected-topics-in-applied-earth-observations-and-remote-sensing/"><em>IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing</em></a> (JSTARS).</li>
       <li>[05/2026] PRISM-Stain received the 3rd-place poster award at the SABPA OC/LA 18th Annual Biomedical Forum Poster Competition. <a href="https://www.linkedin.com/feed/update/urn:li:activity:7463034204185083904/">post</a></li>
       <li>[05/2026] Invited to serve as a reviewer for the <a href="https://neurips.cc/">Conference on Neural Information Processing Systems (NeurIPS) 2026</a>.</li>
       <li>[04/2026] MAS-LLaVA was published at the <a href="https://acdsa.org/2026/">IEEE International Conference on Artificial Intelligence, Computer, Data Sciences and Applications (ACDSA) 2026</a>.</li>
@@ -56,7 +56,7 @@ redirect_from:
       <li>[01/2026] Presented my EV wireless charging optimization and ASO efficacy modeling work at the <a href="https://ieee-ccwc.org/">IEEE 16th Annual Computing and Communication Workshop and Conference (CCWC) 2026</a>. <a href="https://www.linkedin.com/feed/update/urn:li:activity:7414165378937044993/">post</a></li>
       <li>[12/2025] Invited to serve as a reviewer for <a href="https://www.grss-ieee.org/publications/transactions-on-geoscience-remote-sensing/"><em>IEEE Transactions on Geoscience and Remote Sensing</em> (TGRS)</a>.</li>
       <li>[11/2025] Invited guest speaker at The 6th Workshop on Enhanced Open Networked Airborne Computing Platform, University of Nevada-Reno, NV. Topic: <em>HyperEAST: A Lightweight Spectral-Spatial Transformer for UAV-Based Hyperspectral Image Classification</em>. <a href="https://www.linkedin.com/feed/update/urn:li:activity:7397103743579688960/">post</a></li>
-      <li>[08/2025] HyperEAST was published in <a href="https://www.grss-ieee.org/publications/journal-of-selected-topics-in-applied-earth-observations-and-remote-sensing/"><em>IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing</em></a> (JSTARS).</li>
+      <li>[08/2025] <a href="https://doi.org/10.1109/JSTARS.2025.3599855">HyperEAST</a> was published in <a href="https://www.grss-ieee.org/publications/journal-of-selected-topics-in-applied-earth-observations-and-remote-sensing/"><em>IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing</em></a> (JSTARS).</li>
     </ul>
   </section>
 
