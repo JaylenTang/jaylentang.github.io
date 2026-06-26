@@ -54,7 +54,7 @@ redirect_from:
           <li>[06/17] <a href="https://doi.org/10.1109/JSTARS.2026.3705708">HyperMODE</a> was accepted by <a href="https://www.grss-ieee.org/publications/journal-of-selected-topics-in-applied-earth-observations-and-remote-sensing/"><em>IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing</em></a> (JSTARS).</li>
           <li>[05/16] PRISM-Stain received the 3rd-place poster award at the SABPA OC/LA 18th Annual Biomedical Forum Poster Competition. <a href="https://www.linkedin.com/feed/update/urn:li:activity:7463034204185083904/">post</a></li>
           <li>[05/15] Received the M.S. degree in Computer Science from California State University, Fullerton, with Graduate Academic Honors.</li>
-          <li>[05] Invited to serve as a reviewer for the <a href="https://neurips.cc/">Conference on Neural Information Processing Systems (NeurIPS) 2026</a>.</li>
+          <li>[03/27] Defended my M.S. thesis at California State University, Fullerton.</li>
         </ul>
       </div>
       <div class="roger-news-year">
