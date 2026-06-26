@@ -232,9 +232,9 @@
 
 .roger-news-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 2rem;
-  max-width: 980px;
+  grid-template-columns: 1fr;
+  gap: 1.35rem;
+  max-width: 900px;
 }
 
 .roger-news-year h3 {
@@ -432,11 +432,6 @@
 
   .roger-section {
     margin-top: 2.4rem;
-  }
-
-  .roger-news-grid {
-    grid-template-columns: 1fr;
-    gap: 1.35rem;
   }
 
   .research-card h3 {
