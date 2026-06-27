@@ -51,9 +51,10 @@ redirect_from:
       <div class="roger-news-year">
         <h3>2026</h3>
         <ul class="roger-news">
-          <li>[06/17] <a href="https://doi.org/10.1109/JSTARS.2026.3705708">HyperMODE</a> was accepted by <a href="https://www.grss-ieee.org/publications/journal-of-selected-topics-in-applied-earth-observations-and-remote-sensing/"><em>IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing</em></a> (JSTARS).</li>
+          <li>[06/17] <a href="https://doi.org/10.1109/JSTARS.2026.3705708">HyperMODE</a> was accepted for publication in <a href="https://www.grss-ieee.org/publications/journal-of-selected-topics-in-applied-earth-observations-and-remote-sensing/"><em>IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing</em></a> (JSTARS).</li>
           <li>[05/16] PRISM-Stain received the 3rd-place poster award at the SABPA OC/LA 18th Annual Biomedical Forum Poster Competition. <a href="https://www.linkedin.com/feed/update/urn:li:activity:7463034204185083904/">post</a></li>
           <li>[05/15] Received the M.S. degree in Computer Science from California State University, Fullerton, with Graduate Academic Honors.</li>
+          <li>[04/13] Received the Presidential Graduate Research Fellowship from San Diego State University for the 2026&ndash;2027 academic year.</li>
           <li>[03/27] Defended my M.S. thesis at California State University, Fullerton.</li>
           <li>[01/05] Presented our EV wireless charging optimization and ASO efficacy modeling work at the <a href="https://ieee-ccwc.org/">IEEE 16th Annual Computing and Communication Workshop and Conference (CCWC) 2026</a>. <a href="https://www.linkedin.com/feed/update/urn:li:activity:7414165378937044993/">post</a></li>
         </ul>
@@ -63,7 +64,7 @@ redirect_from:
         <ul class="roger-news">
           <li>[11/17] MAS-LLaVA was accepted by the <a href="https://acdsa.org/2026/">IEEE International Conference on Artificial Intelligence, Computer, Data Sciences and Applications (ACDSA) 2026</a>.</li>
           <li>[11/14] Invited guest speaker at The 6th Workshop on Enhanced Open Networked Airborne Computing Platform, University of Nevada-Reno, NV. Topic: <em>HyperEAST: A Lightweight Spectral-Spatial Transformer for UAV-Based Hyperspectral Image Classification</em>. <a href="https://www.linkedin.com/feed/update/urn:li:activity:7397103743579688960/">post</a></li>
-          <li>[08/14] <a href="https://doi.org/10.1109/JSTARS.2025.3599855">HyperEAST</a> was accepted by <a href="https://www.grss-ieee.org/publications/journal-of-selected-topics-in-applied-earth-observations-and-remote-sensing/"><em>IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing</em></a> (JSTARS).</li>
+          <li>[08/14] <a href="https://doi.org/10.1109/JSTARS.2025.3599855">HyperEAST</a> was accepted for publication in <a href="https://www.grss-ieee.org/publications/journal-of-selected-topics-in-applied-earth-observations-and-remote-sensing/"><em>IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing</em></a> (JSTARS).</li>
         </ul>
       </div>
     </div>
