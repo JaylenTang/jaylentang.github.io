@@ -11,7 +11,7 @@ redirect_from:
   <section class="roger-hero" aria-label="Profile">
     <div class="roger-intro">
       <h1>Jialin (Jaylen) Tang</h1>
-      <img class="roger-calligraphy" src="/images/name-calligraphy.png?v={{ site.asset_version }}" alt="Jialin Tang Chinese calligraphy">
+      <img class="roger-calligraphy" src="/images/name-calligraphy-transparent.png?v={{ site.asset_version }}" alt="Jialin Tang Chinese calligraphy">
 
       <p>
         I am a Ph.D. student in Computational Science at the University of California, Irvine.
