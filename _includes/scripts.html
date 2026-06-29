@@ -1,3 +1,64 @@
 <script src="{{ base_path }}/assets/js/main.min.js"></script>
 
+<script>
+  (function () {
+    var storageKey = "jaylen-theme";
+    var buttons = Array.prototype.slice.call(document.querySelectorAll("[data-theme-toggle]"));
+
+    if (!buttons.length) return;
+
+    function updateButtons(theme) {
+      var isDark = theme === "dark";
+      var label = isDark ? "Switch to light mode" : "Switch to dark mode";
+
+      buttons.forEach(function (button) {
+        button.setAttribute("aria-label", label);
+        button.setAttribute("title", label);
+        button.setAttribute("aria-pressed", isDark ? "true" : "false");
+      });
+    }
+
+    function setTheme(theme, persist) {
+      document.documentElement.setAttribute("data-theme", theme);
+      document.documentElement.style.colorScheme = theme;
+      updateButtons(theme);
+
+      if (persist) {
+        try {
+          localStorage.setItem(storageKey, theme);
+        } catch (error) {}
+      }
+    }
+
+    function getCurrentTheme() {
+      return document.documentElement.getAttribute("data-theme") === "dark" ? "dark" : "light";
+    }
+
+    buttons.forEach(function (button) {
+      button.addEventListener("click", function () {
+        setTheme(getCurrentTheme() === "dark" ? "light" : "dark", true);
+      });
+    });
+
+    updateButtons(getCurrentTheme());
+
+    if (window.matchMedia) {
+      var mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+      var handleSystemThemeChange = function (event) {
+        try {
+          if (localStorage.getItem(storageKey)) return;
+        } catch (error) {}
+
+        setTheme(event.matches ? "dark" : "light", false);
+      };
+
+      if (mediaQuery.addEventListener) {
+        mediaQuery.addEventListener("change", handleSystemThemeChange);
+      } else if (mediaQuery.addListener) {
+        mediaQuery.addListener(handleSystemThemeChange);
+      }
+    }
+  }());
+</script>
+
 {% include analytics.html %}

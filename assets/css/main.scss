@@ -40,6 +40,185 @@
 @import "vendor/magnific-popup/magnific-popup";
 @import "print";
 
+:root {
+  color-scheme: light;
+  --theme-bg: #fff;
+  --theme-surface: #fff;
+  --theme-surface-soft: #f5f6f7;
+  --theme-text: #080808;
+  --theme-heading: #050505;
+  --theme-muted: #444;
+  --theme-soft: #666;
+  --theme-link: #06c;
+  --theme-border: #e5e7eb;
+  --theme-card-shadow: 0 16px 36px rgba(20, 20, 20, 0.12);
+  --theme-focus: #06c;
+}
+
+html[data-theme="dark"] {
+  color-scheme: dark;
+  --theme-bg: #111315;
+  --theme-surface: #191c20;
+  --theme-surface-soft: #24282d;
+  --theme-text: #e8eaed;
+  --theme-heading: #f4f6f8;
+  --theme-muted: #bdc4cc;
+  --theme-soft: #9ba3ad;
+  --theme-link: #8ab4ff;
+  --theme-border: #343942;
+  --theme-card-shadow: 0 18px 42px rgba(0, 0, 0, 0.38);
+  --theme-focus: #8ab4ff;
+}
+
+body {
+  background: var(--theme-bg);
+}
+
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  padding: 0;
+  border: 1px solid var(--theme-border);
+  border-radius: 999px;
+  color: var(--theme-text);
+  background: var(--theme-surface);
+  line-height: 1;
+  cursor: pointer;
+  transition: background 160ms ease, border-color 160ms ease, color 160ms ease, box-shadow 160ms ease;
+}
+
+.theme-toggle:hover,
+.theme-toggle:focus-visible {
+  color: var(--theme-link);
+  border-color: var(--theme-link);
+  box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.14);
+}
+
+html[data-theme="dark"] .theme-toggle:hover,
+html[data-theme="dark"] .theme-toggle:focus-visible {
+  box-shadow: 0 0 0 3px rgba(138, 180, 255, 0.18);
+}
+
+.theme-toggle__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.92rem;
+}
+
+.theme-toggle__icon--sun {
+  display: none;
+}
+
+html[data-theme="dark"] .theme-toggle__icon--moon {
+  display: none;
+}
+
+html[data-theme="dark"] .theme-toggle__icon--sun {
+  display: inline-flex;
+}
+
+.greedy-nav .theme-toggle {
+  position: static;
+  height: 2.25rem;
+  margin-left: 0.35rem;
+  background: var(--theme-surface);
+  color: var(--theme-text);
+  z-index: auto;
+}
+
+.greedy-nav .visible-links .masthead__menu-item--theme {
+  padding-left: 0.15rem;
+}
+
+.theme-toggle--floating {
+  position: fixed;
+  top: 0.9rem;
+  right: 1rem;
+  z-index: 30;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+}
+
+html[data-theme="dark"] body {
+  color: var(--theme-text);
+  background: var(--theme-bg);
+}
+
+html[data-theme="dark"] a,
+html[data-theme="dark"] a:visited {
+  color: var(--theme-link);
+}
+
+html[data-theme="dark"] .masthead,
+html[data-theme="dark"] .greedy-nav {
+  background: var(--theme-bg);
+}
+
+html[data-theme="dark"] .masthead {
+  border-bottom-color: var(--theme-border);
+}
+
+html[data-theme="dark"] .greedy-nav a {
+  color: var(--theme-text);
+}
+
+html[data-theme="dark"] .greedy-nav a:hover {
+  color: var(--theme-link);
+}
+
+html[data-theme="dark"] .greedy-nav .hidden-links {
+  border-color: var(--theme-border);
+  background: var(--theme-surface);
+  box-shadow: var(--theme-card-shadow);
+}
+
+html[data-theme="dark"] .greedy-nav .hidden-links:after {
+  border-color: var(--theme-surface) transparent;
+}
+
+html[data-theme="dark"] .page__content,
+html[data-theme="dark"] .page__title,
+html[data-theme="dark"] .archive__item-title,
+html[data-theme="dark"] .archive__item-title a,
+html[data-theme="dark"] .sidebar,
+html[data-theme="dark"] .author__name {
+  color: var(--theme-heading);
+}
+
+html[data-theme="dark"] .page__content p,
+html[data-theme="dark"] .page__content li,
+html[data-theme="dark"] .archive__item-excerpt,
+html[data-theme="dark"] .page__meta,
+html[data-theme="dark"] .author__content,
+html[data-theme="dark"] .author__urls {
+  color: var(--theme-text);
+}
+
+html[data-theme="dark"] .page__content h2,
+html[data-theme="dark"] .page__content hr {
+  border-color: var(--theme-border);
+}
+
+html[data-theme="dark"] .author__avatar img {
+  border-color: var(--theme-border);
+}
+
+html[data-theme="dark"] .page__footer {
+  color: var(--theme-soft);
+  background: var(--theme-surface);
+  border-top-color: var(--theme-border);
+}
+
+html[data-theme="dark"] .page__footer .fas,
+html[data-theme="dark"] .page__footer .fab,
+html[data-theme="dark"] .page__footer .far,
+html[data-theme="dark"] .page__footer .fal {
+  color: var(--theme-soft);
+}
+
 .cv-publications {
   max-width: 900px;
   padding-left: 0;
@@ -437,4 +616,82 @@
   .research-card h3 {
     font-size: 0.94rem;
   }
+}
+
+html[data-theme="dark"] .cv-publication-title,
+html[data-theme="dark"] .cv-publication-title a,
+html[data-theme="dark"] .cv-publication-title a:visited {
+  color: var(--theme-link);
+}
+
+html[data-theme="dark"] .cv-publication-meta,
+html[data-theme="dark"] .cv-publication-authors {
+  color: var(--theme-soft);
+}
+
+html[data-theme="dark"] .research-home {
+  color: var(--theme-text);
+  background: var(--theme-bg);
+}
+
+html[data-theme="dark"] .research-home a,
+html[data-theme="dark"] .research-home a:visited {
+  color: var(--theme-link);
+}
+
+html[data-theme="dark"] .email-unscramble,
+html[data-theme="dark"] .research-authors {
+  color: var(--theme-link);
+}
+
+html[data-theme="dark"] .roger-intro h1,
+html[data-theme="dark"] .roger-section h2,
+html[data-theme="dark"] .roger-news-year h3,
+html[data-theme="dark"] .roger-service-group h3,
+html[data-theme="dark"] .research-card h3,
+html[data-theme="dark"] .research-authors strong {
+  color: var(--theme-heading);
+}
+
+html[data-theme="dark"] .roger-intro p,
+html[data-theme="dark"] .roger-news li,
+html[data-theme="dark"] .roger-services li,
+html[data-theme="dark"] .roger-research-summary,
+html[data-theme="dark"] .research-note {
+  color: var(--theme-text);
+}
+
+html[data-theme="dark"] .roger-profile-meta,
+html[data-theme="dark"] .roger-profile-meta li,
+html[data-theme="dark"] .roger-profile-meta i,
+html[data-theme="dark"] .roger-profile-links a,
+html[data-theme="dark"] .research-venue {
+  color: var(--theme-muted);
+}
+
+html[data-theme="dark"] .roger-profile-links a:hover {
+  color: var(--theme-link);
+}
+
+html[data-theme="dark"] .roger-calligraphy {
+  filter: invert(1) brightness(1.2);
+}
+
+html[data-theme="dark"] .research-card {
+  background: var(--theme-surface);
+  box-shadow: var(--theme-card-shadow);
+}
+
+html[data-theme="dark"] .research-card img {
+  background: var(--theme-surface-soft);
+}
+
+html[data-theme="dark"] .research-figure:focus-visible {
+  outline-color: var(--theme-focus);
+}
+
+html[data-theme="dark"] .research-zoom-close {
+  color: var(--theme-heading);
+  background: var(--theme-surface);
+  border-color: var(--theme-border);
 }
