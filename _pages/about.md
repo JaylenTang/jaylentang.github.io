@@ -120,6 +120,7 @@ redirect_from:
       <h3>Invited Reviewer</h3>
       <ul class="roger-services">
         <li>Reviewer for the <a href="https://neurips.cc/">Conference on Neural Information Processing Systems (NeurIPS) 2026</a>.</li>
+        <li>Reviewer for the <a href="https://aaai.org/conference/aaai/aaai-27/">AAAI Conference on Artificial Intelligence (AAAI) 2027</a>.</li>
       </ul>
     </div>
   </section>
