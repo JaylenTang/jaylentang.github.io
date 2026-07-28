@@ -55,4 +55,4 @@ Invited Reviewer
 ------
 
 * Reviewer for the [Conference on Neural Information Processing Systems (NeurIPS) 2026](https://neurips.cc/).
-* Reviewer for the [AAAI Conference on Artificial Intelligence (AAAI) 2027](https://aaai.org/conference/aaai/aaai-27/).
+* Reviewer for the [Conference on Artificial Intelligence (AAAI) 2027](https://aaai.org/conference/aaai/aaai-27/).
