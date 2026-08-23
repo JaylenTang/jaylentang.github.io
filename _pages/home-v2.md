@@ -1,7 +1,11 @@
 ---
 layout: home-v2
-permalink: /v2/
+permalink: /
 title: "Jialin (Jaylen) Tang"
+redirect_from:
+  - /v2/
+  - /about/
+  - /about.html
 ---
 
 <header class="v2-header">
@@ -9,7 +13,7 @@ title: "Jialin (Jaylen) Tang"
     <button class="v2-menu-toggle" type="button" aria-expanded="false" aria-controls="v2-navigation" aria-label="Open navigation">
       <i class="fas fa-bars" aria-hidden="true"></i>
     </button>
-    <nav id="v2-navigation" class="v2-navigation" aria-label="V2 navigation">
+    <nav id="v2-navigation" class="v2-navigation" aria-label="Primary navigation">
       <a href="#about">about</a>
       <a href="#research">research</a>
       <a href="/cv/">cv</a>

@@ -73,22 +73,22 @@ test("mobile theme controls remain available", () => {
 });
 
 test("research cards use lightweight thumbnails", () => {
-  const about = read("_pages/about.md");
+  const homepage = read("_pages/home-v2.md");
   const names = ["hypermode", "hypereast", "mas-llava"];
   let thumbnailBytes = 0;
   let originalBytes = 0;
 
-  assert.equal((about.match(/<picture>/g) || []).length, 3);
-  assert.equal((about.match(/loading="lazy"/g) || []).length, 3);
-  assert.equal((about.match(/decoding="async"/g) || []).length, 3);
-  assert.equal((about.match(/width="720" height="405"/g) || []).length, 3);
+  assert.equal((homepage.match(/class="v2-publication__figure"/g) || []).length, 3);
+  assert.equal((homepage.match(/loading="lazy"/g) || []).length, 3);
+  assert.equal((homepage.match(/decoding="async"/g) || []).length, 3);
+  assert.equal((homepage.match(/width="720" height="405"/g) || []).length, 3);
 
   for (const name of names) {
     const thumbnail = `images/research-${name}-thumb.webp`;
     const original = `images/research-${name}.png`;
 
-    assert.match(about, new RegExp(`/images/research-${name}-thumb\\.webp`));
-    assert.match(about, new RegExp(`data-full="/images/research-${name}\\.png`));
+    assert.match(homepage, new RegExp(`/images/research-${name}-thumb\\.webp`));
+    assert.match(homepage, new RegExp(`data-full="/images/research-${name}\\.png`));
     assert.ok(existsSync(pathFor(thumbnail)), `${thumbnail} is missing`);
     assert.ok(statSync(pathFor(thumbnail)).size < 200_000, `${thumbnail} is too large`);
     thumbnailBytes += statSync(pathFor(thumbnail)).size;

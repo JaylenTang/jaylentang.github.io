@@ -1,17 +1,22 @@
 import assert from "node:assert/strict";
-import { readFileSync } from "node:fs";
+import { existsSync, readFileSync } from "node:fs";
 import test from "node:test";
 
 const root = new URL("../", import.meta.url);
 const read = (relativePath) => readFileSync(new URL(relativePath, root), "utf8");
 
-test("V2 is an isolated noindex preview", () => {
+test("V2 is the indexable production homepage", () => {
+  const config = read("_config.yml");
   const layout = read("_layouts/home-v2.html");
   const page = read("_pages/home-v2.md");
 
   assert.match(page, /^layout: home-v2$/m);
-  assert.match(page, /^permalink: \/v2\/$/m);
-  assert.match(layout, /<meta name="robots" content="noindex, nofollow">/);
+  assert.match(page, /^permalink: \/$/m);
+  assert.match(page, /^  - \/v2\/$/m);
+  assert.match(page, /^  - \/about\/$/m);
+  assert.match(page, /^  - \/about\.html$/m);
+  assert.match(config, /^\s+- jekyll-redirect-from$/m);
+  assert.doesNotMatch(layout, /<meta name="robots" content="noindex, nofollow">/);
   assert.match(layout, /<body class="homepage-v2">/);
   assert.match(layout, /include scripts\.html skip_main=true/);
   assert.doesNotMatch(layout, /main\.min\.js/);
@@ -25,6 +30,7 @@ test("V2 contains the approved profile and navigation", () => {
   assert.match(page, /href="#research"/);
   assert.match(page, /href="\/cv\/"/);
   assert.match(page, /aria-controls="v2-navigation"/);
+  assert.match(page, /aria-label="Primary navigation"/);
   assert.match(page, /Jialin \(Jaylen\) Tang/);
   assert.match(page, /name-calligraphy-transparent\.png/);
   assert.match(page, /profile-photo-2026\.jpg/);
@@ -82,14 +88,10 @@ test("V2 uses the approved purple accent palette", () => {
   assert.doesNotMatch(v2Css, /#4d9cbb|#75bfdc|#3b94b7|#176f91|#0d536e/i);
 });
 
-test("V1 homepage and CV remain present", () => {
-  const homepage = read("_pages/about.md");
+test("the production homepage and CV remain present", () => {
+  const homepage = read("_pages/home-v2.md");
 
   assert.match(homepage, /^permalink: \/$/m);
-  assert.match(
-    homepage,
-    /<a href="https:\/\/doi\.org\/10\.1109\/JSTARS\.2026\.3705708">paper<\/a>/,
-  );
-  assert.doesNotMatch(homepage, />doi<\/a>/);
+  assert.equal(existsSync(new URL("_pages/about.md", root)), false);
   assert.match(read("_pages/cv.md"), /^permalink: \/cv\/$/m);
 });
