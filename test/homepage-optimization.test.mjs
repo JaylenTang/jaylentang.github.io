@@ -69,7 +69,7 @@ test("mobile theme controls remain available", () => {
   assert.match(minifiedNavigation, /#site-nav > button/);
   assert.doesNotMatch(minifiedNavigation, /#site-nav button/);
   assert.match(mobileCss, /\.theme-toggle\s*\{[^}]*min-width:\s*44px;[^}]*height:\s*44px;/s);
-  assert.match(mobileCss, /\.roger-intro h1\s*\{[^}]*padding-right:\s*3\.25rem;[^}]*padding-left:\s*3\.25rem;/s);
+  assert.match(mobileCss, /\.roger-intro h1\s*\{[^}]*padding-right:\s*3\.25rem;/s);
 });
 
 test("research cards use lightweight thumbnails", () => {

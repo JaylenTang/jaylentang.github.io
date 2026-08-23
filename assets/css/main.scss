@@ -605,7 +605,21 @@ html[data-theme="dark"] .page__footer .fal {
 }
 
 @media (max-width: 520px) {
+  .theme-toggle {
+    width: 44px;
+    min-width: 44px;
+    height: 44px;
+    min-height: 44px;
+  }
+
+  .theme-toggle--floating {
+    top: 0.65rem;
+    right: 0.75rem;
+  }
+
   .roger-intro h1 {
+    min-height: 44px;
+    padding-right: 3.25rem;
     font-size: 1.8rem;
   }
 

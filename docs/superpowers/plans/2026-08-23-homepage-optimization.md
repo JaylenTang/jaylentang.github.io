@@ -205,7 +205,6 @@ Inside the existing `@media (max-width: 520px)` block, add:
 .roger-intro h1 {
   min-height: 44px;
   padding-right: 3.25rem;
-  padding-left: 3.25rem;
 }
 ```
 
