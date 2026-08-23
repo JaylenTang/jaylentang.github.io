@@ -107,3 +107,9 @@ test("homepage skips unused resources", () => {
   assert.match(scripts, /\{% unless include\.skip_main %\}[\s\S]*main\.min\.js[\s\S]*\{% endunless %\}/);
   assert.match(homeLayout, /include scripts\.html skip_main=true/);
 });
+
+test("internal project documentation is excluded from GitHub Pages", () => {
+  const config = read("_config.yml");
+
+  assert.match(config, /^\s*- docs\s*$/m);
+});
