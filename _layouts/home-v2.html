@@ -1,0 +1,33 @@
+---
+layout: compress
+---
+
+{% include base_path %}
+
+<!doctype html>
+<html lang="{{ site.locale | slice: 0,2 }}" class="no-js">
+  <head>
+    {% include head.html %}
+    <meta name="robots" content="noindex, nofollow">
+    <script>
+      (function () {
+        try {
+          if (!localStorage.getItem("jaylen-theme")) {
+            document.documentElement.setAttribute("data-theme", "dark");
+            document.documentElement.style.colorScheme = "dark";
+          }
+        } catch (error) {
+          document.documentElement.setAttribute("data-theme", "dark");
+          document.documentElement.style.colorScheme = "dark";
+        }
+      }());
+    </script>
+    {% include head/custom.html %}
+  </head>
+
+  <body class="homepage-v2">
+    {% include browser-upgrade.html %}
+    {{ content }}
+    {% include scripts.html skip_main=true %}
+  </body>
+</html>
