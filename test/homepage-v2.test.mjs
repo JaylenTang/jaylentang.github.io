@@ -32,9 +32,16 @@ test("V2 contains the approved profile and navigation", () => {
 
 test("V2 includes real news, publications, and services", () => {
   const page = read("_pages/home-v2.md");
+  const firstPublicationStart = page.indexOf('<article class="v2-publication">');
+  const firstPublicationEnd = page.indexOf("</article>", firstPublicationStart);
+  const hypermodePublication = page.slice(firstPublicationStart, firstPublicationEnd);
 
   assert.equal((page.match(/class="v2-publication"/g) || []).length, 3);
   assert.match(page, /10\.1109\/JSTARS\.2026\.3705708/);
+  assert.match(
+    hypermodePublication,
+    /<a href="https:\/\/doi\.org\/10\.1109\/JSTARS\.2026\.3705708">DOI<\/a>/,
+  );
   assert.match(page, /ieeexplore\.ieee\.org\/document\/11129658/);
   assert.match(page, /ieeexplore\.ieee\.org\/document\/11468028/);
   assert.match(page, /github\.com\/JaylenTang\/HyperMODE/);
@@ -75,6 +82,12 @@ test("V2 uses the approved purple accent palette", () => {
 });
 
 test("V1 homepage and CV remain present", () => {
-  assert.match(read("_pages/about.md"), /^permalink: \/$/m);
+  const homepage = read("_pages/about.md");
+
+  assert.match(homepage, /^permalink: \/$/m);
+  assert.match(
+    homepage,
+    /<a href="https:\/\/doi\.org\/10\.1109\/JSTARS\.2026\.3705708">doi<\/a>/,
+  );
   assert.match(read("_pages/cv.md"), /^permalink: \/cv\/$/m);
 });
