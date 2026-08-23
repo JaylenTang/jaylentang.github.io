@@ -483,6 +483,10 @@ html[data-theme="dark"] .page__footer .fal {
   cursor: zoom-in;
 }
 
+.research-figure picture {
+  display: block;
+}
+
 .research-figure:focus-visible {
   outline: 3px solid #06c;
   outline-offset: 4px;

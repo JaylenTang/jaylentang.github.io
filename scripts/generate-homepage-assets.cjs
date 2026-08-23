@@ -3,6 +3,7 @@ const sharp = require("sharp");
 
 const root = path.resolve(__dirname, "..");
 const images = path.join(root, "images");
+const researchImages = ["hypermode", "hypereast", "mas-llava"];
 
 async function generateSocialCard() {
   const portrait = await sharp(path.join(images, "profile-photo-2026.jpg"))
@@ -34,7 +35,23 @@ async function generateSocialCard() {
     .toFile(path.join(images, "social-card.jpg"));
 }
 
-generateSocialCard().catch((error) => {
+async function generateResearchThumbnails() {
+  await Promise.all(researchImages.map((name) => (
+    sharp(path.join(images, `research-${name}.png`))
+      .resize(720, 405, { fit: "contain", background: "#ffffff" })
+      .webp({ quality: 84, effort: 6, smartSubsample: true })
+      .toFile(path.join(images, `research-${name}-thumb.webp`))
+  )));
+}
+
+async function main() {
+  await Promise.all([
+    generateSocialCard(),
+    generateResearchThumbnails(),
+  ]);
+}
+
+main().catch((error) => {
   console.error(error);
   process.exitCode = 1;
 });

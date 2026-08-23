@@ -75,7 +75,10 @@ redirect_from:
 
     <article class="research-card">
       <button class="research-figure" type="button" data-full="/images/research-hypermode.png?v={{ site.asset_version }}" aria-label="Open HyperMODE figure">
-        <img src="/images/research-hypermode.png?v={{ site.asset_version }}" alt="HyperMODE hyperspectral modeling thumbnail">
+        <picture>
+          <source srcset="/images/research-hypermode-thumb.webp?v={{ site.asset_version }}" type="image/webp">
+          <img src="/images/research-hypermode.png?v={{ site.asset_version }}" width="720" height="405" loading="lazy" decoding="async" alt="HyperMODE hyperspectral modeling thumbnail">
+        </picture>
       </button>
       <div>
         <h3>HyperMODE: A Continuous-Depth Spectral-Spatial Modeling Framework with Mamba and Neural Ordinary Differential Equations for Hyperspectral Image Classification</h3>
@@ -88,7 +91,10 @@ redirect_from:
 
     <article class="research-card">
       <button class="research-figure" type="button" data-full="/images/research-hypereast.png?v={{ site.asset_version }}" aria-label="Open HyperEAST figure">
-        <img src="/images/research-hypereast.png?v={{ site.asset_version }}" alt="HyperEAST hyperspectral image classification thumbnail">
+        <picture>
+          <source srcset="/images/research-hypereast-thumb.webp?v={{ site.asset_version }}" type="image/webp">
+          <img src="/images/research-hypereast.png?v={{ site.asset_version }}" width="720" height="405" loading="lazy" decoding="async" alt="HyperEAST hyperspectral image classification thumbnail">
+        </picture>
       </button>
       <div>
         <h3>HyperEAST: An Enhanced Attention-Based Spectral-Spatial Transformer with Self-Supervised Pretraining for Hyperspectral Image Classification</h3>
@@ -101,7 +107,10 @@ redirect_from:
 
     <article class="research-card">
       <button class="research-figure" type="button" data-full="/images/research-mas-llava.png?v={{ site.asset_version }}" aria-label="Open MAS-LLaVA figure">
-        <img src="/images/research-mas-llava.png?v={{ site.asset_version }}" alt="MAS-LLaVA video sampling thumbnail">
+        <picture>
+          <source srcset="/images/research-mas-llava-thumb.webp?v={{ site.asset_version }}" type="image/webp">
+          <img src="/images/research-mas-llava.png?v={{ site.asset_version }}" width="720" height="405" loading="lazy" decoding="async" alt="MAS-LLaVA video sampling thumbnail">
+        </picture>
       </button>
       <div>
         <h3>MAS-LLaVA: Motion-Aware Adaptive Sampling for Training-Free Video Large Language Models</h3>
