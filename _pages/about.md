@@ -84,7 +84,7 @@ redirect_from:
         <h3>HyperMODE: A Continuous-Depth Spectral-Spatial Modeling Framework with Mamba and Neural Ordinary Differential Equations for Hyperspectral Image Classification</h3>
         <p class="research-authors"><strong>Jialin Tang</strong>, Yunduan Lou, Yanhui Guo, Yu Bai</p>
         <p class="research-venue"><a href="https://www.grss-ieee.org/publications/journal-of-selected-topics-in-applied-earth-observations-and-remote-sensing/"><em>IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing</em></a> (JSTARS), 2026, Volume 19</p>
-        <p class="research-links"><a href="https://doi.org/10.1109/JSTARS.2026.3705708">doi</a> / <a href="https://github.com/JaylenTang/HyperMODE">code</a></p>
+        <p class="research-links"><a href="https://doi.org/10.1109/JSTARS.2026.3705708">paper</a> / <a href="https://github.com/JaylenTang/HyperMODE">code</a></p>
         <p class="research-note">Continuous-depth spectral-spatial modeling that combines sequence modeling with neural ODE dynamics.</p>
       </div>
     </article>

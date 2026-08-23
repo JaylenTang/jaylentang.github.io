@@ -40,8 +40,9 @@ test("V2 includes real news, publications, and services", () => {
   assert.match(page, /10\.1109\/JSTARS\.2026\.3705708/);
   assert.match(
     hypermodePublication,
-    /<a href="https:\/\/doi\.org\/10\.1109\/JSTARS\.2026\.3705708">DOI<\/a>/,
+    /<a href="https:\/\/doi\.org\/10\.1109\/JSTARS\.2026\.3705708">Paper<\/a>/,
   );
+  assert.doesNotMatch(page, />DOI<\/a>/);
   assert.match(page, /ieeexplore\.ieee\.org\/document\/11129658/);
   assert.match(page, /ieeexplore\.ieee\.org\/document\/11468028/);
   assert.match(page, /github\.com\/JaylenTang\/HyperMODE/);
@@ -87,7 +88,8 @@ test("V1 homepage and CV remain present", () => {
   assert.match(homepage, /^permalink: \/$/m);
   assert.match(
     homepage,
-    /<a href="https:\/\/doi\.org\/10\.1109\/JSTARS\.2026\.3705708">doi<\/a>/,
+    /<a href="https:\/\/doi\.org\/10\.1109\/JSTARS\.2026\.3705708">paper<\/a>/,
   );
+  assert.doesNotMatch(homepage, />doi<\/a>/);
   assert.match(read("_pages/cv.md"), /^permalink: \/cv\/$/m);
 });

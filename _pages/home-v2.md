@@ -111,7 +111,7 @@ title: "Jialin (Jaylen) Tang"
         <p class="v2-publication__authors"><strong>Jialin Tang</strong>, Yunduan Lou, Yanhui Guo, Yu Bai</p>
         <p class="v2-publication__venue"><em>IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing</em>, 2026, Volume 19</p>
         <div class="v2-publication__actions">
-          <a href="https://doi.org/10.1109/JSTARS.2026.3705708">DOI</a>
+          <a href="https://doi.org/10.1109/JSTARS.2026.3705708">Paper</a>
           <a href="https://github.com/JaylenTang/HyperMODE">Code</a>
         </div>
         <p class="v2-publication__summary">Continuous-depth spectral-spatial modeling that combines sequence modeling with neural ODE dynamics.</p>
@@ -132,7 +132,6 @@ title: "Jialin (Jaylen) Tang"
         <div class="v2-publication__actions">
           <a href="https://ieeexplore.ieee.org/document/11129658">Paper</a>
           <a href="https://github.com/JaylenTang/HyperEAST">Code</a>
-          <a href="https://doi.org/10.1109/JSTARS.2025.3599855">DOI</a>
         </div>
         <p class="v2-publication__summary">Self-supervised spectral-spatial representation learning for hyperspectral image classification.</p>
       </div>
