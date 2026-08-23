@@ -182,3 +182,145 @@ title: "Jialin (Jaylen) Tang"
   <button class="v2-modal__close" type="button" aria-label="Close research figure"><i class="fas fa-times" aria-hidden="true"></i></button>
   <img alt="">
 </div>
+
+<script>
+  (function () {
+    var menuButton = document.querySelector(".v2-menu-toggle");
+    var navigation = document.getElementById("v2-navigation");
+
+    function setMenuOpen(isOpen) {
+      if (!menuButton || !navigation) return;
+
+      navigation.classList.toggle("is-open", isOpen);
+      menuButton.setAttribute("aria-expanded", isOpen ? "true" : "false");
+      menuButton.setAttribute("aria-label", isOpen ? "Close navigation" : "Open navigation");
+    }
+
+    if (menuButton && navigation) {
+      menuButton.addEventListener("click", function () {
+        setMenuOpen(menuButton.getAttribute("aria-expanded") !== "true");
+      });
+
+      navigation.addEventListener("click", function (event) {
+        var link = event.target.closest("a");
+        if (link && link.getAttribute("href").charAt(0) === "#") setMenuOpen(false);
+      });
+    }
+
+    var emailTarget = document.getElementById("v2-email");
+    var emailButton = document.querySelector("[data-v2-email]");
+    var emailIcon = document.querySelector("[data-v2-email-icon]");
+    var revealedEmail = null;
+
+    function revealEmail() {
+      if (revealedEmail) return revealedEmail;
+
+      var encoded = [125, 46, 109, 55, 79, 99, 112, 76, 46, 69, 126, 105, 105, 63, 83];
+      var key = [23, 71, 12, 91, 38];
+      revealedEmail = encoded.map(function (value, index) {
+        return String.fromCharCode(value ^ key[index % key.length]);
+      }).join("");
+
+      if (emailTarget) {
+        var link = document.createElement("a");
+        link.href = "mailto:" + revealedEmail;
+        link.textContent = revealedEmail;
+        emailTarget.textContent = "";
+        emailTarget.appendChild(link);
+      }
+
+      if (emailButton) emailButton.remove();
+
+      if (emailIcon) {
+        var iconLink = document.createElement("a");
+        iconLink.href = "mailto:" + revealedEmail;
+        iconLink.setAttribute("aria-label", "Email Jialin Tang");
+        iconLink.setAttribute("title", "Email Jialin Tang");
+        iconLink.innerHTML = emailIcon.innerHTML;
+        emailIcon.replaceWith(iconLink);
+        emailIcon = iconLink;
+      }
+
+      return revealedEmail;
+    }
+
+    if (emailButton) emailButton.addEventListener("click", revealEmail);
+    if (emailIcon) emailIcon.addEventListener("click", function (event) {
+      if (!revealedEmail) {
+        event.preventDefault();
+        revealEmail();
+      }
+    });
+
+    var modal = document.querySelector("[data-v2-modal]");
+    if (!modal) return;
+
+    var modalImage = modal.querySelector("img");
+    var closeButton = modal.querySelector(".v2-modal__close");
+    var lastModalTrigger = null;
+
+    function getFocusableModalElements() {
+      return Array.prototype.slice.call(modal.querySelectorAll("button:not([disabled]), a[href], [tabindex]:not([tabindex='-1'])"));
+    }
+
+    function openModal(button) {
+      var thumbnail = button.querySelector("img");
+      lastModalTrigger = button;
+      modalImage.src = button.getAttribute("data-full");
+      modalImage.alt = thumbnail ? thumbnail.alt : "";
+      modal.hidden = false;
+      document.body.classList.add("v2-modal-open");
+      closeButton.focus({ preventScroll: true });
+    }
+
+    function closeModal() {
+      if (modal.hidden) return;
+
+      modal.hidden = true;
+      modalImage.removeAttribute("src");
+      document.body.classList.remove("v2-modal-open");
+      if (lastModalTrigger) lastModalTrigger.focus({ preventScroll: true });
+    }
+
+    document.querySelectorAll(".v2-publication__figure").forEach(function (button) {
+      button.addEventListener("click", function () {
+        openModal(button);
+      });
+    });
+
+    closeButton.addEventListener("click", closeModal);
+    modal.addEventListener("click", function (event) {
+      if (event.target === modal) closeModal();
+    });
+
+    document.addEventListener("keydown", function (event) {
+      if (event.key === "Escape") {
+        if (!modal.hidden) {
+          closeModal();
+          return;
+        }
+
+        if (menuButton && menuButton.getAttribute("aria-expanded") === "true") {
+          setMenuOpen(false);
+          menuButton.focus();
+        }
+      }
+
+      if (event.key === "Tab" && !modal.hidden) {
+        var focusable = getFocusableModalElements();
+        if (!focusable.length) return;
+
+        var first = focusable[0];
+        var last = focusable[focusable.length - 1];
+
+        if (event.shiftKey && document.activeElement === first) {
+          event.preventDefault();
+          last.focus();
+        } else if (!event.shiftKey && document.activeElement === last) {
+          event.preventDefault();
+          first.focus();
+        }
+      }
+    });
+  }());
+</script>
