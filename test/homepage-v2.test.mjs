@@ -60,6 +60,20 @@ test("V2 styles and interactions are scoped and accessible", () => {
   assert.match(page, /data-v2-modal/);
 });
 
+test("V2 uses the approved purple accent palette", () => {
+  const css = read("assets/css/main.scss");
+  const v2Css = css.split("/* Homepage V2 reference-inspired preview */")[1];
+
+  assert.ok(v2Css, "V2 stylesheet section should exist");
+  assert.match(v2Css, /--v2-link:\s*#a78bfa;/);
+  assert.match(v2Css, /--v2-link-hover:\s*#c4b5fd;/);
+  assert.match(v2Css, /--v2-accent:\s*#7654c5;/);
+  assert.match(v2Css, /html\[data-theme="light"\][^}]*--v2-link:\s*#6d28d9;/s);
+  assert.match(v2Css, /html\[data-theme="dark"\] \.homepage-v2 \.v2-about__copy a/);
+  assert.match(v2Css, /\.v2-venue-tag[^}]*background:\s*var\(--v2-accent\);/s);
+  assert.doesNotMatch(v2Css, /#4d9cbb|#75bfdc|#3b94b7|#176f91|#0d536e/i);
+});
+
 test("V1 homepage and CV remain present", () => {
   assert.match(read("_pages/about.md"), /^permalink: \/$/m);
   assert.match(read("_pages/cv.md"), /^permalink: \/cv\/$/m);
