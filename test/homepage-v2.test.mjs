@@ -49,6 +49,7 @@ test("V2 styles and interactions are scoped and accessible", () => {
   const css = read("assets/css/main.scss");
 
   assert.match(css, /\.homepage-v2\s*\{/);
+  assert.match(css, /\.homepage-v2\s*\{[^}]*padding:\s*0;/s);
   assert.match(css, /\.v2-profile-photo[^}]*border-radius:\s*50%/s);
   assert.match(css, /\.v2-publication\s*\{[^}]*grid-template-columns:/s);
   assert.match(css, /@media \(max-width: 760px\)[\s\S]*\.v2-menu-toggle/);
