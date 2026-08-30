@@ -39,6 +39,7 @@ const selectedPublications = [
       venueName:
         "IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing",
       venueShort: "JSTARS",
+      location: undefined,
       volume: 19,
       pages: "21474-21491",
       authors: [
@@ -69,6 +70,7 @@ const selectedPublications = [
       venueName:
         "IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing",
       venueShort: "JSTARS",
+      location: undefined,
       volume: 18,
       pages: "22241-22255",
       authors: [
@@ -99,8 +101,9 @@ const selectedPublications = [
       venueName:
         "IEEE International Conference on Artificial Intelligence, Computer, Data Sciences and Applications",
       venueShort: "ACDSA",
+      location: "Boracay Island, Philippines",
       volume: undefined,
-      pages: undefined,
+      pages: "1-6",
       authors: [
         { name: "Jialin Tang", shortName: "J Tang", self: true },
         { name: "Yu Bai", shortName: "Y Bai" },
@@ -164,6 +167,7 @@ for (const { name, path, metadata } of selectedPublications) {
     const frontMatter = frontMatterFor(path);
     const volume = yamlScalar(frontMatter, "volume", false);
     const pages = yamlScalar(frontMatter, "pages", false);
+    const location = yamlScalar(frontMatter, "location", false);
 
     assert.deepEqual(
       {
@@ -173,6 +177,7 @@ for (const { name, path, metadata } of selectedPublications) {
         publicationYear: Number(yamlScalar(frontMatter, "publication_year")),
         venueName: yamlScalar(frontMatter, "venue_name"),
         venueShort: yamlScalar(frontMatter, "venue_short"),
+        location,
         volume: volume === undefined ? undefined : Number(volume),
         pages,
         authors: yamlAuthors(frontMatter),
@@ -403,7 +408,9 @@ test("the rendered homepage preserves exact selected publication cards", () => {
         expectedAuthors,
       );
 
-      const expectedVenue = `<em>${metadata.venueName}</em>, ${metadata.publicationYear}${
+      const expectedVenue = `<em>${metadata.venueName}</em>${
+        metadata.location === undefined ? "" : `, ${metadata.location}`
+      }, ${metadata.publicationYear}${
         metadata.volume === undefined ? "" : `, vol. ${metadata.volume}`
       }${metadata.pages === undefined ? "" : `, pp. ${metadata.pages.replace("-", "&ndash;")}`}`;
       assert.equal(

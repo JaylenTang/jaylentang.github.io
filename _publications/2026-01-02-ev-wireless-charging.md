@@ -8,6 +8,7 @@ web_visible: true
 publication_year: 2026
 venue_name: "IEEE 16th Annual Computing and Communication Workshop and Conference"
 venue_short: CCWC
+doi: "10.1109/CCWC67433.2026.11393703"
 pages: "454-457"
 location: "Las Vegas, NV, USA"
 authors:
@@ -28,6 +29,7 @@ bibtex: |-
     pages={454--457},
     address={Las Vegas, NV, USA},
     year={2026},
+    doi={10.1109/CCWC67433.2026.11393703},
     url={https://ieeexplore.ieee.org/document/11393703}
   }
 excerpt: 'This work applies proximal policy optimization to energy management for EV wireless charging efficiency.'
@@ -35,14 +37,14 @@ date: 2026-01-02
 venue: 'IEEE 16th Annual Computing and Communication Workshop and Conference (CCWC)'
 paperurl: 'https://ieeexplore.ieee.org/document/11393703'
 scholar_authors: 'A George, J Tang'
-scholar_venue: '2026 IEEE 16th Annual Computing and Communication Workshop and Conference'
-citation: 'George, Ava; Tang, Jialin. (2026). "Optimizing Energy Management Strategy for EV Wireless Charging Efficiency Using Proximal Policy Optimization." <i>IEEE 16th Annual Computing and Communication Workshop and Conference (CCWC)</i>.'
+scholar_venue: '2026 IEEE 16th Annual Computing and Communication Workshop and Conference, 454-457'
+citation: 'George, Ava; Tang, Jialin. (2026). "Optimizing Energy Management Strategy for EV Wireless Charging Efficiency Using Proximal Policy Optimization." <i>IEEE 16th Annual Computing and Communication Workshop and Conference (CCWC)</i>, Las Vegas, NV, USA, pp. 454-457.'
 ---
 
 Optimizing Energy Management Strategy for EV Wireless Charging Efficiency Using Proximal Policy Optimization
 
-Published at _IEEE 16th Annual Computing and Communication Workshop and Conference (CCWC)_, 2026.
+Published at _IEEE 16th Annual Computing and Communication Workshop and Conference (CCWC)_, Las Vegas, NV, USA, 2026, pp. 454-457.
 
 This work applies reinforcement learning to optimize energy management for EV wireless charging efficiency.
 
-Recommended citation: George, Ava; Tang, Jialin. (2026). "Optimizing Energy Management Strategy for EV Wireless Charging Efficiency Using Proximal Policy Optimization." _IEEE 16th Annual Computing and Communication Workshop and Conference (CCWC)_.
+Recommended citation: George, Ava; Tang, Jialin. (2026). "Optimizing Energy Management Strategy for EV Wireless Charging Efficiency Using Proximal Policy Optimization." _IEEE 16th Annual Computing and Communication Workshop and Conference (CCWC)_, Las Vegas, NV, USA, pp. 454-457.

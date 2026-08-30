@@ -143,7 +143,8 @@ CONFERENCE_PAPERS = [
         ),
         "venue": (
             "<i>2026 International Conference on Artificial Intelligence, Computer, "
-            "Data Sciences and Applications (ACDSA)</i>"
+            "Data Sciences and Applications (ACDSA)</i>, Boracay Island, "
+            "Philippines, 2026, pp. 1-6"
         ),
     },
     {
@@ -483,6 +484,8 @@ def verify_pdf(output_path: Path = OUTPUT_PATH) -> tuple[int, str]:
         "PRISM-MAP",
         "AAAI 2027",
         "MAS-LLaVA",
+        "Boracay Island, Philippines",
+        "1-6",
         "Regression-Based Modeling of Antisense Oligonucleotide Efficacy",
         "458-461",
         "Optimizing Energy Management Strategy for EV Wireless Charging",

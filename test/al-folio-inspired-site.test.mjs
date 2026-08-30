@@ -33,6 +33,7 @@ test("every web publication declares visibility and approved page metadata", () 
   const expectedPages = new Map([
     ["2026-01-04-hypermode.md", "21474-21491"],
     ["2025-01-01-hypereast.md", "22241-22255"],
+    ["2026-01-01-mas-llava.md", "1-6"],
     ["2026-01-03-aso-efficacy.md", "458-461"],
     ["2026-01-02-ev-wireless-charging.md", "454-457"],
   ]);
@@ -41,10 +42,43 @@ test("every web publication declares visibility and approved page metadata", () 
     assert.match(source, /^web_visible: true$/m);
     assert.match(source, new RegExp(`^pages: ["']?${pages}["']?$`, "m"));
   }
-  assert.match(
-    read("_publications/2026-01-01-mas-llava.md"),
-    /^web_visible: true$/m,
-  );
+});
+
+test("conference publications expose official IEEE bibliographic metadata", () => {
+  const expected = [
+    [
+      "2026-01-01-mas-llava.md",
+      "10.1109/ACDSA67686.2026.11468028",
+    ],
+    [
+      "2026-01-03-aso-efficacy.md",
+      "10.1109/CCWC67433.2026.11393870",
+    ],
+    [
+      "2026-01-02-ev-wireless-charging.md",
+      "10.1109/CCWC67433.2026.11393703",
+    ],
+  ];
+
+  for (const [file, doi] of expected) {
+    const source = read(`_publications/${file}`);
+    assert.match(source, new RegExp(`^doi: ["']?${doi.replaceAll(".", "\\.")}["']?$`, "mi"));
+    assert.match(source, new RegExp(`doi=\\{${doi.replaceAll(".", "\\.")}\\}`, "i"));
+  }
+
+  const mas = read("_publications/2026-01-01-mas-llava.md");
+  assert.match(mas, /^location: "Boracay Island, Philippines"$/m);
+  assert.match(mas, /^paperurl: 'https:\/\/ieeexplore\.ieee\.org\/document\/11468028'$/m);
+
+  const hypermode = read("_publications/2026-01-04-hypermode.md");
+  assert.match(hypermode, /^citation: .*21474-21491.*$/m);
+
+  const generator = read("scripts/build-public-cv.py");
+  assert.match(generator, /Boracay Island, Philippines/);
+  assert.match(generator, /pp\. 1-6/);
+
+  const row = read("_includes/v2-publication-row.html");
+  assert.doesNotMatch(row, /publication\.doi/);
 });
 
 test("shared publication rows support optional Code and Bib actions", () => {
