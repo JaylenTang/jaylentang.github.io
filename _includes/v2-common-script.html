@@ -95,6 +95,13 @@
       }
     });
 
+    var mobileToc = document.querySelector(".cv-toc-mobile");
+    if (mobileToc) {
+      mobileToc.addEventListener("click", function (event) {
+        if (event.target.closest("a[href^='#']")) mobileToc.open = false;
+      });
+    }
+
     document.querySelectorAll("[data-v2-bib-copy]").forEach(function (button) {
       button.addEventListener("click", function () {
         var panel = button.closest(".v2-bib__panel");

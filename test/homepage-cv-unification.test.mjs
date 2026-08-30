@@ -590,18 +590,17 @@ test("the shared Escape handler defers to an open homepage modal", () => {
 
 test("the CV email reveal is visible, protected, and focus-safe on first activation", () => {
   const layout = readExpectedFile("_layouts/cv-v2.html");
+  const cv = read("_pages/cv.md");
   const homepage = read("_pages/home-v2.md");
   const script = readExpectedFile("_includes/v2-common-script.html");
   const css = read("assets/css/main.scss");
   const cvEmailTarget =
-    /<p\b(?=[^>]*\bid=["']v2-email["'])(?=[^>]*\bclass=["']cv-v2-email["'])(?=[^>]*\bdata-v2-cv-email\b)(?=[^>]*\baria-live=["']polite["'])(?=[^>]*\bhidden\b)[^>]*>\s*<\/p>/;
+    /<dd\b(?=[^>]*\bclass=["']cv-v2-email["'])(?=[^>]*\bdata-v2-cv-email\b)(?=[^>]*\baria-live=["']polite["'])[^>]*><span id=["']v2-email["']>protected<\/span>\s*<button\b[^>]*data-v2-email[^>]*>reveal<\/button><\/dd>/;
 
   assertMatches(
-    layout,
-    new RegExp(
-      String.raw`{%\s*include\s+v2-social\.html\s*%}\s*${cvEmailTarget.source}`,
-    ),
-    "CV layout should place an initially hidden polite live region beside shared social controls",
+    cv,
+    cvEmailTarget,
+    "CV should render a visible protected email control in General Information",
   );
   assertDoesNotMatch(
     homepage,
@@ -616,7 +615,7 @@ test("the CV email reveal is visible, protected, and focus-safe on first activat
   assertMatches(
     script,
     /cvEmailTarget\.hidden\s*=\s*false/,
-    "first activation should unhide the CV email target",
+    "shared reveal logic should continue supporting a CV email target",
   );
   assertMatches(
     script,
@@ -649,7 +648,7 @@ test("the CV email reveal is visible, protected, and focus-safe on first activat
     "the revealed CV address should wrap safely on narrow screens",
   );
   assertDoesNotMatch(
-    `${layout}\n${script}`,
+    `${layout}\n${cv}\n${script}`,
     /[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}/i,
     "the CV source should keep the decoded address protected",
   );
@@ -667,7 +666,7 @@ test("the CV email reveal is visible, protected, and focus-safe on first activat
     assertMatches(
       renderedCv,
       cvEmailTarget,
-      "rendered CV should retain the hidden polite live region before activation",
+      "rendered CV should retain the visible protected email control before activation",
     );
     assertDoesNotMatch(
       renderedCv,
@@ -755,7 +754,13 @@ test("the rendered CV preserves a semantic heading hierarchy", () => {
       );
 
     assert.deepEqual(headingText("h1"), ["Curriculum Vitae"]);
-    assert.deepEqual(headingText("h2"), ["Education", "Publications", "Services"]);
+    assert.deepEqual(headingText("h2"), [
+      "General Information",
+      "Education",
+      "Research Interests",
+      "Publications",
+      "Service",
+    ]);
     assert.deepEqual(headingText("h3"), [
       "Journal Articles",
       "Conference Papers",

@@ -39,7 +39,7 @@
 
   <p class="cv-publication-meta cv-publication-venue">
     {% if post.venue_name %}
-      {{ post.venue_name | escape }}, {{ publication_year | escape }}{% if post.volume %}, Volume {{ post.volume | escape }}{% endif %}
+      {{ post.venue_name | escape }}{% if post.location %}, {{ post.location | escape }}{% endif %}, {{ publication_year | escape }}{% if post.volume %}, vol. {{ post.volume | escape }}{% endif %}{% if post.pages %}, pp. {{ post.pages | escape | replace: "-", "&ndash;" }}{% endif %}
     {% elsif post.scholar_venue %}
       {{ post.scholar_venue | escape }}
     {% elsif post.category == "manuscripts" %}

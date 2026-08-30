@@ -64,6 +64,40 @@ test("the V2 header exposes the approved route set", () => {
   assert.doesNotMatch(header, />research<\/a>/);
 });
 
+test("the web CV uses the approved public sections and navigation", () => {
+  const layout = read("_layouts/cv-v2.html");
+  const page = read("_pages/cv.md");
+  const publication = read("_includes/archive-single-cv.html");
+
+  assert.match(layout, /href="\/files\/Jialin_Tang_CV\.pdf"/);
+  assert.match(layout, /include cv-v2-toc\.html/);
+  assert.match(layout, /class="cv-toc-mobile"/);
+  assert.match(layout, /class="cv-v2-grid"/);
+
+  for (const id of [
+    "general-information",
+    "education",
+    "research-interests",
+    "publications",
+    "service",
+  ]) {
+    assert.match(page, new RegExp(`id="${id}"`));
+  }
+  assert.match(page, /where:\s*"web_visible",\s*true/);
+  assert.doesNotMatch(page, /Preprints \/ Manuscripts|category", "manuscripts"/);
+  assert.match(publication, /post\.pages/);
+  assert.match(publication, /pp\./);
+});
+
+test("the public CV generator contains explicit privacy checks", () => {
+  const generator = read("scripts/build-public-cv.py");
+  assert.ok(existsSync(new URL("files/Jialin_Tang_CV.pdf", root)));
+  assert.match(generator, /forbidden_fragments|Telephone number found/);
+  assert.doesNotMatch(generator, /href=['"]tel:|"telephone"\s*:/i);
+  assert.match(generator, /mailto:jialit7@uci\.edu/);
+  assert.match(generator, /https:\/\/jaylentang\.github\.io\//);
+});
+
 test("rendered V2 routes share the shell and exclude unpublished work", () => {
   const destination = mkdtempSync(join(tmpdir(), "al-folio-inspired-site-"));
   try {

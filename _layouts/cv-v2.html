@@ -29,12 +29,29 @@ layout: compress
     {% include v2-header.html %}
     <main class="v2-main cv-v2-main">
       <header class="cv-v2-intro">
-        <h1>Curriculum Vitae</h1>
-        <p class="cv-v2-subtitle">Jialin (Jaylen) Tang</p>
+        <div>
+          <h1>Curriculum Vitae</h1>
+          <p class="cv-v2-subtitle">Jialin (Jaylen) Tang</p>
+        </div>
+        <a class="cv-pdf-link" href="/files/Jialin_Tang_CV.pdf" aria-label="Download Jialin Tang curriculum vitae as PDF">
+          <i class="fas fa-file-pdf" aria-hidden="true"></i>
+          <span>PDF</span>
+        </a>
       </header>
-      {{ content }}
+      <details class="cv-toc-mobile">
+        <summary>On this page</summary>
+        {% include cv-v2-toc.html %}
+      </details>
+      <div class="cv-v2-grid">
+        <aside class="cv-v2-toc">
+          <p class="cv-v2-toc__label">On this page</p>
+          {% include cv-v2-toc.html %}
+        </aside>
+        <div class="cv-v2-content">
+          {{ content }}
+        </div>
+      </div>
       {% include v2-social.html %}
-      <p id="v2-email" class="cv-v2-email" data-v2-cv-email aria-live="polite" hidden></p>
     </main>
     {% include v2-footer.html %}
     {% include v2-common-script.html %}
