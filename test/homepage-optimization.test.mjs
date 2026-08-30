@@ -5,7 +5,21 @@ import test from "node:test";
 
 const root = new URL("../", import.meta.url);
 const read = (relativePath) => readFileSync(new URL(relativePath, root), "utf8");
+const readExpectedFile = (relativePath) => {
+  const file = new URL(relativePath, root);
+  assert.ok(existsSync(file), `${relativePath} should exist`);
+  return readFileSync(file, "utf8");
+};
 const pathFor = (relativePath) => fileURLToPath(new URL(relativePath, root));
+const assertMatches = (source, pattern, message) => {
+  assert.ok(pattern.test(source), message);
+};
+const escapeRegExp = (value) => value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+const yamlImagePath = (field, relativePath) =>
+  new RegExp(
+    `^${field}:[ \\t]*["']?/${escapeRegExp(relativePath)}["']?[ \\t]*$`,
+    "m",
+  );
 
 function jpegDimensions(relativePath) {
   const buffer = readFileSync(pathFor(relativePath));
@@ -73,26 +87,61 @@ test("mobile theme controls remain available", () => {
 });
 
 test("research cards use lightweight thumbnails", () => {
-  const homepage = read("_pages/home-v2.md");
-  const names = ["hypermode", "hypereast", "mas-llava"];
+  const selectedPublication = readExpectedFile("_includes/selected-publication.html");
+  const publications = [
+    {
+      source: "_publications/2026-01-04-hypermode.md",
+      thumbnail: "images/research-hypermode-thumb.webp",
+      original: "images/research-hypermode.png",
+    },
+    {
+      source: "_publications/2025-01-01-hypereast.md",
+      thumbnail: "images/research-hypereast-thumb.webp",
+      original: "images/research-hypereast.png",
+    },
+    {
+      source: "_publications/2026-01-01-mas-llava.md",
+      thumbnail: "images/research-mas-llava-thumb.webp",
+      original: "images/research-mas-llava.png",
+    },
+  ];
   let thumbnailBytes = 0;
   let originalBytes = 0;
 
-  assert.equal((homepage.match(/class="v2-publication__figure"/g) || []).length, 3);
-  assert.equal((homepage.match(/loading="lazy"/g) || []).length, 3);
-  assert.equal((homepage.match(/decoding="async"/g) || []).length, 3);
-  assert.equal((homepage.match(/width="720" height="405"/g) || []).length, 3);
+  assertMatches(
+    selectedPublication,
+    /class="v2-publication__figure"/,
+    "selected publication include should render figure controls",
+  );
+  assertMatches(
+    selectedPublication,
+    /<img\b(?=[^>]*loading="lazy")(?=[^>]*decoding="async")(?=[^>]*width="720")(?=[^>]*height="405")[^>]*>/,
+    "selected publication image should be lazy, async, and dimensioned",
+  );
 
-  for (const name of names) {
-    const thumbnail = `images/research-${name}-thumb.webp`;
-    const original = `images/research-${name}.png`;
-
-    assert.match(homepage, new RegExp(`/images/research-${name}-thumb\\.webp`));
-    assert.match(homepage, new RegExp(`data-full="/images/research-${name}\\.png`));
-    assert.ok(existsSync(pathFor(thumbnail)), `${thumbnail} is missing`);
-    assert.ok(statSync(pathFor(thumbnail)).size < 200_000, `${thumbnail} is too large`);
-    thumbnailBytes += statSync(pathFor(thumbnail)).size;
-    originalBytes += statSync(pathFor(original)).size;
+  for (const publication of publications) {
+    const source = read(publication.source);
+    assertMatches(
+      source,
+      yamlImagePath("featured_thumbnail", publication.thumbnail),
+      `${publication.source} should bind its lightweight featured_thumbnail`,
+    );
+    assertMatches(
+      source,
+      yamlImagePath("featured_image", publication.original),
+      `${publication.source} should bind its full featured_image`,
+    );
+    assert.ok(
+      existsSync(pathFor(publication.thumbnail)),
+      `${publication.thumbnail} is missing`,
+    );
+    assert.ok(existsSync(pathFor(publication.original)), `${publication.original} is missing`);
+    assert.ok(
+      statSync(pathFor(publication.thumbnail)).size < 200_000,
+      `${publication.thumbnail} is too large`,
+    );
+    thumbnailBytes += statSync(pathFor(publication.thumbnail)).size;
+    originalBytes += statSync(pathFor(publication.original)).size;
   }
 
   assert.ok(thumbnailBytes < originalBytes * 0.35, "thumbnail payload was not reduced enough");
