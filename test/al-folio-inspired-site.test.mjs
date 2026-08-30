@@ -68,6 +68,7 @@ test("the web CV uses the approved public sections and navigation", () => {
   const layout = read("_layouts/cv-v2.html");
   const page = read("_pages/cv.md");
   const publication = read("_includes/archive-single-cv.html");
+  const styles = read("assets/css/main.scss");
 
   assert.match(layout, /href="\/files\/Jialin_Tang_CV\.pdf"/);
   assert.match(layout, /include cv-v2-toc\.html/);
@@ -87,6 +88,10 @@ test("the web CV uses the approved public sections and navigation", () => {
   assert.doesNotMatch(page, /Preprints \/ Manuscripts|category", "manuscripts"/);
   assert.match(publication, /post\.pages/);
   assert.match(publication, /pp\./);
+  assert.match(
+    styles,
+    /\.cv-v2-section\s*>\s*h2\s*\{[^}]*scroll-margin-top:\s*5rem;/s,
+  );
 });
 
 test("the public CV generator contains explicit privacy checks", () => {
