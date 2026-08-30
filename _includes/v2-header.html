@@ -1,19 +1,16 @@
 <header class="v2-header">
   <div class="v2-header__inner">
+    {% if page.url != "/" %}
+      <a class="v2-brand" href="/">Jialin (Jaylen) Tang</a>
+    {% endif %}
     <button class="v2-menu-toggle" type="button" aria-expanded="false" aria-controls="v2-navigation" aria-label="Open navigation">
       <i class="fas fa-bars" aria-hidden="true"></i>
     </button>
     <nav id="v2-navigation" class="v2-navigation" aria-label="Primary navigation">
-      {% if page.url == "/cv/" %}
-        <a href="/">homepage</a>
-        <a href="/cv/" aria-current="page">cv</a>
-        {% include theme-toggle.html %}
-      {% else %}
-        <a href="#about">about</a>
-        <a href="#research">research</a>
-        <a href="/cv/">cv</a>
-        {% include theme-toggle.html %}
-      {% endif %}
+      <a href="{% if page.url == "/" %}#about{% else %}/#about{% endif %}"{% if page.url == "/" %} aria-current="page"{% endif %}>about</a>
+      <a href="/publications/"{% if page.url == "/publications/" %} aria-current="page"{% endif %}>publications</a>
+      <a href="/cv/"{% if page.url == "/cv/" %} aria-current="page"{% endif %}>cv</a>
+      {% include theme-toggle.html %}
     </nav>
   </div>
 </header>

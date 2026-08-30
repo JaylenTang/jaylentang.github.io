@@ -809,6 +809,20 @@ html[data-theme="dark"] .homepage-v2 .v2-services a:hover {
   min-height: 58px;
 }
 
+.homepage-v2 .v2-brand {
+  margin-right: auto;
+  color: var(--v2-text);
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.homepage-v2 .v2-brand:hover,
+.homepage-v2 .v2-brand:focus-visible {
+  color: var(--v2-link-hover);
+  text-decoration: none;
+}
+
 .homepage-v2 .v2-navigation {
   display: flex;
   align-items: center;
@@ -822,7 +836,8 @@ html[data-theme="dark"] .homepage-v2 .v2-services a:hover {
 }
 
 .homepage-v2 .v2-navigation > a:hover,
-.homepage-v2 .v2-navigation > a:focus-visible {
+.homepage-v2 .v2-navigation > a:focus-visible,
+.homepage-v2 .v2-navigation > a[aria-current="page"] {
   color: var(--v2-link);
   text-decoration: none;
 }
@@ -859,6 +874,36 @@ html[data-theme="dark"] .homepage-v2 .v2-services a:hover {
 .homepage-v2 .v2-main {
   padding-top: 2.9rem;
   padding-bottom: 4.5rem;
+}
+
+.homepage-v2 .v2-page-main {
+  padding-top: 4rem;
+}
+
+.homepage-v2 .v2-page-intro {
+  padding-bottom: 1.6rem;
+  border-bottom: 1px solid var(--v2-border);
+}
+
+.homepage-v2 .v2-page-intro h1 {
+  margin: 0;
+  color: var(--v2-text);
+  font-size: 2.4rem;
+  font-weight: 300;
+  line-height: 1.2;
+}
+
+.homepage-v2 .v2-page-intro p {
+  margin: 0.4rem 0 0;
+  color: var(--v2-muted);
+}
+
+.homepage-v2 .v2-publication-group {
+  margin-top: 3.6rem;
+}
+
+.homepage-v2 .v2-publication-group + .v2-publication-group {
+  margin-top: 4.4rem;
 }
 
 .homepage-v2 .v2-section {
@@ -1467,11 +1512,20 @@ html[data-theme="light"] .homepage-v2 .v2-calligraphy {
     min-height: 56px;
   }
 
+  .homepage-v2 .v2-brand {
+    max-width: calc(100% - 60px);
+    overflow: hidden;
+    font-size: 0.96rem;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
   .homepage-v2 .v2-menu-toggle {
     display: inline-flex;
     width: 44px;
     min-width: 44px;
     height: 44px;
+    margin-left: auto;
   }
 
   .homepage-v2 .v2-navigation {
@@ -1512,6 +1566,18 @@ html[data-theme="light"] .homepage-v2 .v2-calligraphy {
   .homepage-v2 .v2-main {
     padding-top: 2.35rem;
     padding-bottom: 3.5rem;
+  }
+
+  .homepage-v2 .v2-page-main {
+    padding-top: 3rem;
+  }
+
+  .homepage-v2 .v2-page-intro h1 {
+    font-size: 2rem;
+  }
+
+  .homepage-v2 .v2-publication-group {
+    margin-top: 3rem;
   }
 
   .homepage-v2.cv-v2 .cv-v2-main {

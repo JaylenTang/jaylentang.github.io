@@ -1,0 +1,38 @@
+---
+layout: compress
+---
+
+{% include base_path %}
+
+<!doctype html>
+<html lang="{{ site.locale | slice: 0,2 }}" class="no-js">
+  <head>
+    {% include head.html %}
+    <script>
+      (function () {
+        try {
+          if (!localStorage.getItem("jaylen-theme")) {
+            document.documentElement.setAttribute("data-theme", "dark");
+            document.documentElement.style.colorScheme = "dark";
+          }
+        } catch (error) {
+          document.documentElement.setAttribute("data-theme", "dark");
+          document.documentElement.style.colorScheme = "dark";
+        }
+      }());
+    </script>
+    {% include head/custom.html %}
+  </head>
+
+  <body class="homepage-v2 v2-page">
+    {% include browser-upgrade.html %}
+    {% include v2-header.html %}
+    <main class="v2-main v2-page-main">
+      {{ content }}
+    </main>
+    {% include v2-footer.html %}
+    {% include v2-publication-modal.html %}
+    {% include v2-common-script.html %}
+    {% include scripts.html skip_main=true %}
+  </body>
+</html>

@@ -99,6 +99,12 @@ test("rendered V2 routes share the shell and exclude unpublished work", () => {
       assert.match(page, /class="v2-footer"/);
       assert.match(page, /class="theme-toggle"/);
     }
+    assert.doesNotMatch(home, /class="v2-brand"/);
+    assert.match(publications, /class="v2-brand" href="\/"/);
+    assert.match(cv, /class="v2-brand" href="\/"/);
+    assert.match(home, /href="#about" aria-current="page">about<\/a>/);
+    assert.match(publications, /href="\/#about">about<\/a>/);
+    assert.match(cv, /href="\/#about">about<\/a>/);
     assert.match(cv, /href="\/files\/Jialin_Tang_CV\.pdf"/);
   } finally {
     rmSync(destination, { recursive: true, force: true });

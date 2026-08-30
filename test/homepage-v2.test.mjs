@@ -42,9 +42,6 @@ test("V2 is the indexable production homepage", () => {
 test("V2 uses the shared header and approved profile", () => {
   const page = read("_pages/home-v2.md");
   const header = readExpectedFile("_includes/v2-header.html");
-  const navigationBranches = header.match(
-    /{%\s*if\s+page\.url\s*==\s*["']\/cv\/["']\s*%}([\s\S]*?){%\s*else\s*%}([\s\S]*?){%\s*endif\s*%}/,
-  );
 
   assertMatches(
     page,
@@ -52,28 +49,35 @@ test("V2 uses the shared header and approved profile", () => {
     "homepage should render the shared V2 header include",
   );
   assertMatches(header, /<header class="v2-header"/, "V2 header should render header markup");
-  assert.ok(navigationBranches, "V2 header should branch when page.url is /cv/");
-  const [, cvNavigation, homepageNavigation] = navigationBranches;
-  assertMatches(cvNavigation, /href="\/"/, "CV header should link back to the homepage");
   assertMatches(
-    cvNavigation,
-    /<a\b(?=[^>]*href="\/cv\/")(?=[^>]*aria-current="page")[^>]*>/,
-    "CV header should mark the CV link as the current page",
+    header,
+    /class="v2-brand" href="\/">Jialin \(Jaylen\) Tang<\/a>/,
+    "inner pages should link the name back to the homepage",
   );
   assertMatches(
-    homepageNavigation,
-    /href="#about"/,
-    "homepage header should link to the about section",
+    header,
+    /href="{% if page\.url == "\/" %}#about{% else %}\/#about{% endif %}"/,
+    "the about link should work on both homepage and inner pages",
   );
   assertMatches(
-    homepageNavigation,
-    /href="#research"/,
-    "homepage header should link to the research section",
+    header,
+    /href="\/publications\/"/,
+    "header should link to the full publications page",
   );
   assertMatches(
-    homepageNavigation,
+    header,
     /href="\/cv\/"/,
-    "homepage header should link to the CV page",
+    "header should link to the CV page",
+  );
+  assertMatches(
+    header,
+    /page\.url == "\/publications\/"/,
+    "header should expose the publications current-page state",
+  );
+  assertMatches(
+    header,
+    /page\.url == "\/cv\/"/,
+    "header should expose the CV current-page state",
   );
   assertMatches(
     header,
