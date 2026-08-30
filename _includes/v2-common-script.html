@@ -1,0 +1,98 @@
+<script>
+  (function () {
+    var menuButton = document.querySelector(".v2-menu-toggle");
+    var navigation = document.getElementById("v2-navigation");
+
+    function setMenuOpen(isOpen) {
+      if (!menuButton || !navigation) return;
+
+      navigation.classList.toggle("is-open", isOpen);
+      menuButton.setAttribute("aria-expanded", isOpen ? "true" : "false");
+      menuButton.setAttribute("aria-label", isOpen ? "Close navigation" : "Open navigation");
+    }
+
+    if (menuButton && navigation) {
+      menuButton.addEventListener("click", function () {
+        setMenuOpen(menuButton.getAttribute("aria-expanded") !== "true");
+      });
+
+      navigation.addEventListener("click", function (event) {
+        var link = event.target.closest("a");
+        var href = link && link.getAttribute("href");
+        if (href && href.charAt(0) === "#") setMenuOpen(false);
+      });
+    }
+
+    document.addEventListener("keydown", function (event) {
+      if (document.body.classList.contains("v2-modal-open")) return;
+
+      if (event.key === "Escape" && menuButton && menuButton.getAttribute("aria-expanded") === "true") {
+        setMenuOpen(false);
+        menuButton.focus();
+      }
+    }, true);
+
+    var emailTarget = document.getElementById("v2-email");
+    var emailButton = document.querySelector("[data-v2-email]");
+    var emailIcon = document.querySelector("[data-v2-email-icon]");
+    var cvEmailTarget = document.querySelector("[data-v2-cv-email]");
+    var revealedEmail = null;
+
+    function revealEmail(initiator) {
+      if (revealedEmail) return revealedEmail;
+
+      var inlineLink = null;
+      var iconLink = null;
+      var iconTrigger = emailIcon;
+      var encoded = [125, 46, 109, 55, 79, 99, 112, 76, 46, 69, 126, 105, 105, 63, 83];
+      var key = [23, 71, 12, 91, 38];
+      revealedEmail = encoded.map(function (value, index) {
+        return String.fromCharCode(value ^ key[index % key.length]);
+      }).join("");
+
+      if (emailTarget) {
+        if (cvEmailTarget) cvEmailTarget.hidden = false;
+
+        inlineLink = document.createElement("a");
+        inlineLink.href = "mailto:" + revealedEmail;
+        inlineLink.textContent = revealedEmail;
+        emailTarget.textContent = "";
+        emailTarget.appendChild(inlineLink);
+      }
+
+      if (emailButton) emailButton.remove();
+
+      if (emailIcon) {
+        iconLink = document.createElement("a");
+        iconLink.href = "mailto:" + revealedEmail;
+        iconLink.setAttribute("aria-label", "Email Jialin Tang");
+        iconLink.setAttribute("title", "Email Jialin Tang");
+        iconLink.innerHTML = emailIcon.innerHTML;
+        emailIcon.replaceWith(iconLink);
+        emailIcon = iconLink;
+      }
+
+      var focusTarget = null;
+      if (cvEmailTarget && inlineLink) {
+        focusTarget = inlineLink;
+      } else if (initiator === emailButton && inlineLink) {
+        focusTarget = inlineLink;
+      } else if (initiator === iconTrigger && iconLink) {
+        focusTarget = iconLink;
+      }
+      if (focusTarget) focusTarget.focus({ preventScroll: true });
+
+      return revealedEmail;
+    }
+
+    if (emailButton) emailButton.addEventListener("click", function () {
+      revealEmail(emailButton);
+    });
+    if (emailIcon) emailIcon.addEventListener("click", function (event) {
+      if (!revealedEmail) {
+        event.preventDefault();
+        revealEmail(emailIcon);
+      }
+    });
+  }());
+</script>

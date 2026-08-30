@@ -24,9 +24,19 @@ layout: compress
     {% include head/custom.html %}
   </head>
 
-  <body class="homepage-v2">
+  <body class="homepage-v2 cv-v2">
     {% include browser-upgrade.html %}
-    {{ content }}
+    {% include v2-header.html %}
+    <main class="v2-main cv-v2-main">
+      <header class="cv-v2-intro">
+        <h1>Curriculum Vitae</h1>
+        <p class="cv-v2-subtitle">Jialin (Jaylen) Tang</p>
+      </header>
+      {{ content }}
+      {% include v2-social.html %}
+      <p id="v2-email" class="cv-v2-email" data-v2-cv-email aria-live="polite" hidden></p>
+    </main>
+    {% include v2-footer.html %}
     {% include v2-common-script.html %}
     {% include scripts.html skip_main=true %}
   </body>

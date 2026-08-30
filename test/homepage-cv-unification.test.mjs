@@ -544,3 +544,221 @@ test("the homepage delegates footer rendering without update copy", () => {
     "homepage should not contain a hardcoded update date",
   );
 });
+
+test("the shared Escape handler defers to an open homepage modal", () => {
+  const script = readExpectedFile("_includes/v2-common-script.html");
+  const escapeHandler = script.match(
+    /document\.addEventListener\(\s*["']keydown["']\s*,\s*function\s*\(event\)\s*\{([\s\S]*?)\}\s*,\s*true\s*\);/,
+  );
+
+  assert.ok(
+    escapeHandler,
+    "the shared keydown handler should run in the capture phase before the homepage modal handler",
+  );
+  assertMatches(
+    escapeHandler[1],
+    /if\s*\(\s*document\.body\.classList\.contains\(\s*["']v2-modal-open["']\s*\)\s*\)\s*return\s*;/,
+    "the shared keydown handler should leave Escape ownership with an open modal",
+  );
+  assert.ok(
+    escapeHandler[1].indexOf("v2-modal-open") < escapeHandler[1].indexOf("event.key"),
+    "the modal guard should run before ordinary Escape-to-close-menu behavior",
+  );
+  assertMatches(
+    escapeHandler[1],
+    /event\.key\s*===\s*["']Escape["'][\s\S]*?setMenuOpen\(false\)[\s\S]*?menuButton\.focus\(\)/,
+    "ordinary Escape should still close the menu and retain its existing focus behavior",
+  );
+});
+
+test("the CV email reveal is visible, protected, and focus-safe on first activation", () => {
+  const layout = readExpectedFile("_layouts/cv-v2.html");
+  const homepage = read("_pages/home-v2.md");
+  const script = readExpectedFile("_includes/v2-common-script.html");
+  const css = read("assets/css/main.scss");
+  const cvEmailTarget =
+    /<p\b(?=[^>]*\bid=["']v2-email["'])(?=[^>]*\bclass=["']cv-v2-email["'])(?=[^>]*\bdata-v2-cv-email\b)(?=[^>]*\baria-live=["']polite["'])(?=[^>]*\bhidden\b)[^>]*>\s*<\/p>/;
+
+  assertMatches(
+    layout,
+    new RegExp(
+      String.raw`{%\s*include\s+v2-social\.html\s*%}\s*${cvEmailTarget.source}`,
+    ),
+    "CV layout should place an initially hidden polite live region beside shared social controls",
+  );
+  assertDoesNotMatch(
+    homepage,
+    /data-v2-cv-email|cv-v2-email/,
+    "homepage presentation should not gain the CV-only email target",
+  );
+  assertMatches(
+    script,
+    /var\s+cvEmailTarget\s*=\s*document\.querySelector\(\s*["']\[data-v2-cv-email\]["']\s*\)/,
+    "shared script should discover the CV-only reveal target",
+  );
+  assertMatches(
+    script,
+    /cvEmailTarget\.hidden\s*=\s*false/,
+    "first activation should unhide the CV email target",
+  );
+  assertMatches(
+    script,
+    /emailTarget\.appendChild\(inlineLink\)/,
+    "first activation should populate the visible target with the decoded mailto link",
+  );
+  assert.ok(
+    script.indexOf("cvEmailTarget.hidden = false") <
+      script.indexOf("emailTarget.appendChild(inlineLink)"),
+    "the live region should be unhidden before its address link is populated",
+  );
+  assertMatches(
+    script,
+    /emailIcon\.replaceWith\(iconLink\)/,
+    "first activation should still replace the protected icon button with a mailto link",
+  );
+  assertMatches(
+    script,
+    /event\.preventDefault\(\);\s*revealEmail\(emailIcon\);/,
+    "first icon activation should reveal in place instead of following a mailto action",
+  );
+  assertDoesNotMatch(
+    script,
+    /(?:iconLink|inlineLink)\.click\(\)|window\.open\(|(?:window\.)?location(?:\.href)?\s*=/,
+    "email reveal should not launch the generated mailto link automatically",
+  );
+  assertMatches(
+    css,
+    /\.homepage-v2\.cv-v2\s+\.cv-v2-email\s*\{[^}]*overflow-wrap:\s*anywhere;/s,
+    "the revealed CV address should wrap safely on narrow screens",
+  );
+  assertDoesNotMatch(
+    `${layout}\n${script}`,
+    /[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}/i,
+    "the CV source should keep the decoded address protected",
+  );
+
+  const destination = mkdtempSync(join(tmpdir(), "homepage-cv-email-reveal-"));
+  try {
+    execFileSync(
+      "bundle",
+      ["exec", "jekyll", "build", "--quiet", "--destination", destination],
+      { cwd: rootPath, encoding: "utf8", stdio: "pipe" },
+    );
+    const renderedCv = readFileSync(join(destination, "cv", "index.html"), "utf8");
+    const renderedHomepage = readFileSync(join(destination, "index.html"), "utf8");
+
+    assertMatches(
+      renderedCv,
+      cvEmailTarget,
+      "rendered CV should retain the hidden polite live region before activation",
+    );
+    assertDoesNotMatch(
+      renderedCv,
+      /[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}/i,
+      "rendered CV should not expose the address before activation",
+    );
+    assertDoesNotMatch(
+      renderedHomepage,
+      cvEmailTarget,
+      "rendered homepage should keep its existing presentation",
+    );
+  } finally {
+    rmSync(destination, { recursive: true, force: true });
+  }
+});
+
+test("email reveal focuses the logical replacement for each initiating control", () => {
+  const script = readExpectedFile("_includes/v2-common-script.html");
+
+  assertMatches(
+    script,
+    /function\s+revealEmail\(initiator\)/,
+    "email reveal should receive the control that initiated first activation",
+  );
+  assertMatches(
+    script,
+    /var\s+inlineLink\s*=\s*null\s*;[\s\S]*?var\s+iconLink\s*=\s*null\s*;[\s\S]*?var\s+iconTrigger\s*=\s*emailIcon\s*;/,
+    "email reveal should retain both replacement links and the original icon trigger",
+  );
+  assertMatches(
+    script,
+    /emailButton\.addEventListener\(\s*["']click["']\s*,\s*function\s*\(\)\s*\{\s*revealEmail\(emailButton\);\s*\}\s*\)/,
+    "homepage inline activation should identify the inline reveal button",
+  );
+  assertMatches(
+    script,
+    /event\.preventDefault\(\);\s*revealEmail\(emailIcon\);/,
+    "homepage and CV icon activation should identify the protected icon button",
+  );
+  assertMatches(
+    script,
+    /if\s*\(cvEmailTarget\s*&&\s*inlineLink\)\s*\{?\s*focusTarget\s*=\s*inlineLink\s*;?\s*\}?/,
+    "CV icon activation should prefer the newly visible text mailto link",
+  );
+  assertMatches(
+    script,
+    /else\s+if\s*\(initiator\s*===\s*emailButton\s*&&\s*inlineLink\)\s*\{?\s*focusTarget\s*=\s*inlineLink\s*;?\s*\}?/,
+    "homepage inline activation should focus its new inline mailto link",
+  );
+  assertMatches(
+    script,
+    /else\s+if\s*\(initiator\s*===\s*iconTrigger\s*&&\s*iconLink\)\s*\{?\s*focusTarget\s*=\s*iconLink\s*;?\s*\}?/,
+    "homepage social activation should focus its replacement icon mailto link",
+  );
+  assertMatches(
+    script,
+    /if\s*\(focusTarget\)\s*focusTarget\.focus\(\{\s*preventScroll:\s*true\s*\}\)/,
+    "the selected logical replacement should receive focus without scrolling",
+  );
+  assert.ok(
+    script.indexOf("emailIcon.replaceWith(iconLink)") <
+      script.indexOf("if (cvEmailTarget && inlineLink)"),
+    "focus selection should happen only after all DOM replacements complete",
+  );
+});
+
+test("the rendered CV preserves a semantic heading hierarchy", () => {
+  const destination = mkdtempSync(join(tmpdir(), "homepage-cv-heading-hierarchy-"));
+
+  try {
+    execFileSync(
+      "bundle",
+      ["exec", "jekyll", "build", "--quiet", "--destination", destination],
+      { cwd: rootPath, encoding: "utf8", stdio: "pipe" },
+    );
+    const renderedCv = readFileSync(join(destination, "cv", "index.html"), "utf8");
+    const main = renderedCv.match(
+      /<main class="v2-main cv-v2-main">([\s\S]*?)<\/main>/,
+    )?.[1];
+    assert.ok(main, "rendered CV should expose its V2 main content");
+
+    const headingText = (level) =>
+      [...main.matchAll(new RegExp(`<${level}\\b[^>]*>([\\s\\S]*?)<\\/${level}>`, "g"))].map(
+        ([, value]) => value.replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim(),
+      );
+
+    assert.deepEqual(headingText("h1"), ["Curriculum Vitae"]);
+    assert.deepEqual(headingText("h2"), ["Education", "Publications", "Services"]);
+    assert.deepEqual(headingText("h3"), [
+      "Journal Articles",
+      "Conference Papers",
+      "Invited Reviewer",
+    ]);
+
+    const publicationTitleH4s = [
+      ...main.matchAll(/<h4\b[^>]*class="cv-publication-title"[^>]*>/g),
+    ];
+    assert.equal(
+      publicationTitleH4s.length,
+      5,
+      "all five CV publication titles should render as H4 beneath category H3 headings",
+    );
+    assertDoesNotMatch(
+      main,
+      /<h3\b[^>]*class="cv-publication-title"/,
+      "publication titles should not compete with category H3 headings",
+    );
+  } finally {
+    rmSync(destination, { recursive: true, force: true });
+  }
+});

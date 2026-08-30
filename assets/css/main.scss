@@ -1208,6 +1208,126 @@ html[data-theme="light"] .homepage-v2 .v2-calligraphy {
   margin: 0;
 }
 
+.homepage-v2.cv-v2 .cv-v2-main {
+  min-width: 0;
+  padding-top: 4.5rem;
+}
+
+.homepage-v2.cv-v2 .cv-v2-intro {
+  padding-bottom: 1.75rem;
+  border-bottom: 1px solid var(--v2-border);
+}
+
+.homepage-v2.cv-v2 .cv-v2-intro h1 {
+  margin: 0;
+  color: var(--v2-text);
+  font-size: 2.4rem;
+  font-weight: 300;
+  line-height: 1.2;
+}
+
+.homepage-v2.cv-v2 .cv-v2-subtitle {
+  margin: 0.35rem 0 0;
+  color: var(--v2-muted);
+  font-size: 1rem;
+}
+
+.homepage-v2.cv-v2 .cv-v2-section {
+  min-width: 0;
+  margin-top: 4rem;
+}
+
+.homepage-v2.cv-v2 .cv-v2-section > h2 {
+  margin-bottom: 1.25rem;
+  font-size: 1.75rem;
+}
+
+.homepage-v2.cv-v2 .cv-v2-section > h3 {
+  margin: 1.8rem 0 0.75rem;
+  color: var(--v2-text);
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.homepage-v2.cv-v2 .cv-v2-education,
+.homepage-v2.cv-v2 .cv-v2-services {
+  display: grid;
+  gap: 0.4rem;
+  padding-left: 1.25rem;
+  margin: 0;
+}
+
+.homepage-v2.cv-v2 .cv-v2-education li,
+.homepage-v2.cv-v2 .cv-v2-services li {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+.homepage-v2.cv-v2 .cv-publications {
+  max-width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.homepage-v2.cv-v2 .cv-publication {
+  min-width: 0;
+  margin: 0 0 1.35rem;
+}
+
+.homepage-v2.cv-v2 .cv-publication-title {
+  margin: 0 0 0.2rem;
+  color: var(--v2-link);
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+}
+
+.homepage-v2.cv-v2 .cv-publication-title a,
+.homepage-v2.cv-v2 .cv-publication-title a:visited {
+  color: var(--v2-link);
+}
+
+.homepage-v2.cv-v2 .cv-publication-title a:hover {
+  color: var(--v2-link-hover);
+}
+
+.homepage-v2.cv-v2 .cv-publication-meta {
+  margin: 0.08rem 0;
+  color: var(--v2-muted);
+  font-size: 0.92rem;
+  line-height: 1.45;
+  overflow-wrap: anywhere;
+}
+
+.homepage-v2.cv-v2 .cv-publication-authors strong {
+  color: var(--v2-text);
+  font-weight: 600;
+}
+
+.homepage-v2.cv-v2 .cv-v2-services {
+  line-height: 1.55;
+}
+
+.homepage-v2.cv-v2 .cv-v2-email {
+  max-width: 100%;
+  margin: 0.75rem 0 0;
+  color: var(--v2-muted);
+  font-size: 0.92rem;
+  overflow-wrap: anywhere;
+}
+
+.homepage-v2.cv-v2 .cv-v2-email[hidden] {
+  display: none;
+}
+
+.homepage-v2.cv-v2 .cv-v2-email a {
+  display: inline-block;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
+
 .homepage-v2.v2-modal-open {
   overflow: hidden;
 }
@@ -1320,6 +1440,18 @@ html[data-theme="light"] .homepage-v2 .v2-calligraphy {
   .homepage-v2 .v2-main {
     padding-top: 2.35rem;
     padding-bottom: 3.5rem;
+  }
+
+  .homepage-v2.cv-v2 .cv-v2-main {
+    padding-top: 3.25rem;
+  }
+
+  .homepage-v2.cv-v2 .cv-v2-intro h1 {
+    font-size: 2rem;
+  }
+
+  .homepage-v2.cv-v2 .cv-v2-section {
+    margin-top: 3rem;
   }
 
   .homepage-v2 .v2-about__heading {

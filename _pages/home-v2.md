@@ -8,19 +8,7 @@ redirect_from:
   - /about.html
 ---
 
-<header class="v2-header">
-  <div class="v2-header__inner">
-    <button class="v2-menu-toggle" type="button" aria-expanded="false" aria-controls="v2-navigation" aria-label="Open navigation">
-      <i class="fas fa-bars" aria-hidden="true"></i>
-    </button>
-    <nav id="v2-navigation" class="v2-navigation" aria-label="Primary navigation">
-      <a href="#about">about</a>
-      <a href="#research">research</a>
-      <a href="/cv/">cv</a>
-      {% include theme-toggle.html %}
-    </nav>
-  </div>
-</header>
+{% include v2-header.html %}
 
 <main class="v2-main">
   <section id="about" class="v2-section v2-about" aria-labelledby="v2-name">
@@ -118,17 +106,10 @@ redirect_from:
     </ul>
   </section>
 
-  <nav class="v2-social" aria-label="Academic profiles">
-    <button type="button" data-v2-email-icon aria-label="Reveal email address" title="Reveal email address"><i class="fas fa-envelope" aria-hidden="true"></i></button>
-    <a href="https://scholar.google.com/citations?user=tOytfmwAAAAJ&amp;hl=en" aria-label="Google Scholar" title="Google Scholar"><i class="ai ai-google-scholar" aria-hidden="true"></i></a>
-    <a href="https://github.com/jaylentang" aria-label="GitHub" title="GitHub"><i class="fab fa-github" aria-hidden="true"></i></a>
-    <a href="https://www.linkedin.com/in/jtang0516/" aria-label="LinkedIn" title="LinkedIn"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
-  </nav>
+  {% include v2-social.html %}
 </main>
 
-<footer class="v2-footer">
-  <p>&copy; {{ site.time | date: "%Y" }} Jialin (Jaylen) Tang. Last updated: August 23, 2026.</p>
-</footer>
+{% include v2-footer.html %}
 
 <div class="v2-modal" data-v2-modal hidden role="dialog" aria-modal="true" aria-label="Research figure preview">
   <button class="v2-modal__close" type="button" aria-label="Close research figure"><i class="fas fa-times" aria-hidden="true"></i></button>
@@ -137,73 +118,6 @@ redirect_from:
 
 <script>
   (function () {
-    var menuButton = document.querySelector(".v2-menu-toggle");
-    var navigation = document.getElementById("v2-navigation");
-
-    function setMenuOpen(isOpen) {
-      if (!menuButton || !navigation) return;
-
-      navigation.classList.toggle("is-open", isOpen);
-      menuButton.setAttribute("aria-expanded", isOpen ? "true" : "false");
-      menuButton.setAttribute("aria-label", isOpen ? "Close navigation" : "Open navigation");
-    }
-
-    if (menuButton && navigation) {
-      menuButton.addEventListener("click", function () {
-        setMenuOpen(menuButton.getAttribute("aria-expanded") !== "true");
-      });
-
-      navigation.addEventListener("click", function (event) {
-        var link = event.target.closest("a");
-        if (link && link.getAttribute("href").charAt(0) === "#") setMenuOpen(false);
-      });
-    }
-
-    var emailTarget = document.getElementById("v2-email");
-    var emailButton = document.querySelector("[data-v2-email]");
-    var emailIcon = document.querySelector("[data-v2-email-icon]");
-    var revealedEmail = null;
-
-    function revealEmail() {
-      if (revealedEmail) return revealedEmail;
-
-      var encoded = [125, 46, 109, 55, 79, 99, 112, 76, 46, 69, 126, 105, 105, 63, 83];
-      var key = [23, 71, 12, 91, 38];
-      revealedEmail = encoded.map(function (value, index) {
-        return String.fromCharCode(value ^ key[index % key.length]);
-      }).join("");
-
-      if (emailTarget) {
-        var link = document.createElement("a");
-        link.href = "mailto:" + revealedEmail;
-        link.textContent = revealedEmail;
-        emailTarget.textContent = "";
-        emailTarget.appendChild(link);
-      }
-
-      if (emailButton) emailButton.remove();
-
-      if (emailIcon) {
-        var iconLink = document.createElement("a");
-        iconLink.href = "mailto:" + revealedEmail;
-        iconLink.setAttribute("aria-label", "Email Jialin Tang");
-        iconLink.setAttribute("title", "Email Jialin Tang");
-        iconLink.innerHTML = emailIcon.innerHTML;
-        emailIcon.replaceWith(iconLink);
-        emailIcon = iconLink;
-      }
-
-      return revealedEmail;
-    }
-
-    if (emailButton) emailButton.addEventListener("click", revealEmail);
-    if (emailIcon) emailIcon.addEventListener("click", function (event) {
-      if (!revealedEmail) {
-        event.preventDefault();
-        revealEmail();
-      }
-    });
-
     var modal = document.querySelector("[data-v2-modal]");
     if (!modal) return;
 
@@ -250,11 +164,6 @@ redirect_from:
         if (!modal.hidden) {
           closeModal();
           return;
-        }
-
-        if (menuButton && menuButton.getAttribute("aria-expanded") === "true") {
-          setMenuOpen(false);
-          menuButton.focus();
         }
       }
 
