@@ -240,13 +240,19 @@ test("the homepage renders the selected publication collection", () => {
   );
 });
 
-test("the selected publication include renders aliased publication data", () => {
+test("the selected publication include delegates to the shared publication row", () => {
   const selectedPublication = readExpectedFile("_includes/selected-publication.html");
+  const publicationRow = readExpectedFile("_includes/v2-publication-row.html");
 
   assertMatches(
     selectedPublication,
     /{%\s*assign\s+publication\s*=\s*include\.publication\s*%}/,
     "selected publication include should alias include.publication",
+  );
+  assertMatches(
+    selectedPublication,
+    /include v2-publication-row\.html publication=publication/,
+    "selected publication include should delegate to v2-publication-row.html",
   );
   for (const [field, pattern] of [
     ["title", /publication\.title\b/],
@@ -261,69 +267,69 @@ test("the selected publication include renders aliased publication data", () => 
     ["summary", /publication\.summary\b/],
   ]) {
     assertMatches(
-      selectedPublication,
+      publicationRow,
       pattern,
-      `selected publication include should consume publication.${field}`,
+      `shared publication row should consume publication.${field}`,
     );
   }
   assertMatches(
-    selectedPublication,
+    publicationRow,
     /{%\s*for\s+author\s+in\s+publication\.authors\s*%}/,
-    "selected publication include should iterate over publication.authors",
+    "shared publication row should iterate over publication.authors",
   );
   assertMatches(
-    selectedPublication,
+    publicationRow,
     /{%\s*if\s+author\.self\s*%}/,
-    "selected publication include should identify the self author",
+    "shared publication row should identify the self author",
   );
   assertMatches(
-    selectedPublication,
+    publicationRow,
     /author\.name\b/,
-    "selected publication include should render each author name",
+    "shared publication row should render each author name",
   );
   assertMatches(
-    selectedPublication,
+    publicationRow,
     /{%\s*if\s+publication\.volume\s*%}[\s\S]*{{\s*publication\.volume\s*\|\s*escape\s*}}[\s\S]*{%\s*endif\s*%}/,
-    "selected publication include should conditionally render publication.volume",
+    "shared publication row should conditionally render publication.volume",
   );
   assertMatches(
-    selectedPublication,
+    publicationRow,
     /<a\b[^>]*href="{{\s*publication\.paperurl\s*\|\s*escape\s*}}"[^>]*>\s*Paper\s*<\/a>/,
-    "selected publication include should escape the Paper href",
+    "shared publication row should escape the Paper href",
   );
   assertMatches(
-    selectedPublication,
+    publicationRow,
     /{%\s*if\s+publication\.codeurl\s*%}[\s\S]*<a\b[^>]*href="{{\s*publication\.codeurl\s*\|\s*escape\s*}}"[^>]*>\s*Code\s*<\/a>[\s\S]*{%\s*endif\s*%}/,
-    "selected publication include should conditionally escape the Code href",
+    "shared publication row should conditionally escape the Code href",
   );
   assertMatches(
-    selectedPublication,
+    publicationRow,
     /{%\s*assign\s+asset_query\s*=\s*["']\?v=["']\s*\|\s*append:\s*site\.asset_version\s*%}/,
-    "selected publication include should build a shared asset query",
+    "shared publication row should build a shared asset query",
   );
   assertMatches(
-    selectedPublication,
+    publicationRow,
     /{%\s*assign\s+featured_image_url\s*=\s*publication\.featured_image\s*\|\s*append:\s*asset_query\s*%}/,
-    "selected publication include should build the full image URL before output",
+    "shared publication row should build the full image URL before output",
   );
   assertMatches(
-    selectedPublication,
+    publicationRow,
     /{%\s*assign\s+featured_thumbnail_url\s*=\s*publication\.featured_thumbnail\s*\|\s*append:\s*asset_query\s*%}/,
-    "selected publication include should build the thumbnail URL before output",
+    "shared publication row should build the thumbnail URL before output",
   );
   assertMatches(
-    selectedPublication,
+    publicationRow,
     /{%\s*assign\s+figure_name\s*=\s*publication\.title\s*\|\s*split:\s*["']:["']\s*\|\s*first\s*\|\s*strip\s*%}/,
-    "selected publication include should derive the concise figure name from the title",
+    "shared publication row should derive the concise figure name from the title",
   );
   assertMatches(
-    selectedPublication,
+    publicationRow,
     /{%\s*assign\s+figure_aria_label\s*=\s*["']Open ["']\s*\|\s*append:\s*figure_name\s*\|\s*append:\s*["'] figure["']\s*%}/,
-    "selected publication include should build the concise figure label",
+    "shared publication row should build the concise figure label",
   );
 
-  const outputs = [...selectedPublication.matchAll(/{{([\s\S]*?)}}/g)];
-  assert.ok(outputs.length > 0, "selected publication include should render Liquid outputs");
+  const outputs = [...publicationRow.matchAll(/{{([\s\S]*?)}}/g)];
+  assert.ok(outputs.length > 0, "shared publication row should render Liquid outputs");
   for (const [, expression] of outputs) {
     assertMatches(
       expression,
@@ -332,9 +338,9 @@ test("the selected publication include renders aliased publication data", () => 
     );
   }
   assertDoesNotMatch(
-    selectedPublication,
+    publicationRow,
     />\s*DOI\s*<\/a>/,
-    "selected publication include should not label its paper action DOI",
+    "shared publication row should not label its paper action DOI",
   );
 });
 
