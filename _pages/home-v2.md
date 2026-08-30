@@ -103,61 +103,10 @@ redirect_from:
   <section id="research" class="v2-section v2-publications" aria-labelledby="v2-publications-title">
     <h2 id="v2-publications-title">selected publications</h2>
 
-    <article class="v2-publication">
-      <div class="v2-publication__visual">
-        <span class="v2-venue-tag">JSTARS</span>
-        <button class="v2-publication__figure" type="button" data-full="/images/research-hypermode.png?v={{ site.asset_version }}" aria-label="Open HyperMODE figure">
-          <img src="/images/research-hypermode-thumb.webp?v={{ site.asset_version }}" width="720" height="405" loading="lazy" decoding="async" alt="HyperMODE hyperspectral modeling thumbnail">
-        </button>
-      </div>
-      <div class="v2-publication__content">
-        <h3><a href="https://doi.org/10.1109/JSTARS.2026.3705708">HyperMODE: A Continuous-Depth Spectral-Spatial Modeling Framework with Mamba and Neural Ordinary Differential Equations for Hyperspectral Image Classification</a></h3>
-        <p class="v2-publication__authors"><strong>Jialin Tang</strong>, Yunduan Lou, Yanhui Guo, Yu Bai</p>
-        <p class="v2-publication__venue"><em>IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing</em>, 2026, Volume 19</p>
-        <div class="v2-publication__actions">
-          <a href="https://doi.org/10.1109/JSTARS.2026.3705708">Paper</a>
-          <a href="https://github.com/JaylenTang/HyperMODE">Code</a>
-        </div>
-        <p class="v2-publication__summary">Continuous-depth spectral-spatial modeling that combines sequence modeling with neural ODE dynamics.</p>
-      </div>
-    </article>
-
-    <article class="v2-publication">
-      <div class="v2-publication__visual">
-        <span class="v2-venue-tag">JSTARS</span>
-        <button class="v2-publication__figure" type="button" data-full="/images/research-hypereast.png?v={{ site.asset_version }}" aria-label="Open HyperEAST figure">
-          <img src="/images/research-hypereast-thumb.webp?v={{ site.asset_version }}" width="720" height="405" loading="lazy" decoding="async" alt="HyperEAST hyperspectral image classification thumbnail">
-        </button>
-      </div>
-      <div class="v2-publication__content">
-        <h3><a href="https://ieeexplore.ieee.org/document/11129658">HyperEAST: An Enhanced Attention-Based Spectral-Spatial Transformer with Self-Supervised Pretraining for Hyperspectral Image Classification</a></h3>
-        <p class="v2-publication__authors"><strong>Jialin Tang</strong>, Nan Ma, Chen Jia, Rui Tian, Yanhui Guo</p>
-        <p class="v2-publication__venue"><em>IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing</em>, 2025, Volume 18</p>
-        <div class="v2-publication__actions">
-          <a href="https://ieeexplore.ieee.org/document/11129658">Paper</a>
-          <a href="https://github.com/JaylenTang/HyperEAST">Code</a>
-        </div>
-        <p class="v2-publication__summary">Self-supervised spectral-spatial representation learning for hyperspectral image classification.</p>
-      </div>
-    </article>
-
-    <article class="v2-publication">
-      <div class="v2-publication__visual">
-        <span class="v2-venue-tag">ACDSA</span>
-        <button class="v2-publication__figure" type="button" data-full="/images/research-mas-llava.png?v={{ site.asset_version }}" aria-label="Open MAS-LLaVA figure">
-          <img src="/images/research-mas-llava-thumb.webp?v={{ site.asset_version }}" width="720" height="405" loading="lazy" decoding="async" alt="MAS-LLaVA video sampling thumbnail">
-        </button>
-      </div>
-      <div class="v2-publication__content">
-        <h3><a href="https://ieeexplore.ieee.org/document/11468028">MAS-LLaVA: Motion-Aware Adaptive Sampling for Training-Free Video Large Language Models</a></h3>
-        <p class="v2-publication__authors"><strong>Jialin Tang</strong>, Yu Bai</p>
-        <p class="v2-publication__venue"><em>IEEE International Conference on Artificial Intelligence, Computer, Data Sciences and Applications</em>, 2026</p>
-        <div class="v2-publication__actions">
-          <a href="https://ieeexplore.ieee.org/document/11468028">Paper</a>
-        </div>
-        <p class="v2-publication__summary">Motion-aware token and frame sampling for efficient training-free video large language model inference.</p>
-      </div>
-    </article>
+    {% assign selected_publications = site.publications | where: "selected", true | sort: "sort_order" %}
+    {% for publication in selected_publications %}
+      {% include selected-publication.html publication=publication %}
+    {% endfor %}
   </section>
 
   <section class="v2-section v2-services" aria-labelledby="v2-services-title">

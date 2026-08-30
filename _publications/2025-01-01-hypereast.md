@@ -4,6 +4,28 @@ collection: publications
 category: journals
 permalink: /publication/2025-01-01-hypereast
 sort_order: 2
+selected: true
+publication_year: 2025
+venue_name: "IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing"
+venue_short: JSTARS
+volume: 18
+authors:
+  - name: Jialin Tang
+    short_name: J Tang
+    self: true
+  - name: Nan Ma
+    short_name: N Ma
+  - name: Chen Jia
+    short_name: C Jia
+  - name: Rui Tian
+    short_name: R Tian
+  - name: Yanhui Guo
+    short_name: Y Guo
+codeurl: "https://github.com/JaylenTang/HyperEAST"
+featured_image: "/images/research-hypereast.png"
+featured_thumbnail: "/images/research-hypereast-thumb.webp"
+featured_image_alt: "HyperEAST hyperspectral image classification thumbnail"
+summary: "Self-supervised spectral-spatial representation learning for hyperspectral image classification."
 excerpt: 'We propose HyperEAST, an enhanced attention-based spectral-spatial transformer with self-supervised pretraining for hyperspectral image classification.'
 date: 2025-01-01
 venue: 'IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing (JSTARS)'
