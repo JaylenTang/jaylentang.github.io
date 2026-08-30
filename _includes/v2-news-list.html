@@ -1,0 +1,9 @@
+{% assign news = include.news %}
+<div class="v2-news-list" role="list">
+  {% for item in news %}
+    <article class="v2-news-item" role="listitem">
+      <time datetime="{{ item.date | date: '%Y-%m-%d' }}">{{ item.display_date | escape }}</time>
+      <div class="v2-news-item__content">{{ item.content | markdownify }}</div>
+    </article>
+  {% endfor %}
+</div>

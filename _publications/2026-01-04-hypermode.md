@@ -5,10 +5,12 @@ category: journals
 permalink: /publication/2026-01-04-hypermode
 sort_order: 1
 selected: true
+web_visible: true
 publication_year: 2026
 venue_name: "IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing"
 venue_short: JSTARS
 volume: 19
+pages: "21474-21491"
 authors:
   - name: Jialin Tang
     short_name: J Tang
@@ -24,6 +26,16 @@ featured_image: "/images/research-hypermode.png"
 featured_thumbnail: "/images/research-hypermode-thumb.webp"
 featured_image_alt: "HyperMODE hyperspectral modeling thumbnail"
 summary: "Continuous-depth spectral-spatial modeling that combines sequence modeling with neural ODE dynamics."
+bibtex: |-
+  @article{tang2026hypermode,
+    title={HyperMODE: A Continuous-Depth Spectral-Spatial Modeling Framework with Mamba and Neural Ordinary Differential Equations for Hyperspectral Image Classification},
+    author={Tang, Jialin and Lou, Yunduan and Guo, Yanhui and Bai, Yu},
+    journal={IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing},
+    volume={19},
+    pages={21474--21491},
+    year={2026},
+    doi={10.1109/JSTARS.2026.3705708}
+  }
 excerpt: 'HyperMODE is a continuous-depth spectral-spatial modeling framework for hyperspectral image classification.'
 date: 2026-06-17
 venue: 'IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing (JSTARS)'

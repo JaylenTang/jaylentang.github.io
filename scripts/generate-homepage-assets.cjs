@@ -3,7 +3,13 @@ const sharp = require("sharp");
 
 const root = path.resolve(__dirname, "..");
 const images = path.join(root, "images");
-const researchImages = ["hypermode", "hypereast", "mas-llava"];
+const researchImages = [
+  "hypermode",
+  "hypereast",
+  "mas-llava",
+  "aso-regression",
+  "ev-charging",
+];
 
 async function generateSocialCard() {
   const portrait = await sharp(path.join(images, "profile-photo-2026.jpg"))
@@ -17,12 +23,12 @@ async function generateSocialCard() {
   const base = Buffer.from(`
     <svg width="1200" height="630" xmlns="http://www.w3.org/2000/svg">
       <rect width="1200" height="630" fill="#f7f8fa"/>
-      <rect width="12" height="630" fill="#0066cc"/>
+      <rect width="12" height="630" fill="#7654c5"/>
       <rect x="732" y="112" width="406" height="406" fill="#ffffff" stroke="#d8dde5" stroke-width="2"/>
       <text x="72" y="145" font-family="Arial, Helvetica, sans-serif" font-size="52" font-weight="700" fill="#111315">Jialin (Jaylen) Tang</text>
       <text x="72" y="350" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="600" fill="#20252b">Ph.D. Student in Computational Science</text>
       <text x="72" y="398" font-family="Arial, Helvetica, sans-serif" font-size="30" fill="#3f4650">University of California, Irvine</text>
-      <text x="72" y="530" font-family="Arial, Helvetica, sans-serif" font-size="25" fill="#0066cc">jaylentang.github.io</text>
+      <text x="72" y="530" font-family="Arial, Helvetica, sans-serif" font-size="25" fill="#7654c5">jaylentang.github.io</text>
     </svg>
   `);
 
