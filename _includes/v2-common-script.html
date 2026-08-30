@@ -94,5 +94,88 @@
         revealEmail(emailIcon);
       }
     });
+
+    document.querySelectorAll("[data-v2-bib-copy]").forEach(function (button) {
+      button.addEventListener("click", function () {
+        var panel = button.closest(".v2-bib__panel");
+        var code = panel && panel.querySelector("code");
+        var status = panel && panel.querySelector(".v2-bib__status");
+
+        if (!code || !navigator.clipboard) {
+          if (status) status.textContent = "Select and copy the citation above.";
+          return;
+        }
+
+        navigator.clipboard.writeText(code.textContent).then(function () {
+          if (status) status.textContent = "Copied.";
+        }, function () {
+          if (status) status.textContent = "Select and copy the citation above.";
+        });
+      });
+    });
+
+    var modal = document.querySelector("[data-v2-modal]");
+    if (modal) {
+      var modalImage = modal.querySelector("img");
+      var closeButton = modal.querySelector(".v2-modal__close");
+      var lastModalTrigger = null;
+
+      function getFocusableModalElements() {
+        return Array.prototype.slice.call(modal.querySelectorAll("button:not([disabled]), a[href], [tabindex]:not([tabindex='-1'])"));
+      }
+
+      function openModal(button) {
+        var thumbnail = button.querySelector("img");
+        lastModalTrigger = button;
+        modalImage.src = button.getAttribute("data-full");
+        modalImage.alt = thumbnail ? thumbnail.alt : "";
+        modal.hidden = false;
+        document.body.classList.add("v2-modal-open");
+        closeButton.focus({ preventScroll: true });
+      }
+
+      function closeModal() {
+        if (modal.hidden) return;
+
+        modal.hidden = true;
+        modalImage.removeAttribute("src");
+        document.body.classList.remove("v2-modal-open");
+        if (lastModalTrigger) lastModalTrigger.focus({ preventScroll: true });
+      }
+
+      document.querySelectorAll(".v2-publication__figure").forEach(function (button) {
+        button.addEventListener("click", function () {
+          openModal(button);
+        });
+      });
+
+      closeButton.addEventListener("click", closeModal);
+      modal.addEventListener("click", function (event) {
+        if (event.target === modal) closeModal();
+      });
+
+      document.addEventListener("keydown", function (event) {
+        if (event.key === "Escape" && !modal.hidden) {
+          closeModal();
+          return;
+        }
+
+        if (event.key === "Tab" && !modal.hidden) {
+          var focusable = getFocusableModalElements();
+          if (!focusable.length) return;
+
+          var first = focusable[0];
+          var last = focusable[focusable.length - 1];
+
+          if (event.shiftKey && document.activeElement === first) {
+            event.preventDefault();
+            last.focus();
+          } else if (!event.shiftKey && document.activeElement === last) {
+            event.preventDefault();
+            first.focus();
+          }
+        }
+      });
+    }
   }());
 </script>

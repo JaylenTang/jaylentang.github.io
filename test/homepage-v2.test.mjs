@@ -111,6 +111,7 @@ test("V2 uses the shared header and approved profile", () => {
 test("V2 renders selected publication data and retains services", () => {
   const page = read("_pages/home-v2.md");
   const selectedPublicationPath = "_includes/selected-publication.html";
+  const publicationRowPath = "_includes/v2-publication-row.html";
   const publications = [
     {
       path: "_publications/2026-01-04-hypermode.md",
@@ -150,15 +151,16 @@ test("V2 renders selected publication data and retains services", () => {
   );
 
   const selectedPublication = readExpectedFile(selectedPublicationPath);
+  const publicationRow = readExpectedFile(publicationRowPath);
   assertMatches(
-    selectedPublication,
+    publicationRow,
     /<a\b[^>]*>\s*Paper\s*<\/a>/,
-    "selected publication include should render a Paper action",
+    "shared publication row should render a Paper action",
   );
   assertDoesNotMatch(
-    selectedPublication,
+    `${selectedPublication}\n${publicationRow}`,
     />\s*DOI\s*<\/a>/,
-    "selected publication include should not label its paper action DOI",
+    "publication components should not label their paper action DOI",
   );
 
   for (const publication of publications) {
@@ -190,6 +192,8 @@ test("V2 renders selected publication data and retains services", () => {
 test("V2 styles and interactions are scoped and accessible", () => {
   const page = read("_pages/home-v2.md");
   const css = read("assets/css/main.scss");
+  const script = read("_includes/v2-common-script.html");
+  const modal = read("_includes/v2-publication-modal.html");
 
   assertMatches(css, /\.homepage-v2\s*\{/);
   assertMatches(css, /\.homepage-v2\s*\{[^}]*padding:\s*0;/s);
@@ -197,9 +201,10 @@ test("V2 styles and interactions are scoped and accessible", () => {
   assertMatches(css, /\.v2-publication\s*\{[^}]*grid-template-columns:/s);
   assertMatches(css, /@media \(max-width: 760px\)[\s\S]*\.v2-menu-toggle/);
   assertMatches(css, /@media \(prefers-reduced-motion: reduce\)/);
-  assertMatches(page, /event\.key === "Escape"/);
-  assertMatches(page, /lastModalTrigger\.focus/);
-  assertMatches(page, /data-v2-modal/);
+  assertMatches(script, /event\.key === "Escape"/);
+  assertMatches(script, /lastModalTrigger\.focus/);
+  assertMatches(modal, /data-v2-modal/);
+  assertMatches(page, /include v2-publication-modal\.html/);
 });
 
 test("V2 uses the approved purple accent palette", () => {

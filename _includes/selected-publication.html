@@ -1,26 +1,2 @@
 {% assign publication = include.publication %}
-{% assign asset_query = "?v=" | append: site.asset_version %}
-{% assign featured_image_url = publication.featured_image | append: asset_query %}
-{% assign featured_thumbnail_url = publication.featured_thumbnail | append: asset_query %}
-{% assign figure_name = publication.title | split: ":" | first | strip %}
-{% assign figure_aria_label = "Open " | append: figure_name | append: " figure" %}
-<article class="v2-publication">
-  <div class="v2-publication__visual">
-    <span class="v2-venue-tag">{{ publication.venue_short | escape }}</span>
-    <button class="v2-publication__figure" type="button" data-full="{{ featured_image_url | escape }}" aria-label="{{ figure_aria_label | escape }}">
-      <img src="{{ featured_thumbnail_url | escape }}" alt="{{ publication.featured_image_alt | escape }}" width="720" height="405" loading="lazy" decoding="async">
-    </button>
-  </div>
-  <div class="v2-publication__content">
-    <h3><a href="{{ publication.paperurl | escape }}">{{ publication.title | escape }}</a></h3>
-    <p class="v2-publication__authors">{% for author in publication.authors %}{% if author.self %}<strong>{{ author.name | escape }}</strong>{% else %}{{ author.name | escape }}{% endif %}{% unless forloop.last %}, {% endunless %}{% endfor %}</p>
-    <p class="v2-publication__venue"><em>{{ publication.venue_name | escape }}</em>, {{ publication.publication_year | escape }}{% if publication.volume %}, Volume {{ publication.volume | escape }}{% endif %}</p>
-    <div class="v2-publication__actions">
-      <a href="{{ publication.paperurl | escape }}">Paper</a>
-      {% if publication.codeurl %}
-        <a href="{{ publication.codeurl | escape }}">Code</a>
-      {% endif %}
-    </div>
-    <p class="v2-publication__summary">{{ publication.summary | escape }}</p>
-  </div>
-</article>
+{% include v2-publication-row.html publication=publication heading_level="h3" %}

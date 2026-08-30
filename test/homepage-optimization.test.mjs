@@ -87,7 +87,7 @@ test("mobile theme controls remain available", () => {
 });
 
 test("research cards use lightweight thumbnails", () => {
-  const selectedPublication = readExpectedFile("_includes/selected-publication.html");
+  const publicationRow = readExpectedFile("_includes/v2-publication-row.html");
   const publications = [
     {
       source: "_publications/2026-01-04-hypermode.md",
@@ -109,12 +109,12 @@ test("research cards use lightweight thumbnails", () => {
   let originalBytes = 0;
 
   assertMatches(
-    selectedPublication,
+    publicationRow,
     /class="v2-publication__figure"/,
     "selected publication include should render figure controls",
   );
   assertMatches(
-    selectedPublication,
+    publicationRow,
     /<img\b(?=[^>]*loading="lazy")(?=[^>]*decoding="async")(?=[^>]*width="720")(?=[^>]*height="405")[^>]*>/,
     "selected publication image should be lazy, async, and dimensioned",
   );

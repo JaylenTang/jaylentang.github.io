@@ -40,6 +40,7 @@ const selectedPublications = [
         "IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing",
       venueShort: "JSTARS",
       volume: 19,
+      pages: "21474-21491",
       authors: [
         { name: "Jialin Tang", shortName: "J Tang", self: true },
         { name: "Yunduan Lou", shortName: "Y Lou" },
@@ -69,6 +70,7 @@ const selectedPublications = [
         "IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing",
       venueShort: "JSTARS",
       volume: 18,
+      pages: "22241-22255",
       authors: [
         { name: "Jialin Tang", shortName: "J Tang", self: true },
         { name: "Nan Ma", shortName: "N Ma" },
@@ -98,6 +100,7 @@ const selectedPublications = [
         "IEEE International Conference on Artificial Intelligence, Computer, Data Sciences and Applications",
       venueShort: "ACDSA",
       volume: undefined,
+      pages: undefined,
       authors: [
         { name: "Jialin Tang", shortName: "J Tang", self: true },
         { name: "Yu Bai", shortName: "Y Bai" },
@@ -160,6 +163,7 @@ for (const { name, path, metadata } of selectedPublications) {
   test(`${name} exposes exact selected-publication metadata`, () => {
     const frontMatter = frontMatterFor(path);
     const volume = yamlScalar(frontMatter, "volume", false);
+    const pages = yamlScalar(frontMatter, "pages", false);
 
     assert.deepEqual(
       {
@@ -170,6 +174,7 @@ for (const { name, path, metadata } of selectedPublications) {
         venueName: yamlScalar(frontMatter, "venue_name"),
         venueShort: yamlScalar(frontMatter, "venue_short"),
         volume: volume === undefined ? undefined : Number(volume),
+        pages,
         authors: yamlAuthors(frontMatter),
         paperUrl: yamlScalar(frontMatter, "paperurl"),
         codeUrl: yamlScalar(frontMatter, "codeurl", false),
@@ -333,7 +338,7 @@ test("the selected publication include delegates to the shared publication row",
   for (const [, expression] of outputs) {
     assertMatches(
       expression,
-      /\|\s*escape\s*$/,
+      /\|\s*escape(?:\s*\||\s*$)/,
       `Liquid output {{${expression}}} should be escaped`,
     );
   }
@@ -368,7 +373,11 @@ test("the rendered homepage preserves exact selected publication cards", () => {
     assert.equal(articles.length, 3, "homepage should render exactly three publications");
     assert.deepEqual(
       articles.map((article) =>
-        extract(article, /<h3><a\b[^>]*>([\s\S]*?)<\/a><\/h3>/, "title should render"),
+        extract(
+          article,
+          /<h3 class="v2-publication__title"><a\b[^>]*>([\s\S]*?)<\/a><\/h3>/,
+          "title should render",
+        ),
       ),
       selectedPublications.map(({ metadata }) => metadata.title),
     );
@@ -376,7 +385,9 @@ test("the rendered homepage preserves exact selected publication cards", () => {
     for (const [index, publication] of selectedPublications.entries()) {
       const article = articles[index];
       const { metadata } = publication;
-      const titleLink = article.match(/<h3><a href="([^"]+)">([\s\S]*?)<\/a><\/h3>/);
+      const titleLink = article.match(
+        /<h3 class="v2-publication__title"><a href="([^"]+)">([\s\S]*?)<\/a><\/h3>/,
+      );
       assert.ok(titleLink, `${publication.name} should render its title link`);
       assert.deepEqual(titleLink.slice(1), [metadata.paperUrl, metadata.title]);
 
@@ -393,8 +404,8 @@ test("the rendered homepage preserves exact selected publication cards", () => {
       );
 
       const expectedVenue = `<em>${metadata.venueName}</em>, ${metadata.publicationYear}${
-        metadata.volume === undefined ? "" : `, Volume ${metadata.volume}`
-      }`;
+        metadata.volume === undefined ? "" : `, vol. ${metadata.volume}`
+      }${metadata.pages === undefined ? "" : `, pp. ${metadata.pages.replace("-", "&ndash;")}`}`;
       assert.equal(
         extract(
           article,

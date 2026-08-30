@@ -1031,9 +1031,9 @@ html[data-theme="light"] .homepage-v2 .v2-calligraphy {
 .homepage-v2 .v2-publication {
   display: grid;
   grid-template-columns: 170px minmax(0, 1fr);
-  gap: 1.75rem;
+  gap: 1.5rem;
   align-items: start;
-  margin: 0 0 2.2rem;
+  margin: 0 0 1.9rem;
 }
 
 .homepage-v2 .v2-publication__visual {
@@ -1077,18 +1077,18 @@ html[data-theme="light"] .homepage-v2 .v2-calligraphy {
   min-width: 0;
 }
 
-.homepage-v2 .v2-publication h3 {
+.homepage-v2 .v2-publication__title {
   margin: 0 0 0.2rem;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.35;
 }
 
-.homepage-v2 .v2-publication h3 a {
+.homepage-v2 .v2-publication__title a {
   color: var(--v2-text);
 }
 
-.homepage-v2 .v2-publication h3 a:hover {
+.homepage-v2 .v2-publication__title a:hover {
   color: var(--v2-link-hover);
 }
 
@@ -1120,7 +1120,8 @@ html[data-theme="light"] .homepage-v2 .v2-calligraphy {
   margin-top: 0.55rem;
 }
 
-.homepage-v2 .v2-publication__actions a {
+.homepage-v2 .v2-publication__actions a,
+.homepage-v2 .v2-bib > summary {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -1134,14 +1135,85 @@ html[data-theme="light"] .homepage-v2 .v2-calligraphy {
   font-weight: 500;
   line-height: 1;
   text-transform: uppercase;
+  cursor: pointer;
 }
 
 .homepage-v2 .v2-publication__actions a:hover,
-.homepage-v2 .v2-publication__actions a:focus-visible {
+.homepage-v2 .v2-publication__actions a:focus-visible,
+.homepage-v2 .v2-bib > summary:hover,
+.homepage-v2 .v2-bib > summary:focus-visible {
   border-color: var(--v2-link-hover);
   color: var(--v2-link-hover);
   background: var(--v2-surface);
   text-decoration: none;
+}
+
+.homepage-v2 .v2-bib > summary {
+  list-style: none;
+}
+
+.homepage-v2 .v2-bib > summary::-webkit-details-marker {
+  display: none;
+}
+
+.homepage-v2 .v2-bib[open] {
+  flex: 1 0 100%;
+}
+
+.homepage-v2 .v2-bib__panel {
+  max-width: 100%;
+  padding: 0.75rem;
+  margin-top: 0.55rem;
+  border: 1px solid var(--v2-border);
+  border-radius: 4px;
+  background: var(--v2-surface);
+}
+
+.homepage-v2 .v2-bib__panel pre {
+  max-height: 240px;
+  padding: 0;
+  margin: 0;
+  overflow: auto;
+  border: 0;
+  background: transparent;
+  white-space: pre;
+}
+
+.homepage-v2 .v2-bib__panel code {
+  color: var(--v2-text);
+  background: transparent;
+  font-size: 0.76rem;
+  line-height: 1.45;
+}
+
+.homepage-v2 .v2-bib__footer {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  margin-top: 0.65rem;
+}
+
+.homepage-v2 .v2-bib__footer button {
+  min-height: 30px;
+  padding: 0.25rem 0.7rem;
+  border: 1px solid var(--v2-muted);
+  border-radius: 3px;
+  color: var(--v2-text);
+  background: transparent;
+  font: inherit;
+  font-size: 0.78rem;
+  cursor: pointer;
+}
+
+.homepage-v2 .v2-bib__footer button:hover,
+.homepage-v2 .v2-bib__footer button:focus-visible {
+  border-color: var(--v2-link-hover);
+  color: var(--v2-link-hover);
+}
+
+.homepage-v2 .v2-bib__status {
+  color: var(--v2-muted);
+  font-size: 0.8rem;
 }
 
 .homepage-v2 .v2-publication__summary {
@@ -1511,11 +1583,12 @@ html[data-theme="light"] .homepage-v2 .v2-calligraphy {
     width: 100%;
   }
 
-  .homepage-v2 .v2-publication h3 {
+  .homepage-v2 .v2-publication__title {
     font-size: 0.98rem;
   }
 
-  .homepage-v2 .v2-publication__actions a {
+  .homepage-v2 .v2-publication__actions a,
+  .homepage-v2 .v2-bib > summary {
     min-height: 32px;
   }
 
