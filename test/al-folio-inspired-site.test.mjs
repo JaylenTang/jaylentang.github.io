@@ -103,6 +103,15 @@ test("the public CV generator contains explicit privacy checks", () => {
   assert.match(generator, /https:\/\/jaylentang\.github\.io\//);
 });
 
+test("the public CV uses the compact resume-class layout", () => {
+  const generator = read("scripts/build-public-cv.py");
+
+  assert.match(generator, /PAGE_MARGIN\s*=\s*0\.40\s*\*\s*inch/);
+  assert.match(generator, /RULE\s*=\s*colors\.black/);
+  assert.match(generator, /Paragraph\("Jialin Tang", STYLES\["name"\]\)/);
+  assert.doesNotMatch(generator, /CVFooter|def draw_page\(/);
+});
+
 test("rendered V2 routes share the shell and exclude unpublished work", () => {
   const destination = mkdtempSync(join(tmpdir(), "al-folio-inspired-site-"));
   try {

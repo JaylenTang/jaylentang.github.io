@@ -31,16 +31,17 @@ ROOT = Path(__file__).resolve().parents[1]
 OUTPUT_PATH = ROOT / "files" / "Jialin_Tang_CV.pdf"
 
 PAGE_WIDTH, PAGE_HEIGHT = LETTER
-LEFT_MARGIN = 0.56 * inch
-RIGHT_MARGIN = 0.56 * inch
-TOP_MARGIN = 0.40 * inch
-BOTTOM_MARGIN = 0.42 * inch
+PAGE_MARGIN = 0.40 * inch
+LEFT_MARGIN = PAGE_MARGIN
+RIGHT_MARGIN = PAGE_MARGIN
+TOP_MARGIN = PAGE_MARGIN
+BOTTOM_MARGIN = PAGE_MARGIN
 CONTENT_WIDTH = PAGE_WIDTH - LEFT_MARGIN - RIGHT_MARGIN
+CONTENT_INSET = 0.16 * inch
 
-INK = colors.HexColor("#171717")
-MUTED = colors.HexColor("#555555")
-RULE = colors.HexColor("#8B5CF6")
-LINK = colors.HexColor("#6842C2")
+INK = colors.black
+MUTED = colors.HexColor("#222222")
+RULE = colors.black
 
 rl_config.useA85 = 0
 
@@ -66,8 +67,8 @@ EDUCATION = [
 RESEARCH_INTERESTS = [
     "Deep learning",
     "image processing",
-    "vision large language models",
-    "diffusion models",
+    "Vision Large Language Models",
+    "diffusion",
 ]
 
 JOURNAL_ARTICLES = [
@@ -101,7 +102,7 @@ JOURNAL_ARTICLES = [
             "Prediction of Lymph Node Metastasis in Breast Cancer"
         ),
         "venue": (
-            "Manuscript in final preparation for submission to "
+            "manuscript in final preparation for submission to "
             "<i>npj Precision Oncology</i>"
         ),
     },
@@ -116,7 +117,7 @@ JOURNAL_ARTICLES = [
             "Metabolomics Analysis With Transformer and ODE Models"
         ),
         "venue": (
-            "Manuscript in final preparation for submission to "
+            "manuscript in final preparation for submission to "
             "<i>Nature Machine Intelligence</i>, 2026"
         ),
     },
@@ -130,8 +131,8 @@ CONFERENCE_PAPERS = [
             "Modulation and Morphology-Aligned Projection for Unpaired Virtual Staining"
         ),
         "venue": (
-            "Submitted to the AAAI Conference on Artificial Intelligence "
-            "(AAAI 2027)"
+            "submitted to the <i>AAAI Conference on Artificial Intelligence "
+            "(AAAI 2027)</i>"
         ),
     },
     {
@@ -141,8 +142,8 @@ CONFERENCE_PAPERS = [
             "Large Language Models"
         ),
         "venue": (
-            "2026 International Conference on Artificial Intelligence, Computer, "
-            "Data Sciences and Applications (ACDSA)"
+            "<i>2026 International Conference on Artificial Intelligence, Computer, "
+            "Data Sciences and Applications (ACDSA)</i>"
         ),
     },
     {
@@ -152,8 +153,8 @@ CONFERENCE_PAPERS = [
             "Using Sequence, Structural, and Off-Target Features"
         ),
         "venue": (
-            "2026 IEEE 16th Annual Computing and Communication Workshop and "
-            "Conference (CCWC), Las Vegas, NV, USA, 2026, pp. 458-461"
+            "<i>2026 IEEE 16th Annual Computing and Communication Workshop and "
+            "Conference (CCWC)</i>, Las Vegas, NV, USA, 2026, pp. 458-461"
         ),
     },
     {
@@ -163,8 +164,8 @@ CONFERENCE_PAPERS = [
             "Efficiency Using Proximal Policy Optimization"
         ),
         "venue": (
-            "2026 IEEE 16th Annual Computing and Communication Workshop and "
-            "Conference (CCWC), Las Vegas, NV, USA, 2026, pp. 454-457"
+            "<i>2026 IEEE 16th Annual Computing and Communication Workshop and "
+            "Conference (CCWC)</i>, Las Vegas, NV, USA, 2026, pp. 454-457"
         ),
     },
 ]
@@ -192,106 +193,85 @@ def make_styles() -> dict[str, ParagraphStyle]:
         "name": ParagraphStyle(
             "CVName",
             parent=base["Title"],
-            fontName="Helvetica-Bold",
-            fontSize=20,
-            leading=22,
+            fontName="Times-Bold",
+            fontSize=24,
+            leading=27,
             textColor=INK,
             alignment=TA_CENTER,
-            spaceAfter=3,
+            spaceAfter=2,
         ),
         "contact": ParagraphStyle(
             "CVContact",
             parent=base["Normal"],
-            fontName="Helvetica",
-            fontSize=9,
-            leading=11,
+            fontName="Times-Roman",
+            fontSize=9.6,
+            leading=11.5,
             textColor=MUTED,
             alignment=TA_CENTER,
         ),
         "section": ParagraphStyle(
             "CVSection",
             parent=base["Heading2"],
-            fontName="Helvetica-Bold",
-            fontSize=10.5,
-            leading=12.5,
+            fontName="Times-Bold",
+            fontSize=11,
+            leading=13,
             textColor=INK,
-            spaceBefore=8,
-            spaceAfter=4,
             keepWithNext=True,
         ),
         "institution": ParagraphStyle(
             "CVInstitution",
             parent=base["Normal"],
-            fontName="Helvetica-Bold",
-            fontSize=9.6,
-            leading=11.5,
+            fontName="Times-Bold",
+            fontSize=9.8,
+            leading=11.8,
             textColor=INK,
         ),
         "degree": ParagraphStyle(
             "CVDegree",
             parent=base["Normal"],
-            fontName="Helvetica",
-            fontSize=9.1,
-            leading=11,
+            fontName="Times-Roman",
+            fontSize=9.5,
+            leading=11.5,
             textColor=INK,
         ),
         "date": ParagraphStyle(
             "CVDate",
             parent=base["Normal"],
-            fontName="Helvetica-Bold",
-            fontSize=9.2,
-            leading=11,
+            fontName="Times-Roman",
+            fontSize=9.6,
+            leading=11.8,
             textColor=INK,
             alignment=TA_RIGHT,
         ),
         "body": ParagraphStyle(
             "CVBody",
             parent=base["Normal"],
-            fontName="Helvetica",
-            fontSize=9.1,
-            leading=11.5,
+            fontName="Times-Roman",
+            fontSize=9.6,
+            leading=12,
             textColor=INK,
             alignment=TA_LEFT,
+            leftIndent=CONTENT_INSET,
         ),
         "entry": ParagraphStyle(
             "CVEntry",
             parent=base["Normal"],
-            fontName="Helvetica",
-            fontSize=9,
-            leading=11.25,
+            fontName="Times-Roman",
+            fontSize=9.4,
+            leading=11.7,
             textColor=INK,
             alignment=TA_LEFT,
         ),
         "number": ParagraphStyle(
             "CVNumber",
             parent=base["Normal"],
-            fontName="Helvetica",
-            fontSize=9,
-            leading=11.25,
+            fontName="Times-Roman",
+            fontSize=9.4,
+            leading=11.7,
             textColor=INK,
             alignment=TA_RIGHT,
         ),
-        "footer": ParagraphStyle(
-            "CVFooter",
-            parent=base["Normal"],
-            fontName="Helvetica",
-            fontSize=7.3,
-            leading=8,
-            textColor=MUTED,
-            alignment=TA_CENTER,
-        ),
     }
-
-
-def draw_page(canvas: Canvas, doc: BaseDocTemplate) -> None:
-    canvas.saveState()
-    canvas.setStrokeColor(colors.HexColor("#D8D8D8"))
-    canvas.setLineWidth(0.45)
-    canvas.line(LEFT_MARGIN, 0.31 * inch, PAGE_WIDTH - RIGHT_MARGIN, 0.31 * inch)
-    footer = Paragraph(f"Jialin Tang &nbsp;&middot;&nbsp; {doc.page}", STYLES["footer"])
-    _, height = footer.wrap(PAGE_WIDTH - LEFT_MARGIN - RIGHT_MARGIN, 0.18 * inch)
-    footer.drawOn(canvas, LEFT_MARGIN, 0.14 * inch - height / 2)
-    canvas.restoreState()
 
 
 def section_heading(title: str) -> Table:
@@ -303,11 +283,13 @@ def section_heading(title: str) -> Table:
                 ("LEFTPADDING", (0, 0), (-1, -1), 0),
                 ("RIGHTPADDING", (0, 0), (-1, -1), 0),
                 ("TOPPADDING", (0, 0), (-1, -1), 0),
-                ("BOTTOMPADDING", (0, 0), (-1, -1), 2),
-                ("LINEBELOW", (0, 0), (-1, -1), 0.8, RULE),
+                ("BOTTOMPADDING", (0, 0), (-1, -1), 1.5),
+                ("LINEBELOW", (0, 0), (-1, -1), 0.55, RULE),
             ]
         )
     )
+    table.spaceBefore = 6.5
+    table.spaceAfter = 3.5
     return table
 
 
@@ -315,21 +297,30 @@ def education_table() -> Table:
     rows = []
     for item in EDUCATION:
         left = Paragraph(
-            f"{item['institution']}<br/><font name='Helvetica'>{item['degree']}</font>",
+            f"{item['institution']}<br/><font name='Times-Roman'>{item['degree']}</font>",
             STYLES["institution"],
         )
         right = Paragraph(item["date"], STYLES["date"])
-        rows.append([left, right])
+        rows.append(["", left, right])
 
-    table = Table(rows, colWidths=[5.97 * inch, 1.41 * inch], hAlign="LEFT")
+    date_width = 1.25 * inch
+    table = Table(
+        rows,
+        colWidths=[
+            CONTENT_INSET,
+            CONTENT_WIDTH - CONTENT_INSET - date_width,
+            date_width,
+        ],
+        hAlign="LEFT",
+    )
     table.setStyle(
         TableStyle(
             [
                 ("VALIGN", (0, 0), (-1, -1), "TOP"),
                 ("LEFTPADDING", (0, 0), (-1, -1), 0),
                 ("RIGHTPADDING", (0, 0), (-1, -1), 0),
-                ("TOPPADDING", (0, 0), (-1, -1), 1.5),
-                ("BOTTOMPADDING", (0, 0), (-1, -1), 3),
+                ("TOPPADDING", (0, 0), (-1, -1), 0),
+                ("BOTTOMPADDING", (0, 0), (-1, -1), 4),
             ]
         )
     )
@@ -340,12 +331,16 @@ def publication_rows(entries: Iterable[dict[str, str]]) -> list[KeepTogether]:
     rows = []
     for number, item in enumerate(entries, start=1):
         citation = Paragraph(
-            f"{item['authors']}. <b>{item['title']}</b>. {item['venue']}.",
+            f"{item['authors']}, <b>{item['title']}</b>, {item['venue']}.",
             STYLES["entry"],
         )
         table = Table(
-            [[Paragraph(f"{number}.", STYLES["number"]), citation]],
-            colWidths=[0.26 * inch, CONTENT_WIDTH - 0.26 * inch],
+            [["", Paragraph(f"{number}.", STYLES["number"]), citation]],
+            colWidths=[
+                CONTENT_INSET,
+                0.25 * inch,
+                CONTENT_WIDTH - CONTENT_INSET - 0.25 * inch,
+            ],
             hAlign="LEFT",
         )
         table.setStyle(
@@ -354,51 +349,38 @@ def publication_rows(entries: Iterable[dict[str, str]]) -> list[KeepTogether]:
                     ("VALIGN", (0, 0), (-1, -1), "TOP"),
                     ("LEFTPADDING", (0, 0), (-1, -1), 0),
                     ("RIGHTPADDING", (0, 0), (-1, -1), 0),
-                    ("RIGHTPADDING", (0, 0), (0, -1), 3),
+                    ("RIGHTPADDING", (1, 0), (1, -1), 4),
                     ("TOPPADDING", (0, 0), (-1, -1), 0),
                     ("BOTTOMPADDING", (0, 0), (-1, -1), 0),
                 ]
             )
         )
-        rows.append(KeepTogether([table, Spacer(1, 4.2)]))
+        rows.append(KeepTogether([table, Spacer(1, 5.4)]))
     return rows
 
 
 def service_rows() -> list[KeepTogether]:
     rows = []
     for item in SERVICE:
-        bullet = Table(
-            [[Paragraph("-", STYLES["number"]), Paragraph(item, STYLES["body"])]],
-            colWidths=[0.26 * inch, CONTENT_WIDTH - 0.26 * inch],
-            hAlign="LEFT",
-        )
-        bullet.setStyle(
-            TableStyle(
-                [
-                    ("VALIGN", (0, 0), (-1, -1), "TOP"),
-                    ("LEFTPADDING", (0, 0), (-1, -1), 0),
-                    ("RIGHTPADDING", (0, 0), (-1, -1), 0),
-                    ("RIGHTPADDING", (0, 0), (0, -1), 3),
-                    ("TOPPADDING", (0, 0), (-1, -1), 0),
-                    ("BOTTOMPADDING", (0, 0), (-1, -1), 1),
-                ]
-            )
-        )
-        rows.append(KeepTogether([bullet]))
+        rows.append(KeepTogether([Paragraph(item, STYLES["body"]), Spacer(1, 1.5)]))
     return rows
 
 
 def build_story() -> list:
+    location = Paragraph("Irvine, CA", STYLES["contact"])
     contact = Paragraph(
-        "Irvine, CA &nbsp;&middot;&nbsp; "
-        "<link href='mailto:jialit7@uci.edu' color='#6842C2'>jialit7@uci.edu</link> "
-        "&nbsp;&middot;&nbsp; "
-        "<link href='https://jaylentang.github.io/' color='#6842C2'>"
-        "https://jaylentang.github.io/</link>",
+        "<link href='mailto:jialit7@uci.edu' color='#000000'>jialit7@uci.edu</link>"
+        " &nbsp;&middot;&nbsp; "
+        "<link href='https://jaylentang.github.io/' color='#000000'>"
+        "jaylentang.github.io</link>",
         STYLES["contact"],
     )
     header = Table(
-        [[Paragraph("JIALIN TANG", STYLES["name"])], [contact]],
+        [
+            [Paragraph("Jialin Tang", STYLES["name"])],
+            [location],
+            [contact],
+        ],
         colWidths=[CONTENT_WIDTH],
     )
     header.setStyle(
@@ -407,18 +389,20 @@ def build_story() -> list:
                 ("LEFTPADDING", (0, 0), (-1, -1), 0),
                 ("RIGHTPADDING", (0, 0), (-1, -1), 0),
                 ("TOPPADDING", (0, 0), (-1, -1), 0),
-                ("BOTTOMPADDING", (0, 0), (-1, -1), 1),
-                ("LINEBELOW", (0, -1), (-1, -1), 1.1, RULE),
+                ("BOTTOMPADDING", (0, 0), (-1, -1), 0),
             ]
         )
     )
 
-    story = [header, Spacer(1, 3)]
+    story = [header, Spacer(1, 1)]
     story.extend([section_heading("Education"), education_table()])
+    research_line = (
+        f"{', '.join(RESEARCH_INTERESTS[:-1])} and {RESEARCH_INTERESTS[-1]}."
+    )
     story.extend(
         [
             section_heading("Research Interests"),
-            Paragraph(", ".join(RESEARCH_INTERESTS) + ".", STYLES["body"]),
+            Paragraph(research_line, STYLES["body"]),
         ]
     )
     story.append(section_heading("Journal Articles"))
@@ -427,6 +411,7 @@ def build_story() -> list:
     story.extend(publication_rows(CONFERENCE_PAPERS))
     story.append(section_heading("Service"))
     story.append(Paragraph("<b>Invited Reviewer</b>", STYLES["body"]))
+    story.append(Spacer(1, 1.5))
     story.extend(service_rows())
     return story
 
@@ -444,7 +429,7 @@ def build_pdf(output_path: Path = OUTPUT_PATH) -> None:
         bottomPadding=0,
         id="cv-frame",
     )
-    template = PageTemplate(id="cv", frames=[frame], onPage=draw_page)
+    template = PageTemplate(id="cv", frames=[frame])
     document = BaseDocTemplate(
         str(output_path),
         pagesize=LETTER,
@@ -475,7 +460,7 @@ def verify_pdf(output_path: Path = OUTPUT_PATH) -> tuple[int, str]:
     ), "Telephone number found in public CV"
 
     required_fragments = (
-        "JIALIN TANG",
+        "Jialin Tang",
         "Irvine, CA",
         "jialit7@uci.edu",
         "jaylentang.github.io",
@@ -486,7 +471,7 @@ def verify_pdf(output_path: Path = OUTPUT_PATH) -> tuple[int, str]:
         "M.S. in Computer Science",
         "Shandong University of Finance and Economics",
         "B.M. in Information Management and Information Systems",
-        "vision large language models",
+        "Vision Large Language Models",
         "HyperMODE",
         "21474-21491",
         "HyperEAST",
@@ -516,7 +501,7 @@ def verify_pdf(output_path: Path = OUTPUT_PATH) -> tuple[int, str]:
     assert not any(uri and uri.lower().startswith("tel:") for uri in links)
     required_links = {"mailto:jialit7@uci.edu", "https://jaylentang.github.io/"}
     assert required_links.issubset(links), "Required contact links are not active"
-    assert 1 <= len(reader.pages) <= 2, "Public CV must fit within two pages"
+    assert len(reader.pages) == 1, "Public CV must fit on one page"
 
     return len(reader.pages), extracted_text
 
