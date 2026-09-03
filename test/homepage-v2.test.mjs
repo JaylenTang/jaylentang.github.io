@@ -112,6 +112,26 @@ test("V2 uses the shared header and approved profile", () => {
   );
 });
 
+test("homepage profile links pair labels with recognizable icons", () => {
+  const page = read("_pages/home-v2.md");
+  const expectedLinks = [
+    ["ai ai-google-scholar", "Google Scholar"],
+    ["fab fa-linkedin", "LinkedIn"],
+    ["fab fa-github", "GitHub"],
+    ["fas fa-file-alt", "CV"],
+  ];
+
+  for (const [iconClass, label] of expectedLinks) {
+    assertMatches(
+      page,
+      new RegExp(
+        `<a[^>]*>\\s*<i class="${iconClass}" aria-hidden="true"><\\/i>\\s*<span>${label}<\\/span>\\s*<\\/a>`,
+      ),
+      `${label} should retain its text label and include its corresponding icon`,
+    );
+  }
+});
+
 test("V2 renders selected publication data and retains services", () => {
   const page = read("_pages/home-v2.md");
   const selectedPublicationPath = "_includes/selected-publication.html";

@@ -33,10 +33,10 @@ redirect_from:
         <p class="v2-email"><strong>Email:</strong> <span id="v2-email">protected</span> <button type="button" data-v2-email>reveal</button></p>
 
         <nav class="v2-profile-links" aria-label="Profile links">
-          <a href="https://scholar.google.com/citations?user=tOytfmwAAAAJ&amp;hl=en">Google Scholar</a>
-          <a href="https://www.linkedin.com/in/jtang0516/">LinkedIn</a>
-          <a href="https://github.com/jaylentang">GitHub</a>
-          <a href="/cv/">CV</a>
+          <a href="https://scholar.google.com/citations?user=tOytfmwAAAAJ&amp;hl=en"><i class="ai ai-google-scholar" aria-hidden="true"></i><span>Google Scholar</span></a>
+          <a href="https://www.linkedin.com/in/jtang0516/"><i class="fab fa-linkedin" aria-hidden="true"></i><span>LinkedIn</span></a>
+          <a href="https://github.com/jaylentang"><i class="fab fa-github" aria-hidden="true"></i><span>GitHub</span></a>
+          <a href="/cv/"><i class="fas fa-file-alt" aria-hidden="true"></i><span>CV</span></a>
         </nav>
       </div>
 

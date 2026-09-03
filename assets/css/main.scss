@@ -1032,6 +1032,19 @@ html[data-theme="light"] .homepage-v2 .v2-calligraphy {
   font-size: 0.94rem;
 }
 
+.homepage-v2 .v2-profile-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.homepage-v2 .v2-profile-links i {
+  width: 1.05em;
+  font-size: 0.95em;
+  line-height: 1;
+  text-align: center;
+}
+
 .homepage-v2 .v2-section > h2 {
   margin: 0 0 1.4rem;
   color: var(--v2-text);
