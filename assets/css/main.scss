@@ -912,8 +912,8 @@ html[data-theme="dark"] .homepage-v2 .v2-services a:hover {
 
 .homepage-v2 .v2-about__heading {
   display: grid;
-  grid-template-columns: max-content 180px;
-  column-gap: 0.9rem;
+  grid-template-columns: max-content 216px;
+  column-gap: 1rem;
   align-items: center;
   justify-content: start;
 }
@@ -932,7 +932,7 @@ html[data-theme="dark"] .homepage-v2 .v2-services a:hover {
 
 .homepage-v2 .v2-calligraphy {
   display: block;
-  width: 180px;
+  width: 216px;
   height: auto;
   filter: invert(1) brightness(1.16);
 }
@@ -1794,7 +1794,7 @@ html[data-theme="light"] .homepage-v2 .v2-calligraphy {
   }
 
   .homepage-v2 .v2-about__heading {
-    grid-template-columns: minmax(0, max-content) 150px;
+    grid-template-columns: minmax(0, max-content) 180px;
     column-gap: 0.55rem;
   }
 
@@ -1803,7 +1803,7 @@ html[data-theme="light"] .homepage-v2 .v2-calligraphy {
   }
 
   .homepage-v2 .v2-calligraphy {
-    width: 150px;
+    width: 180px;
   }
 
   .homepage-v2 .v2-about__grid {
@@ -1906,7 +1906,7 @@ html[data-theme="light"] .homepage-v2 .v2-calligraphy {
   }
 
   .homepage-v2 .v2-calligraphy {
-    width: 142px;
+    width: 170px;
     margin-top: 0.35rem;
   }
 
