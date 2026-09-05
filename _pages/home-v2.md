@@ -66,6 +66,7 @@ redirect_from:
     <ul>
       <li>Reviewer for the <a href="https://neurips.cc/">Conference on Neural Information Processing Systems (NeurIPS) 2026</a>.</li>
       <li>Reviewer for the <a href="https://aaai.org/conference/aaai/aaai-27/">Conference on Artificial Intelligence (AAAI) 2027</a>.</li>
+      <li>Reviewer for <a href="https://www.techscience.com/cmes/"><em>Computer Modeling in Engineering &amp; Sciences</em> (CMES)</a>.</li>
     </ul>
   </section>
 
