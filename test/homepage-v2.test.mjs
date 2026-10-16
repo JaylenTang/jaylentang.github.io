@@ -206,10 +206,10 @@ test("V2 renders selected publication data and retains services", () => {
     /Conference on Neural Information Processing Systems \(NeurIPS\) 2026/,
     "homepage should retain NeurIPS 2026 service text",
   );
-  assertMatches(
+  assertDoesNotMatch(
     page,
     /Conference on Artificial Intelligence \(AAAI\) 2027/,
-    "homepage should retain AAAI 2027 service text",
+    "homepage should omit the unconfirmed AAAI 2027 reviewer role",
   );
 });
 

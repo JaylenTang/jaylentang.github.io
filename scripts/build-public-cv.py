@@ -176,7 +176,6 @@ SERVICE = [
         "Reviewer for the Conference on Neural Information Processing Systems "
         "(NeurIPS) 2026."
     ),
-    "Reviewer for the Conference on Artificial Intelligence (AAAI) 2027.",
 ]
 
 
@@ -491,7 +490,6 @@ def verify_pdf(output_path: Path = OUTPUT_PATH) -> tuple[int, str]:
         "Optimizing Energy Management Strategy for EV Wireless Charging",
         "454-457",
         "Conference on Neural Information Processing Systems (NeurIPS) 2026",
-        "Reviewer for the Conference on Artificial Intelligence (AAAI) 2027",
     )
     for fragment in required_fragments:
         assert fragment in extracted_text, f"Required content missing: {fragment}"
