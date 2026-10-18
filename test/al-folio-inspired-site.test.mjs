@@ -164,6 +164,16 @@ test("rendered V2 routes separate preprints from published work", () => {
     );
     const cv = readFileSync(join(destination, "cv", "index.html"), "utf8");
 
+    const newsSection = home.match(/<section class="v2-section v2-news"[\s\S]*?<\/section>/)?.[0];
+    const newsArchive = newsSection?.match(/<details class="v2-news-archive">([\s\S]*?)<\/details>/)?.[1];
+    assert.ok(newsArchive, "older news should be collapsed in a native disclosure by default");
+    const recentNews = newsSection.slice(0, newsSection.indexOf('<details class="v2-news-archive">'));
+    assert.equal((recentNews.match(/class="v2-news-item"/g) || []).length, 5);
+    assert.equal((newsArchive.match(/class="v2-news-item"/g) || []).length, 6);
+    assert.match(recentNews, /datetime="2026-10-16"/);
+    assert.match(newsArchive, /datetime="2025-08-14"/);
+    assert.match(newsArchive, /<summary>/);
+
     const selectedSection = home.match(/<section id="research"[\s\S]*?<\/section>/)?.[0];
     const preprintsSection = home.match(/<section id="preprints"[\s\S]*?<\/section>/)?.[0];
     assert.ok(selectedSection, "selected publications should render separately");

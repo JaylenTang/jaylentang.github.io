@@ -1,0 +1,4 @@
+<article class="v2-news-item" role="listitem">
+  <time datetime="{{ include.item.date | date: '%Y-%m-%d' }}">{{ include.item.display_date | escape }}</time>
+  <div class="v2-news-item__content">{{ include.item.content | markdownify }}</div>
+</article>

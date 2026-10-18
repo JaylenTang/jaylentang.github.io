@@ -1,9 +1,16 @@
 {% assign news = include.news %}
 <div class="v2-news-list" role="list">
-  {% for item in news %}
-    <article class="v2-news-item" role="listitem">
-      <time datetime="{{ item.date | date: '%Y-%m-%d' }}">{{ item.display_date | escape }}</time>
-      <div class="v2-news-item__content">{{ item.content | markdownify }}</div>
-    </article>
+  {% for item in news limit:5 %}
+    {% include v2-news-item.html item=item %}
   {% endfor %}
 </div>
+{% if news.size > 5 %}
+<details class="v2-news-archive">
+  <summary>Earlier News <i class="fas fa-chevron-down" aria-hidden="true"></i></summary>
+  <div class="v2-news-list" role="list">
+    {% for item in news offset:5 %}
+      {% include v2-news-item.html item=item %}
+    {% endfor %}
+  </div>
+</details>
+{% endif %}
