@@ -47,12 +47,12 @@ redirect_from:
   </section>
 
   <section class="v2-section v2-news" aria-labelledby="v2-news-title">
-    <h2 id="v2-news-title">news</h2>
+    <h2 id="v2-news-title">News</h2>
     {% include v2-news-list.html news=site.data.news %}
   </section>
 
   <section id="research" class="v2-section v2-publications" aria-labelledby="v2-publications-title">
-    <h2 id="v2-publications-title">selected publications</h2>
+    <h2 id="v2-publications-title">Selected Publications</h2>
 
     {% assign selected_publications = site.publications | where: "selected", true | sort: "sort_order" %}
     {% for publication in selected_publications %}
@@ -61,14 +61,14 @@ redirect_from:
   </section>
 
   <section id="preprints" class="v2-section v2-publications" aria-labelledby="v2-preprints-title">
-    <h2 id="v2-preprints-title">preprints</h2>
+    <h2 id="v2-preprints-title">Preprints</h2>
     {% for preprint in site.data.preprints %}
       {% include v2-publication-row.html publication=preprint heading_level="h3" %}
     {% endfor %}
   </section>
 
   <section class="v2-section v2-services" aria-labelledby="v2-services-title">
-    <h2 id="v2-services-title">services</h2>
+    <h2 id="v2-services-title">Services</h2>
     <h3>Invited Reviewer</h3>
     <ul>
       <li>Reviewer for the <a href="https://neurips.cc/">Conference on Neural Information Processing Systems (NeurIPS) 2026</a>.</li>
