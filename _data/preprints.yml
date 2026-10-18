@@ -1,0 +1,27 @@
+- title: "TRACE-Stain: Transport-Resolved Correspondence Supervision and Amplitude-Constrained Expression Refinement for Weakly Paired Virtual Immunohistochemistry Staining"
+  publication_year: 2026
+  venue_name: Preprint
+  venue_short: Preprint
+  authors:
+    - name: J Tang
+      self: true
+    - name: H Liu
+    - name: Y Zhang
+    - name: B Yuan
+    - name: J Xie
+    - name: Y Bai
+  featured_image: "/images/research-trace-stain.png"
+  featured_thumbnail: "/images/research-trace-stain-thumb.webp"
+  featured_image_alt: "TRACE-Stain architecture: correspondence, rendering, and expression refinement"
+
+- title: "PRISM-MAP: Pathology-Relevant Inversion with Semantic-Frequency Modulation and Morphology-Aligned Projection for Unpaired Virtual Staining"
+  publication_year: 2026
+  venue_name: Preprint
+  venue_short: Preprint
+  authors:
+    - name: J Tang
+      self: true
+    - name: Y Bai
+  featured_image: "/images/research-prism-map.png"
+  featured_thumbnail: "/images/research-prism-map-thumb.webp"
+  featured_image_alt: "PRISM-MAP architecture: semantic adapters, frequency modulation, and morphology-aligned projection"

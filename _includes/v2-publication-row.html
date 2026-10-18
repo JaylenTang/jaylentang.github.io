@@ -17,7 +17,7 @@
   {% endif %}
 
   <div class="v2-publication__content">
-    <{{ heading_level | escape }} class="v2-publication__title"><a href="{{ publication.paperurl | escape }}">{{ publication.title | escape }}</a></{{ heading_level | escape }}>
+    <{{ heading_level | escape }} class="v2-publication__title">{% if publication.paperurl %}<a href="{{ publication.paperurl | escape }}">{% endif %}{{ publication.title | escape }}{% if publication.paperurl %}</a>{% endif %}</{{ heading_level | escape }}>
     <p class="v2-publication__authors">
       {% for author in publication.authors %}{% if author.self %}<strong>{{ author.name | escape }}</strong>{% else %}{{ author.name | escape }}{% endif %}{% unless forloop.last %}, {% endunless %}{% endfor %}
     </p>
@@ -25,8 +25,9 @@
       <em>{{ publication.venue_name | escape }}</em>{% if publication.location %}, {{ publication.location | escape }}{% endif %}, {{ publication.publication_year | escape }}{% if publication.volume %}, vol. {{ publication.volume | escape }}{% endif %}{% if publication.pages %}, pp. {{ publication.pages | escape | replace: "-", "&ndash;" }}{% endif %}
     </p>
 
+    {% if publication.paperurl or publication.codeurl or publication.bibtex %}
     <div class="v2-publication__actions">
-      <a href="{{ publication.paperurl | escape }}">Paper</a>
+      {% if publication.paperurl %}<a href="{{ publication.paperurl | escape }}">Paper</a>{% endif %}
       {% if publication.codeurl %}<a href="{{ publication.codeurl | escape }}">Code</a>{% endif %}
       {% if publication.bibtex %}
         <details class="v2-bib">
@@ -41,6 +42,7 @@
         </details>
       {% endif %}
     </div>
+    {% endif %}
 
   </div>
   {% if publication.summary %}<p class="v2-publication__summary">{{ publication.summary | escape }}</p>{% endif %}

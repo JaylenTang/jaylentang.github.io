@@ -60,6 +60,13 @@ redirect_from:
     {% endfor %}
   </section>
 
+  <section id="preprints" class="v2-section v2-publications" aria-labelledby="v2-preprints-title">
+    <h2 id="v2-preprints-title">preprints</h2>
+    {% for preprint in site.data.preprints %}
+      {% include v2-publication-row.html publication=preprint heading_level="h3" %}
+    {% endfor %}
+  </section>
+
   <section class="v2-section v2-services" aria-labelledby="v2-services-title">
     <h2 id="v2-services-title">services</h2>
     <h3>Invited Reviewer</h3>

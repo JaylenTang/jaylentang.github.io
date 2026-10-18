@@ -364,8 +364,10 @@ test("the rendered homepage preserves exact selected publication cards", () => {
       { cwd: rootPath, encoding: "utf8", stdio: "pipe" },
     );
     const homepage = readFileSync(join(destination, "index.html"), "utf8");
+    const selectedSection = homepage.match(/<section id="research"[\s\S]*?<\/section>/)?.[0];
+    assert.ok(selectedSection, "selected publications section should render");
     const articles = [
-      ...homepage.matchAll(/<article class="v2-publication">[\s\S]*?<\/article>/g),
+      ...selectedSection.matchAll(/<article class="v2-publication">[\s\S]*?<\/article>/g),
     ].map(([article]) => article);
     const extract = (source, pattern, message) => {
       const match = source.match(pattern);
@@ -375,7 +377,7 @@ test("the rendered homepage preserves exact selected publication cards", () => {
     const attribute = (tag, name) =>
       extract(tag, new RegExp(`\\b${name}="([^"]*)"`), `${name} should be present`);
 
-    assert.equal(articles.length, 3, "homepage should render exactly three publications");
+    assert.equal(articles.length, 3, "homepage should render exactly three selected publications");
     assert.deepEqual(
       articles.map((article) =>
         extract(

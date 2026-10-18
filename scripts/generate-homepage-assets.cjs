@@ -9,6 +9,8 @@ const researchImages = [
   "mas-llava",
   "aso-regression",
   "ev-charging",
+  "trace-stain",
+  "prism-map",
 ];
 
 async function generateSocialCard() {

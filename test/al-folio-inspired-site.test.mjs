@@ -17,7 +17,6 @@ const publicTitles = [
   "Optimizing Energy Management Strategy for EV Wireless Charging",
 ];
 const privateTitles = [
-  "PRISM-MAP:",
   "Multimodal Mammography",
   "Dynamic Network Biomarkers",
 ];
@@ -146,7 +145,7 @@ test("the public CV uses the compact resume-class layout", () => {
   assert.doesNotMatch(generator, /CVFooter|def draw_page\(/);
 });
 
-test("rendered V2 routes share the shell and exclude unpublished work", () => {
+test("rendered V2 routes separate preprints from published work", () => {
   const destination = mkdtempSync(join(tmpdir(), "al-folio-inspired-site-"));
   try {
     execFileSync(
@@ -165,7 +164,19 @@ test("rendered V2 routes share the shell and exclude unpublished work", () => {
     );
     const cv = readFileSync(join(destination, "cv", "index.html"), "utf8");
 
-    assert.equal((home.match(/class="v2-publication"/g) || []).length, 3);
+    const selectedSection = home.match(/<section id="research"[\s\S]*?<\/section>/)?.[0];
+    const preprintsSection = home.match(/<section id="preprints"[\s\S]*?<\/section>/)?.[0];
+    assert.ok(selectedSection, "selected publications should render separately");
+    assert.ok(preprintsSection, "preprints should render separately");
+    assert.equal((selectedSection.match(/class="v2-publication"/g) || []).length, 3);
+    assert.equal((preprintsSection.match(/class="v2-publication"/g) || []).length, 2);
+    for (const title of ["TRACE-Stain:", "PRISM-MAP:"]) {
+      assert.ok(preprintsSection.includes(title));
+      assert.ok(!selectedSection.includes(title));
+      assert.ok(!`${publications}\n${cv}`.includes(title));
+    }
+    assert.equal((preprintsSection.match(/<em>Preprint<\/em>, 2026/g) || []).length, 2);
+    assert.doesNotMatch(preprintsSection, /<a\b|v2-publication__actions/);
     assert.equal(
       (publications.match(/class="v2-publication"/g) || []).length,
       5,
