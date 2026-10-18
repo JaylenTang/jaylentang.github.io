@@ -1190,6 +1190,7 @@ html[data-theme="light"] .homepage-v2 .v2-calligraphy {
 }
 
 .homepage-v2 .v2-publication__actions a,
+.homepage-v2 .v2-publication__actions > button,
 .homepage-v2 .v2-bib > summary {
   display: inline-flex;
   align-items: center;
@@ -1200,11 +1201,20 @@ html[data-theme="light"] .homepage-v2 .v2-calligraphy {
   border: 1px solid var(--v2-muted);
   border-radius: 3px;
   color: var(--v2-text);
+  background: transparent;
+  font-family: inherit;
   font-size: 0.72rem;
   font-weight: 500;
   line-height: 1;
   text-transform: uppercase;
   cursor: pointer;
+}
+
+.homepage-v2 .v2-publication__actions > button:disabled {
+  border-color: var(--v2-border);
+  color: var(--v2-muted);
+  opacity: 0.6;
+  cursor: default;
 }
 
 .homepage-v2 .v2-publication__actions a:hover,
@@ -1873,6 +1883,7 @@ html[data-theme="light"] .homepage-v2 .v2-calligraphy {
   }
 
   .homepage-v2 .v2-publication__actions a,
+  .homepage-v2 .v2-publication__actions > button,
   .homepage-v2 .v2-bib > summary {
     min-height: 32px;
   }

@@ -80,7 +80,7 @@ test("conference publications expose official IEEE bibliographic metadata", () =
   assert.doesNotMatch(row, /publication\.doi/);
 });
 
-test("shared publication rows support optional Code and Bib actions", () => {
+test("shared publication rows support optional Paper, Code and Bib resources", () => {
   const include = read("_includes/v2-publication-row.html");
   assert.match(include, /publication\.paperurl/);
   assert.match(include, /if publication\.codeurl/);
@@ -176,7 +176,21 @@ test("rendered V2 routes separate preprints from published work", () => {
       assert.ok(!`${publications}\n${cv}`.includes(title));
     }
     assert.equal((preprintsSection.match(/<em>Preprint<\/em>, 2026/g) || []).length, 2);
-    assert.doesNotMatch(preprintsSection, /<a\b|v2-publication__actions/);
+    assert.doesNotMatch(preprintsSection, /<a\b/);
+    assert.equal(
+      (preprintsSection.match(/<button\b[^>]*\bdisabled[^>]*>(?:Paper|Code|Bib)<\/button>/g) || []).length,
+      6,
+      "both preprints should display three disabled resource buttons",
+    );
+    for (const page of [home, publications]) {
+      const actionGroups = [...page.matchAll(/<div class="v2-publication__actions">([\s\S]*?)<\/div>/g)];
+      assert.equal(actionGroups.length, 5, "every paper should have a resource button group");
+      for (const [, actions] of actionGroups) {
+        const labels = [...actions.matchAll(/<(?:a|button|summary)\b[^>]*>(Paper|Code|Bib)<\/(?:a|button|summary)>/g)]
+          .map(([, label]) => label);
+        assert.deepEqual(labels, ["Paper", "Code", "Bib"]);
+      }
+    }
     assert.equal(
       (publications.match(/class="v2-publication"/g) || []).length,
       5,

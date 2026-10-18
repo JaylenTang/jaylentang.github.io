@@ -25,10 +25,17 @@
       <em>{{ publication.venue_name | escape }}</em>{% if publication.location %}, {{ publication.location | escape }}{% endif %}, {{ publication.publication_year | escape }}{% if publication.volume %}, vol. {{ publication.volume | escape }}{% endif %}{% if publication.pages %}, pp. {{ publication.pages | escape | replace: "-", "&ndash;" }}{% endif %}
     </p>
 
-    {% if publication.paperurl or publication.codeurl or publication.bibtex %}
     <div class="v2-publication__actions">
-      {% if publication.paperurl %}<a href="{{ publication.paperurl | escape }}">Paper</a>{% endif %}
-      {% if publication.codeurl %}<a href="{{ publication.codeurl | escape }}">Code</a>{% endif %}
+      {% if publication.paperurl %}
+        <a href="{{ publication.paperurl | escape }}">Paper</a>
+      {% else %}
+        <button type="button" disabled title="Paper not available yet">Paper</button>
+      {% endif %}
+      {% if publication.codeurl %}
+        <a href="{{ publication.codeurl | escape }}">Code</a>
+      {% else %}
+        <button type="button" disabled title="Code not available yet">Code</button>
+      {% endif %}
       {% if publication.bibtex %}
         <details class="v2-bib">
           <summary>Bib</summary>
@@ -40,9 +47,10 @@
             </div>
           </div>
         </details>
+      {% else %}
+        <button type="button" disabled title="BibTeX not available yet">Bib</button>
       {% endif %}
     </div>
-    {% endif %}
 
   </div>
   {% if publication.summary %}<p class="v2-publication__summary">{{ publication.summary | escape }}</p>{% endif %}
