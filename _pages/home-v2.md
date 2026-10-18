@@ -20,9 +20,9 @@ redirect_from:
 
     <div class="v2-about__grid">
       <div class="v2-about__copy">
-        <p>I am a Ph.D. student in Computational Science at the University of California, Irvine.</p>
-        <p>I am advised by <a href="https://ecsicl.github.io/team/">Prof. Yu Bai</a> and co-advised by <a href="https://aicps.eng.uci.edu/people-2/">Prof. Mohammad Abdullah Al Faruque</a> and <a href="https://smile.sdsu.edu/biography.html">Prof. Junfei Xie</a>.</p>
-        <p>Before that I received my M.S. degree in Computer Science from California State University, Fullerton in 2026.</p>
+        <p>I am a Ph.D. student in Computational Science at the University of California, Irvine.
+        I am advised by <a href="https://ecsicl.github.io/team/">Prof. Yu Bai</a> and co-advised by <a href="https://aicps.eng.uci.edu/people-2/">Prof. Mohammad Abdullah Al Faruque</a> and <a href="https://smile.sdsu.edu/biography.html">Prof. Junfei Xie</a>.
+        Before that, I received my M.S. degree in Computer Science from California State University, Fullerton in 2026.</p>
         <p>My research interests include <strong>deep learning, image processing, Vision Large Language Models and diffusion</strong>.</p>
 
         <ul class="v2-profile-meta" aria-label="Profile details">
