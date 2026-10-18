@@ -376,6 +376,8 @@ test("the rendered homepage preserves exact selected publication cards", () => {
     };
     const attribute = (tag, name) =>
       extract(tag, new RegExp(`\\b${name}="([^"]*)"`), `${name} should be present`);
+    const expectedTitleMarkup = ({ name, metadata }) =>
+      metadata.title.replace(`${name}:`, `<strong>${name}</strong>:`);
 
     assert.equal(articles.length, 3, "homepage should render exactly three selected publications");
     assert.deepEqual(
@@ -386,7 +388,7 @@ test("the rendered homepage preserves exact selected publication cards", () => {
           "title should render",
         ),
       ),
-      selectedPublications.map(({ metadata }) => metadata.title),
+      selectedPublications.map(expectedTitleMarkup),
     );
 
     for (const [index, publication] of selectedPublications.entries()) {
@@ -396,7 +398,7 @@ test("the rendered homepage preserves exact selected publication cards", () => {
         /<h3 class="v2-publication__title"><a href="([^"]+)">([\s\S]*?)<\/a><\/h3>/,
       );
       assert.ok(titleLink, `${publication.name} should render its title link`);
-      assert.deepEqual(titleLink.slice(1), [metadata.paperUrl, metadata.title]);
+      assert.deepEqual(titleLink.slice(1), [metadata.paperUrl, expectedTitleMarkup(publication)]);
 
       const expectedAuthors = metadata.authors
         .map(({ name, self }) => (self ? `<strong>${name}</strong>` : name))

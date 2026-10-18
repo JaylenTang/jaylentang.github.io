@@ -27,7 +27,6 @@ redirect_from:
 
         <ul class="v2-profile-meta" aria-label="Profile details">
           <li><i class="fas fa-map-marker-alt" aria-hidden="true"></i><span>Irvine, CA, USA</span></li>
-          <li><i class="fas fa-university" aria-hidden="true"></i><span>University of California, Irvine</span></li>
         </ul>
 
         <p class="v2-email"><strong>Email:</strong> <span id="v2-email">protected</span> <button type="button" data-v2-email>reveal</button></p>

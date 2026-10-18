@@ -180,11 +180,12 @@ test("rendered V2 routes separate preprints from published work", () => {
     assert.ok(preprintsSection, "preprints should render separately");
     assert.equal((selectedSection.match(/class="v2-publication"/g) || []).length, 3);
     assert.equal((preprintsSection.match(/class="v2-publication"/g) || []).length, 2);
-    for (const title of ["TRACE-Stain:", "PRISM-MAP:"]) {
-      assert.ok(preprintsSection.includes(title));
-      assert.ok(!selectedSection.includes(title));
-      assert.ok(!`${publications}\n${cv}`.includes(title));
+    for (const name of ["TRACE-Stain", "PRISM-MAP"]) {
+      assert.ok(preprintsSection.includes(`<strong>${name}</strong>:`));
+      assert.ok(!selectedSection.includes(name));
+      assert.ok(!`${publications}\n${cv}`.includes(name));
     }
+    assert.equal((preprintsSection.match(/<strong>Jialin Tang<\/strong>/g) || []).length, 2);
     assert.equal((preprintsSection.match(/<em>Preprint<\/em>, 2026/g) || []).length, 2);
     assert.doesNotMatch(preprintsSection, /<a\b/);
     assert.equal(
