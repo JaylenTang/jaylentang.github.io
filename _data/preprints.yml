@@ -22,7 +22,7 @@
   authors:
     - name: Jialin Tang
       self: true
-    - name: Y Bai
+    - name: Yu Bai
   featured_image: "/images/research-prism-map.png"
   featured_thumbnail: "/images/research-prism-map-thumb.webp"
   featured_image_alt: "PRISM-MAP architecture: semantic adapters, frequency modulation, and morphology-aligned projection"
