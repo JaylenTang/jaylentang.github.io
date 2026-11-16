@@ -176,6 +176,9 @@ SERVICE = [
         "Reviewer for the Conference on Neural Information Processing Systems "
         "(NeurIPS) 2026."
     ),
+    "Reviewer for International Journal of Digital Earth (IJDE).",
+    "Reviewer for IEEE Internet of Things Magazine.",
+    "Reviewer for Computer Modeling in Engineering & Sciences (CMES).",
 ]
 
 
@@ -493,6 +496,9 @@ def verify_pdf(output_path: Path = OUTPUT_PATH) -> tuple[int, str]:
     )
     for fragment in required_fragments:
         assert fragment in extracted_text, f"Required content missing: {fragment}"
+
+    service_text = extracted_text.partition("Invited Reviewer")[2]
+    assert " ".join(service_text.split()) == " ".join(SERVICE), "Service list mismatch"
 
     links = {
         annotation.get_object().get("/A", {}).get("/URI")

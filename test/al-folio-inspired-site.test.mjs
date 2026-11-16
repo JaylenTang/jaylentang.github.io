@@ -178,7 +178,18 @@ test("rendered V2 routes separate preprints from published work", () => {
 
     const services = home.match(/<section class="v2-section v2-services"[\s\S]*?<\/section>/)?.[0];
     assert.ok(services, "homepage Services should render");
-    assert.match(services, /<li>Reviewer for <a [^>]+><em>IEEE Internet of Things Magazine<\/em><\/a>\.<\/li>/);
+    const cvServices = cv.match(/<ul class="cv-v2-services">[\s\S]*?<\/ul>/)?.[0];
+    assert.ok(cvServices, "CV Service should render");
+    for (const section of [services, cvServices]) {
+      const reviewers = [...section.matchAll(/<li>(Reviewer for [\s\S]*?)<\/li>/g)]
+        .map(([, row]) => row.replace(/<[^>]+>/g, "").replaceAll("&amp;", "&"));
+      assert.deepEqual(reviewers, [
+        "Reviewer for the Conference on Neural Information Processing Systems (NeurIPS) 2026.",
+        "Reviewer for International Journal of Digital Earth (IJDE).",
+        "Reviewer for IEEE Internet of Things Magazine.",
+        "Reviewer for Computer Modeling in Engineering & Sciences (CMES).",
+      ]);
+    }
 
     const selectedSection = home.match(/<section id="research"[\s\S]*?<\/section>/)?.[0];
     const preprintsSection = home.match(/<section id="preprints"[\s\S]*?<\/section>/)?.[0];
