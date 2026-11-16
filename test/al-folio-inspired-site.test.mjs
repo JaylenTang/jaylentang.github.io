@@ -176,6 +176,10 @@ test("rendered V2 routes separate preprints from published work", () => {
     assert.match(newsArchive, /datetime="2025-08-14"/);
     assert.match(newsArchive, /<summary>/);
 
+    const services = home.match(/<section class="v2-section v2-services"[\s\S]*?<\/section>/)?.[0];
+    assert.ok(services, "homepage Services should render");
+    assert.match(services, /<li>Invited to review for <a [^>]+><em>IEEE Internet of Things Magazine<\/em><\/a>\.<\/li>/);
+
     const selectedSection = home.match(/<section id="research"[\s\S]*?<\/section>/)?.[0];
     const preprintsSection = home.match(/<section id="preprints"[\s\S]*?<\/section>/)?.[0];
     assert.ok(selectedSection, "selected publications should render separately");
