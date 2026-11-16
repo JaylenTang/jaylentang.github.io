@@ -185,8 +185,8 @@ test("rendered V2 routes separate preprints from published work", () => {
         .map(([, row]) => row.replace(/<[^>]+>/g, "").replaceAll("&amp;", "&"));
       assert.deepEqual(reviewers, [
         "Reviewer for the Conference on Neural Information Processing Systems (NeurIPS) 2026.",
-        "Reviewer for International Journal of Digital Earth (IJDE).",
         "Reviewer for IEEE Internet of Things Magazine.",
+        "Reviewer for International Journal of Digital Earth (IJDE).",
         "Reviewer for Computer Modeling in Engineering & Sciences (CMES).",
       ]);
     }
