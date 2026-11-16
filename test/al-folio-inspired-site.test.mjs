@@ -170,7 +170,7 @@ test("rendered V2 routes separate preprints from published work", () => {
     const recentNews = newsSection.slice(0, newsSection.indexOf('<details class="v2-news-archive">'));
     assert.equal((recentNews.match(/class="v2-news-item"/g) || []).length, 5);
     assert.equal((newsArchive.match(/class="v2-news-item"/g) || []).length, 7);
-    assert.match(recentNews, /datetime="2026-11-08"[\s\S]*?Received a manuscript review invitation from[\s\S]*?IEEE Internet of Things Magazine/);
+    assert.match(recentNews, /datetime="2026-11-08"[\s\S]*?Invited to serve as a reviewer for[\s\S]*?IEEE Internet of Things Magazine/);
     assert.match(recentNews, /datetime="2026-10-16"/);
     assert.match(newsArchive, /datetime="2026-05-15"/);
     assert.match(newsArchive, /datetime="2025-08-14"/);
